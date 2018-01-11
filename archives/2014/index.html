@@ -29,22 +29,25 @@
 	
 </head>
     
-		
-<!-- Layouts -->
-
-    <!-- Single Links Page -->
-    
-<link rel="stylesheet" href="/css/item.css" />
-
-<body class="is-loading">
+		<body class="is-loading">
     <!-- Wrapper 外包 s-->
-    <div id="wrapper" class="fade-in">
+    <div id="wrapper" class="fade-in overlay">
         <!-- Intro 头部显示 s -->
+                <div id="intro">
+            <h1><br/>
+                         </h1>
+            <p> 
+            </p>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
         <!-- Intro 头部显示 e -->
         <!-- Header 头部logo start -->
         <header id="header">
     <a href="/" class="logo">主页</a>
 </header>
+        <!-- Header 头部logo end -->
         <!-- Nav 导航条 start -->
         <nav id="nav" class="special" >
             <ul class="menu links" >
@@ -112,37 +115,53 @@
 		            
 			</ul>
 </nav>
-                <div id="main">
-            <!-- Main first s-->
-            <article id="me" class="panel">
-                <header>
-                    <h1>MainFirst name</h1>
-                    <p>MainFirst description</p>
-                </header>
-                <a href="https://hexo.io/zh-cn/docs/front-matter.html" class="jumplink pic">
-                    <span class="arrow icon fa-chevron-right"><span></span></span>
-                    <img src="/images/me.jpg" alt="" />
-                </a>
-            </article>
-            <!-- Main first e-->
-        </div>
+        <!-- Nav 导航条 end -->
+        <!-- Main 主要部分 start -->
+        
+        <!-- 文章列表   s -->
+        <div id="main" style="background-color: transparent; padding:0;">
+        <section class="link_container" style="margin-top: 0; background-color: transparent; ">
+            <div class="link_row">
+                <!-- 文章sample  s-->
 
-        <section class="special">
-                            <div class="row">
-                                
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="http://miccall.tech/img/twx.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="https://hexo.io/zh-cn/docs/front-matter.html"><h3>三国杀</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">没啥想说的</a>
+                 
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                        <div class="page_title" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1515665308&amp;di=c47dba565aa9965eb524c6b306ffce50&amp;src=http://img.zcool.cn/community/0144c457b4f79d0000018c1b26b075.jpg) ;background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <a href="/2014/01/10/iOS 自学心得/从0开始学-ios-01/"><h2 class="page_title_text">  从0开始学 ios-01 </h2></a>
+                            <!--段落-->
+                        </div>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2014-01-10</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/"></a>                              
+                            </h6>
+
+                        </span>
                                 </div>
-                                </section>
-        
-    
                             </div>
-                    
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
+            </div>
         </section>
+        </div>
+        <!-- 文章列表   end -->
+        <!-- Main 主要部分 end -->
+        <!-- footer  页码 start-->
+        <footer style="text-align: center; padding-top: 2em;">
+  
+</footer>
+
+        <!-- footer  页码 end-->
         <!-- Copyright 版权 start -->
                 <div id="copyright">
             <ul>
@@ -152,9 +171,10 @@
             	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 			
         </div>
+        <!-- Copyright 版权 end -->
     </div>
+    <!-- Wrapper 外包 e-->
+    <!-- Scripts -->
 </body>
-
-
  	
 </html>
