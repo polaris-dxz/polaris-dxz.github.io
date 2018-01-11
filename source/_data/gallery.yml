@@ -1,0 +1,9 @@
+#图片名称 :
+#  full_link : 图片地址
+#  thumb_link: 略缩图地址
+#  descr : 图片描述
+
+图片名称 :
+  full_link : http://miccall.tech/img/twx.jpg
+  thumb_link: http://miccall.tech/img/twx.jpg
+  descr : 图片描述
