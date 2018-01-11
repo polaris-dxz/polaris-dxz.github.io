@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">主页</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/github/">github</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/iOS开发/逆向开发/">逆向开发</a></li><li><a class="category-link" href="/categories/linux/">linux</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/01/">January 2018</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="友情链接">
+		                友情链接
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="about">
+		                about
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/Yggdrasill-7C9" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(thum.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >gem、rvm使用心得</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="gem-rvm使用心得"><a href="#gem-rvm使用心得" class="headerlink" title="gem,rvm使用心得"></a>gem,rvm使用心得</h1><h5 id="rvm-和-gem-的关系"><a href="#rvm-和-gem-的关系" class="headerlink" title="rvm 和 gem 的关系"></a>rvm 和 gem 的关系</h5><ul>
+<li>rvm 全称是 Ruby Version Manager，即Ruby 版本管理器。</li>
+<li>gem，即RubyGems，是一个用于对 Ruby 组件进行打包 Ruby 的打包系统，可以从远程服务器下载并安装 Rails。</li>
+</ul>
+<blockquote>
+<p><a href="https://baike.baidu.com/item/Ruby" target="_blank" rel="noopener">Ruby</a> on Rails 是一个用于开发数据库驱动的网络应用程序的完整框架。Rails基于<a href="https://baike.baidu.com/item/MVC" target="_blank" rel="noopener">MVC</a>（模型- 视图- 控制器）设计模式。从视图中的<a href="https://baike.baidu.com/item/Ajax" target="_blank" rel="noopener">Ajax</a>应用，到控制器中的访问请求和反馈，到封装数据库的模型，Rails 为你提供一个纯Ruby的开发环境。发布网站时，你只需要一个数据库和一个网络服务器即可。</p>
+<p>Ruby On Rails是一个用于编写网络应用程序的软件包.它基于一种计算机软件语言Ruby,给程序开发人员提供了强大的框架支持.你可以用比以前少的多的代码和 短的多的时间编写出一流的网络软件。</p>
+</blockquote>
+<p><strong>查看gem 源</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem source</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>–add SOURCE_URI</td>
+<td>添加源</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>–list</td>
+<td>列表</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>–remove SOURCE_URI</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>–clear-all</td>
+<td>清除所有</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>–update</td>
+<td>更新</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources -r http://rubygems.org/ #删除默认的源</span><br><span class="line"></span><br><span class="line">$ gem sources -a https://ruby.taobao.org #添加淘宝源</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Mac OSX 必须要安装的库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install libxml2 libxslt libiconv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>载入 RVM 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source ~/.rvm/scripts/rvm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用 RVM 安装 ruby 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rvm requirements</span><br><span class="line">$ rvm install 2.3.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Bundler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install bundler</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Rails 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install rails</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>homebrew 安装 ruby</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install ruby</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RVM 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">$ \curl -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">$ source ~/.bashrc</span><br><span class="line">$ source ~/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出以及 ruby 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rvm list known</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换 ruby 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rvm use 2.2.0</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>修改 RVM 下载 Ruby 的源，到 Ruby China 的镜像:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<p>  ​</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-Ydddrasill-7C9'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/09/2017/gem、rvm使用心得/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/09/2017/gem、rvm使用心得/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-Ydddrasill-7C9.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
