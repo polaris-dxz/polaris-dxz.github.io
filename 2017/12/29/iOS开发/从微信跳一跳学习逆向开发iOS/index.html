@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/git/">git</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/linux/">linux</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -114,30 +114,19 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1084700340,387885401&amp;fm=27&amp;gp=0.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >分享几个常用的插件工具</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1515671098503&amp;di=650c7f02a784008ee52200ccb1115324&amp;imgtype=0&amp;src=http%3A%2F%2Ff3.topitme.com%2F3%2Fb9%2F57%2F1132270460a9c57b93o.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >从微信跳一跳学习逆向开发iOS</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="分享几个我常用的插件工具"><a href="#分享几个我常用的插件工具" class="headerlink" title="分享几个我常用的插件工具"></a>分享几个我常用的插件工具</h1><h2 id="一、gem"><a href="#一、gem" class="headerlink" title="一、gem"></a>一、gem</h2><h3 id="1、synx"><a href="#1、synx" class="headerlink" title="1、synx"></a>1、synx</h3><ol>
-<li><p>介绍：</p>
-<p>synx：同步 xcode 工程中的 group 至当前的 finder 中</p>
-</li>
-<li><p>安装：</p>
-<pre><code class="shell">$ gem install synx
+                <h1 id="从微信跳一跳学习逆向开发-iOS"><a href="#从微信跳一跳学习逆向开发-iOS" class="headerlink" title="从微信跳一跳学习逆向开发 iOS"></a>从微信跳一跳学习逆向开发 iOS</h1><p>[TOC]</p>
+<h3 id="一、libimobiledevice与-adb"><a href="#一、libimobiledevice与-adb" class="headerlink" title="一、libimobiledevice与 adb"></a>一、libimobiledevice与 adb</h3><p>libimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议</p>
+<p>adb：安卓下调试工具</p>
+<h3 id="二、安装libimobiledevice"><a href="#二、安装libimobiledevice" class="headerlink" title="二、安装libimobiledevice"></a>二、安装libimobiledevice</h3><pre><code>$ brew update
+$ brew install libimobiledevice
+#libimobiledevice中并不包含ipa的安装命令，所以还需要安装
+$ brew install ideviceinstaller
 </code></pre>
-</li>
-</ol>
-<ol>
-<li><p>使用：</p>
-<pre><code class="shell">$ synx your/product/path/project.xcodeproj #项目中有 pod 时一样用xcodeproj
-</code></pre>
-</li>
-<li><p>注意事项：</p>
-<p>导入 .a 和 .framework文件时，或者 支付宝 SDK 时可能会出现一些问题</p>
-</li>
-</ol>
-
             </div>
 
             <!-- Post Comments -->
@@ -199,8 +188,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/12/分享几个常用的插件工具/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/12/分享几个常用的插件工具/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2017/12/29/iOS开发/从微信跳一跳学习逆向开发iOS/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2017/12/29/iOS开发/从微信跳一跳学习逆向开发iOS/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

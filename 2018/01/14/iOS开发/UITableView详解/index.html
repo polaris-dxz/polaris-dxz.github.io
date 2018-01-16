@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/git/">git</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/linux/">linux</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -115,69 +115,68 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >cUrl使用心得</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >UITableView详解</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>常用命令：</p>
-<pre><code> -a, --append        Append to target file when uploading (F/SFTP)
- -E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)
- -K, --config FILE   Read config from FILE
- -C, --continue-at OFFSET  Resumed transfer OFFSET
- -b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)
- -c, --cookie-jar FILE  Write cookies to FILE after operation (H)
- -d, --data DATA     HTTP POST data (H)
- -D, --dump-header FILE  Write the received headers to FILE
- -f, --fail          Fail silently (no output at all) on HTTP errors (H)
- -F, --form CONTENT  Specify HTTP multipart POST data (H)
- -P, --ftp-port ADR  Use PORT with given address instead of PASV (F)
- -G, --get           Send the -d data with a HTTP GET (H)
- -g, --globoff       Disable URL sequences and ranges using {} and []
- -H, --header LINE   Pass custom header LINE to server (H)
- -I, --head          Show document info only
- -h, --help          This help text
- -i, --include       Include protocol headers in the output (H/F)
- -k, --insecure      Allow connections to SSL sites without certs (H)
- -j, --junk-session-cookies  Ignore session cookies read from file (H)
- -l, --list-only     List only mode (F/POP3)
- -L, --location      Follow redirects (H)
- -M, --manual        Display the full manual
- -m, --max-time SECONDS  Maximum time allowed for the transfer
- -n, --netrc         Must read .netrc for user name and password
- -N, --no-buffer     Disable buffering of the output stream
- -o, --output FILE   Write to FILE instead of stdout
- -U, --proxy-user USER[:PASSWORD]  Proxy user and password
-     --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port
- -p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)
-     --pubkey KEY    Public key file name (SSH)
- -Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
-     --random-file FILE  File for reading random data from (SSL)
- -r, --range RANGE   Retrieve only the bytes within RANGE
-     --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)
- -e, --referer       Referer URL (H)
- -J, --remote-header-name  Use the header-provided filename (H)
- -O, --remote-name   Write output to a file named as the remote file
-     --remote-name-all  Use the remote file name for all URLs
- -R, --remote-time   Set the remote file&#39;s time on the local output
- -X, --request COMMAND  Specify request command to use
- -S, --show-error    Show error. With -s, make curl show errors when they occur
- -s, --silent        Silent mode (don&#39;t output anything)
- -Y, --speed-limit RATE  Stop transfers below RATE for &#39;speed-time&#39; secs
- -y, --speed-time SECONDS  Trigger &#39;speed-limit&#39; abort after SECONDS (default: 30)
- -t, --telnet-option OPT=VAL  Set telnet option
-     --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)
-     --tftp-no-options  Do not send TFTP options requests
- -z, --time-cond TIME   Transfer based on a time condition
- -T, --upload-file FILE  Transfer FILE to destination
-     --url URL       URL to work with
- -B, --use-ascii     Use ASCII/text transfer
- -u, --user USER[:PASSWORD]  Server user and password
- -A, --user-agent STRING  Send User-Agent STRING to server (H)
- -v, --verbose       Make the operation more talkative
- -V, --version       Show version number and quit
- -w, --write-out FORMAT  Use output FORMAT after completion
- -q, --disable       Disable .curlrc (must be first parameter)
-</code></pre>
+                <ul>
+<li>UITableView<strong>DataSource</strong><ul>
+<li>必要的<ul>
+<li>设置 tableview cell</li>
+<li>设置行数</li>
+</ul>
+</li>
+<li>可选的<ul>
+<li>​</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UITableView<strong>Delegate</strong><ul>
+<li>可选的<ul>
+<li>设置行高</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>UITableView<strong>DataSource</strong></p>
+<ul>
+<li>required<ul>
+<li>UITableViewCell </li>
+<li>numberOfRowsInSection</li>
+</ul>
+</li>
+<li>optional<ul>
+<li>numberOfSectionsInTableView </li>
+<li>titleForHeaderViewOrFooterView</li>
+<li>index<ul>
+<li>sectionForSectionIndexTitle</li>
+<li>sectionIndexTitlesForTableView</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UITableView<strong>Delegate</strong></p>
+<ul>
+<li>optional<ul>
+<li>Display customization</li>
+<li>Variable (estimated) height support</li>
+<li>Section header &amp; footer information.返回一个 view</li>
+<li>Accessories</li>
+<li>should or did (Un)HighlightRowAtIndexPath</li>
+<li>Called before the user changes the selection.</li>
+<li>Editing</li>
+</ul>
+</li>
+</ul>
+<p>​</p>
+</li>
+</ul>
+
             </div>
 
             <!-- Post Comments -->
@@ -239,8 +238,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/13/cUrl使用心得/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/13/cUrl使用心得/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/14/iOS开发/UITableView详解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/14/iOS开发/UITableView详解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
