@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/icon.png"/>
+	 <link rel="shortcut icon" href="/img/icon.png">
+	
+			
+    <title>
+    温故而知新
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">亚古兽进化！</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/ios开发/">ios开发</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="/archives/2017/12/">December 2017</a></li><li><a class="archive-link" href="/archives/2014/01/">January 2014</a></li><li><a class="archive-link" href="/archives/2013/04/">April 2013</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="友情链接">
+		                友情链接
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="about">
+		                about
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >深入学习多线程编程</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>共享数据时 </p>
+<p>@synchronize（self）{  // 括号内表示的是锁对象，需要全局只创建一次，所以一般用 self </p>
+<p>​    // 操作</p>
+<p>}</p>
+<h2 id="一、NSThread"><a href="#一、NSThread" class="headerlink" title="一、NSThread"></a>一、NSThread</h2><h3 id="1、创建线程"><a href="#1、创建线程" class="headerlink" title="1、创建线程"></a>1、创建线程</h3><pre><code class="objective-c">NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(downloadWithURL:) object:@&quot;传入的参数&quot;];
+
+[thread start]; // 启动线程
+</code></pre>
+<h3 id="2、分离线程（创建线程并启动）"><a href="#2、分离线程（创建线程并启动）" class="headerlink" title="2、分离线程（创建线程并启动）"></a>2、分离线程（创建线程并启动）</h3><pre><code class="objective-c"> [NSThread detachNewThreadSelector:@selector(downloadWithURL:) toTarget:self withObject:@&quot;thread3：detach&quot;];
+</code></pre>
+<h3 id="3、隐式创建一个线程"><a href="#3、隐式创建一个线程" class="headerlink" title="3、隐式创建一个线程"></a>3、隐式创建一个线程</h3><pre><code class="objective-c">performSelectorInBackground:
+</code></pre>
+<h3 id="4、常见方法："><a href="#4、常见方法：" class="headerlink" title="4、常见方法："></a>4、常见方法：</h3><pre><code class="objective-c">// 获取当前线程
+[NSThread currentThread];
+// 获取主线程
+[NSThread mainThread];
+</code></pre>
+<h3 id="5、睡眠（暂停）线程；死亡"><a href="#5、睡眠（暂停）线程；死亡" class="headerlink" title="5、睡眠（暂停）线程；死亡"></a>5、睡眠（暂停）线程；死亡</h3><pre><code class="objective-c">+ (void)sleepUntilDate:(NSDate):date;
++ (void)sleepForTimeInterval(NSTimeInterVal)ti;
+
++ (void)exit; // 线程死亡，并释放内存
+</code></pre>
+<h3 id="6、互斥锁、同步锁（-synchronize）"><a href="#6、互斥锁、同步锁（-synchronize）" class="headerlink" title="6、互斥锁、同步锁（@synchronize）"></a>6、互斥锁、同步锁（@synchronize）</h3><p>① 目的：为了防止多个线程访问同一块内存（数据），从而造成数据竞争的问题。</p>
+<p>②使用：</p>
+<pre><code class="objective-c">// 因为只需要一把锁，所以需要一个静态全局锁对象(保证只创建一次)，一般我们用 self 代替。
+@synchronize（LockObject）{  
+    // 操作
+}
+</code></pre>
+<p>③作用：一个线程获得锁以后，会阻塞其他想要访问此锁的线程，知道该锁被释放。</p>
+<p>④其他锁：</p>
+<blockquote>
+<ol>
+<li>NSLock</li>
+<li>NSRecursiveLock</li>
+<li>NSCondition</li>
+<li>NSConditionLock</li>
+<li>pthread_mutex</li>
+<li>pthread_rwlock</li>
+<li>POSIX Conditions</li>
+<li>OSSpinLock (自旋锁)</li>
+<li>os_unfair_lock</li>
+<li>dispatch_semaphore （信号量）</li>
+<li>@synchronized （互斥锁 ）</li>
+</ol>
+</blockquote>
+<h3 id="7、线程通讯"><a href="#7、线程通讯" class="headerlink" title="7、线程通讯"></a>7、线程通讯</h3><h3 id="8、注意事项："><a href="#8、注意事项：" class="headerlink" title="8、注意事项："></a>8、注意事项：</h3><p>① 不要同时开太多线程（1~3条即可，最好不要超过5条）</p>
+<p>② 主线程：UI 线程；（因为属性都是 非原子性的，为了线程安全，所以不要在子线程更新 UI ）</p>
+<p>​     子线程：后台线程；（执行耗时操作 ）</p>
+<h2 id="二、GCD"><a href="#二、GCD" class="headerlink" title="二、GCD"></a>二、GCD</h2><p>1、同步与异步：sync、async （执行）决定要不要开启多线程</p>
+<ul>
+<li>同步：只能在当前线程中执行任务，不具备开启新线程的能力；（不常用）</li>
+<li>异步：可以在新的线程中执行任务，具备开新线程的能力； （开发中一般只需要考虑异步串行队列和异步并行队列）</li>
+</ul>
+<p>2、队列：并发队列、串行队列（concurrent、serial）（队列）决定执行顺序 </p>
+<ul>
+<li>并发队列：可以让多个任务并发执行(同步执行)，自动开启多个线程执行任务。（所以并发队列异步执行才有效）。一般同时开多条线程 （取决于 CPU 调度）</li>
+<li>串行队列：让任务一个接一个执行。一般  只开一条线程。（取决于 CPU 调度     ）</li>
+</ul>
+<p>3、主队列和全局队列</p>
+<ul>
+<li>main：全局串行队列</li>
+<li>global：全局并发队列</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>并发队列（global_queue）</th>
+<th>串行队列</th>
+<th>主队列（串）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同步执行</td>
+<td>不开启多线程，串行执行</td>
+<td>不开多线程，串行执行</td>
+<td>不开多线程，串行执行</td>
+</tr>
+<tr>
+<td>异步执行</td>
+<td><strong>开启多线程，并发执行</strong></td>
+<td><strong>开启多线程，串行执行</strong></td>
+<td>不开多线程，串行执行</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-Ydddrasill-7C9'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/21/iOS开发/开发笔记/深入学习多线程编程/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/21/iOS开发/开发笔记/深入学习多线程编程/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-Ydddrasill-7C9.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

@@ -35,7 +35,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/prism_.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/ios开发/">ios开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -114,15 +114,15 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >instrument 详解</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>[TOC]</p>
 <p><img src="instrument.png" alt=""></p>
-<h2 id="Blank"><a href="#Blank" class="headerlink" title="Blank"></a>Blank</h2><h2 id="Activity-Monitor（活动监视器）"><a href="#Activity-Monitor（活动监视器）" class="headerlink" title="Activity Monitor（活动监视器）"></a>Activity Monitor（活动监视器）</h2><h2 id="Allocations（内存分配）"><a href="#Allocations（内存分配）" class="headerlink" title="Allocations（内存分配）"></a>Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h3 id="程序员对内存关注的点"><a href="#程序员对内存关注的点" class="headerlink" title="程序员对内存关注的点"></a>程序员对内存关注的点</h3><ul>
+<h2 id="一、Blank"><a href="#一、Blank" class="headerlink" title="一、Blank"></a>一、Blank</h2><h2 id="二、Activity-Monitor（活动监视器）"><a href="#二、Activity-Monitor（活动监视器）" class="headerlink" title="二、Activity Monitor（活动监视器）"></a>二、Activity Monitor（活动监视器）</h2><h2 id="三、Allocations（内存分配）"><a href="#三、Allocations（内存分配）" class="headerlink" title="三、Allocations（内存分配）"></a>三、Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<h3 id="1、程序员对内存关注的点"><a href="#1、程序员对内存关注的点" class="headerlink" title="1、程序员对内存关注的点"></a>1、程序员对内存关注的点</h3><ul>
 <li><p>正确使用</p>
 <ul>
 <li><p>避免非法访问</p>
@@ -142,13 +142,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="Regions（区域）"><a href="#Regions（区域）" class="headerlink" title="Regions（区域）"></a>Regions（区域）</h3><p>以下内容参考自 <a href="https://stackoverflow.com/questions/13437365/what-is-resident-and-dirty-memory-of-ios!" target="_blank" rel="noopener">Stack Overflow</a></p>
+<h3 id="2、Regions（区域）"><a href="#2、Regions（区域）" class="headerlink" title="2、Regions（区域）"></a>2、Regions（区域）</h3><p>以下内容参考自 <a href="https://stackoverflow.com/questions/13437365/what-is-resident-and-dirty-memory-of-ios!" target="_blank" rel="noopener">Stack Overflow</a></p>
 <p>视频链接：<a href="https://www.imooc.com/video/11075" target="_blank" rel="noopener">iOS内存管理及优化</a></p>
 <ul>
 <li>Clean Memory：在闪存中有备份，能够再次读取。主要包括<code>system framework</code>、<code>binary executable of your app</code>、<code>memory mapped files</code></li>
 <li>Dirty Memory：所有非<code>Clean Memory</code>，<strong>系统无法回收</strong>。包括<code>Heap allocation</code>、<code>caches</code>、<code>decompressed images</code>（解压的图片）</li>
 </ul>
-<h3 id="虚拟内存之间的关系"><a href="#虚拟内存之间的关系" class="headerlink" title="虚拟内存之间的关系"></a>虚拟内存之间的关系</h3><ul>
+<h3 id="3、虚拟内存之间的关系"><a href="#3、虚拟内存之间的关系" class="headerlink" title="3、虚拟内存之间的关系"></a>3、虚拟内存之间的关系</h3><ul>
 <li><p>虚拟内存层面：（逻辑内存）</p>
 <blockquote>
 <p> virtual memory = clean memory + dirty memory.</p>
@@ -190,7 +190,7 @@
   }
 }
 </code></pre>
-<h3 id="VMTracker："><a href="#VMTracker：" class="headerlink" title="VMTracker："></a>VMTracker：</h3><blockquote>
+<h3 id="4、VMTracker："><a href="#4、VMTracker：" class="headerlink" title="4、VMTracker："></a>4、VMTracker：</h3><blockquote>
 <pre><code>官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program
 </code></pre></blockquote>
 <ul>
@@ -198,7 +198,7 @@
 <li>Swapped Size：</li>
 <li>Resident Size：</li>
 </ul>
-<h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3><ul>
+<h3 id="5、参数："><a href="#5、参数：" class="headerlink" title="5、参数："></a>5、参数：</h3><ul>
 <li><p>图形列（Graph）：</p>
 <blockquote>
 <p>当指定类别的复选框被勾选时,instrument工具在跟踪面板里面显示特定类别的图形。 Instruments 应用通常给每个图形类别赋一个颜色。</p>
@@ -240,7 +240,8 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="Cocoa-Layout"><a href="#Cocoa-Layout" class="headerlink" title="Cocoa Layout"></a>Cocoa Layout</h2><h2 id="Core-Animation"><a href="#Core-Animation" class="headerlink" title="Core Animation"></a>Core Animation</h2><h2 id="Core-Data"><a href="#Core-Data" class="headerlink" title="Core Data"></a>Core Data</h2><h2 id="Counters（计数器）"><a href="#Counters（计数器）" class="headerlink" title="Counters（计数器）"></a>Counters（计数器）</h2><h2 id="Energy-Log"><a href="#Energy-Log" class="headerlink" title="Energy Log"></a>Energy Log</h2><h2 id="File-Activity"><a href="#File-Activity" class="headerlink" title="File Activity"></a>File Activity</h2><h2 id="Leaks（内存泄漏）"><a href="#Leaks（内存泄漏）" class="headerlink" title="Leaks（内存泄漏）"></a>Leaks（内存泄漏）</h2><h2 id="Metal-System-Trace"><a href="#Metal-System-Trace" class="headerlink" title="Metal System Trace"></a>Metal System Trace</h2><h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><h2 id="SceneKit"><a href="#SceneKit" class="headerlink" title="SceneKit"></a>SceneKit</h2><h2 id="System-Trace（系统跟踪）"><a href="#System-Trace（系统跟踪）" class="headerlink" title="System Trace（系统跟踪）"></a>System Trace（系统跟踪）</h2><h2 id="Time-profiler"><a href="#Time-profiler" class="headerlink" title="Time profiler"></a>Time profiler</h2><h2 id="Zombies（僵尸）"><a href="#Zombies（僵尸）" class="headerlink" title="Zombies（僵尸）"></a>Zombies（僵尸）</h2>
+<h2 id="四、Cocoa-Layout"><a href="#四、Cocoa-Layout" class="headerlink" title="四、Cocoa Layout"></a>四、Cocoa Layout</h2><h2 id="五、Core-Animation"><a href="#五、Core-Animation" class="headerlink" title="五、Core Animation"></a>五、Core Animation</h2><h2 id="六、Core-Data"><a href="#六、Core-Data" class="headerlink" title="六、Core Data"></a>六、Core Data</h2><h2 id="七、Counters（计数器）"><a href="#七、Counters（计数器）" class="headerlink" title="七、Counters（计数器）"></a>七、Counters（计数器）</h2><h2 id="八、Energy-Log"><a href="#八、Energy-Log" class="headerlink" title="八、Energy Log"></a>八、Energy Log</h2><h2 id="九、File-Activity"><a href="#九、File-Activity" class="headerlink" title="九、File Activity"></a>九、File Activity</h2><h2 id="十、Leaks（内存泄漏）"><a href="#十、Leaks（内存泄漏）" class="headerlink" title="十、Leaks（内存泄漏）"></a>十、Leaks（内存泄漏）</h2><h2 id="十一、Metal-System-Trace"><a href="#十一、Metal-System-Trace" class="headerlink" title="十一、Metal System Trace"></a>十一、Metal System Trace</h2><h2 id="十二、Network"><a href="#十二、Network" class="headerlink" title="十二、Network"></a>十二、Network</h2><h2 id="十三、SceneKit"><a href="#十三、SceneKit" class="headerlink" title="十三、SceneKit"></a>十三、SceneKit</h2><h2 id="十四、System-Trace（系统跟踪）"><a href="#十四、System-Trace（系统跟踪）" class="headerlink" title="十四、System Trace（系统跟踪）"></a>十四、System Trace（系统跟踪）</h2><h2 id="十五、System-Usage"><a href="#十五、System-Usage" class="headerlink" title="十五、System Usage"></a>十五、System Usage</h2><p> ios 模拟器暂不支持</p>
+<h2 id="十六、Time-profiler"><a href="#十六、Time-profiler" class="headerlink" title="十六、Time profiler"></a>十六、Time profiler</h2><h2 id="十七、Zombies（僵尸）"><a href="#十七、Zombies（僵尸）" class="headerlink" title="十七、Zombies（僵尸）"></a>十七、Zombies（僵尸）</h2>
             </div>
 
             <!-- Post Comments -->
@@ -302,8 +303,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/instrument-详解/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/instrument-详解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/iOS 开发基础/instrument-详解/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/iOS 开发基础/instrument-详解/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

@@ -35,7 +35,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/prism_.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/ios开发/">ios开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -114,15 +114,69 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1515665308&amp;di=c47dba565aa9965eb524c6b306ffce50&amp;src=http://img.zcool.cn/community/0144c457b4f79d0000018c1b26b075.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >iOS开发笔记</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >weak和 strong</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>如果设置LaunchImage，那么屏幕的启动范围由图片决定</p>
-<p>如果使用 LaunchImage，必须让美工提供各种尺寸的启动图片</p>
-<p>LaunchScreen &gt; LaunchImage</p>
-<p>LaunchScreen可以自动识别尺寸</p>
+                <p>@property中 weak 和 strong 的使用先看两段代码：</p>
+<pre><code class="objective-c">@interface ViewController ()
+
+@property (nonatomic,strong)UIButton *button1;
+
+@end
+
+
+@implementation ViewController
+
+
+-(UIButton *)button1{
+    if (!_button1) {
+_button1=[UIButton buttonWithType:UIButtonTypeCustom];
+        _button1.frame=CGRectMake(50, 50, 100, 100);
+        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];
+_button1.backgroundColor=[UIColor redColor];
+    }
+return _button1;
+
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.button1];
+}
+
+@end
+</code></pre>
+<pre><code class="objective-c">@interface ViewController ()
+
+@property (nonatomic,weak) UIButton *button2;
+
+@end
+
+
+
+@implementation ViewController
+
+-(UIButton *)button2{ 
+
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(100, 100, 100, 100);
+    [btn setTitle:@&quot;第二个&quot; forState:UIControlStateNormal];
+    btn.backgroundColor=[UIColor yellowColor];
+    return btn;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.button2];
+}
+
+@end
+</code></pre>
+<p>@property：strong：视图被移除时，因为有强引用指向他，所以不再次释放一下，则引用计数就是1</p>
+<p>@property：weak：从父视图移除时，这个 button 就直接释放了，因为是弱引用，所以不对引用计数造成影响（就像 assign）（xib 用 weak）</p>
+<p>weak 的机制：weak 变量能够在引用计数为 0 时被自动设置成 nil，显然是有运行时逻辑在工作的。</p>
 
             </div>
 
@@ -185,8 +239,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2014/01/10/iOS开发/从0开始学-ios-01/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2014/01/10/iOS开发/从0开始学-ios-01/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/20/weak和-strong/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/20/weak和-strong/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

@@ -35,7 +35,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/prism_.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/ios开发/">ios开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -114,94 +114,35 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 > 闭包、lambda 计算、block</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1515665308&amp;di=c47dba565aa9965eb524c6b306ffce50&amp;src=http://img.zcool.cn/community/0144c457b4f79d0000018c1b26b075.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >iOS开发笔记</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="block"><a href="#block" class="headerlink" title="block"></a>block</h1><p>block 概念：block是带有自动变量值的匿名函数。也称为闭包（closure）、lambda 计算。</p>
-<p>block的本质是 OC 对象。</p>
-<p>block的实质是栈上 block 的结构体实例。</p>
-<p><code>__block</code>的实质是栈上<code>__block</code>变量的结构体实例。</p>
-<pre><code class="objective-c">typedef objc_class *Class; //Class 为 objc_class 结构体的指针类型
-
-typedef struct objc_object{
-  Class isa;
-} *id; //id为 objc_objec 结构体的指针类型
-</code></pre>
-<p>将 block源码转换为 C++源码：<code>clang -rewrite-objc filename</code></p>
-<table>
-<thead>
-<tr>
-<th>__block变量的配置存储域</th>
-<th>Block 从栈复制到堆是的影响</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>栈（stack）</td>
-<td>从栈复制到堆并被 Block 持有</td>
-</tr>
-<tr>
-<td>堆（heap/maclloc）</td>
-<td>被 Block 持有</td>
-</tr>
-</tbody>
-</table>
-<p>栈上的 block ：变量作用域结束时，栈上的 __block变量和 block 被废弃</p>
-<p>堆上的 block：变量作用域结束时不受影响，需要手动释放。 </p>
-<h2 id="block-循环引用的问题"><a href="#block-循环引用的问题" class="headerlink" title="block 循环引用的问题"></a>block 循环引用的问题</h2><p>如果在 Block 中使用__strong修饰的对象和变量，那么当 Block 从栈复制到堆上的时候，该对象就会被 Block所持有。这样就会引起循环引用。</p>
-<blockquote>
-<p>循环引用这里有个重点，Block 是存储在栈上的，普通对象和变量是存储在堆上的。堆（malloc）上的内存需要我们手动管理（需要 dealloc），而栈上的内存顾名思义是按照数据结构中栈的方式管理，即由系统进行分配。</p>
-</blockquote>
-<p><strong>对象持有 block =&gt; block持有 self =&gt; self 持有对象，即形成循环引用。</strong>（这里的 self 也包含当前类的其他属性，因为在调用属性的同时也截获了 self）。</p>
-<blockquote>
-<p>编译器能查出循环引用。</p>
-</blockquote>
-<h2 id="copy-release"><a href="#copy-release" class="headerlink" title="copy release"></a>copy release</h2><p>ARC 无效的时候，我们需要手动将 Block 从栈复制到堆。</p>
-<p>因为 ARC 无效，所以需要我们手动释放复制的 Block。</p>
-<p>这个时候我们用 copy 方法来复制，release 方法来释放。</p>
-<pre><code class="objective-c">void (^block_on_heap)(void) = [block_on_stack copy];//正常复制
-
-[block_on_heap release];//正常释放
-
-[block_on_heap retain]; // 因为block 在堆上，所以可以被 retain
-
-[block_on_stack retain];// 因为现在 block 在栈上，所以这个方法没用
-</code></pre>
-<blockquote>
-<p>ARC 是苹果公司在iOS 5 以后推出的内存管理机制。。iOS 5以前是手动管理的。。如果还问我 ARC 的话，那我基本不考虑你们公司了。。。。</p>
-</blockquote>
-<h2 id="block的作用"><a href="#block的作用" class="headerlink" title="__block的作用"></a>__block的作用</h2><p>ARC 无效__block用来避免 Block 中出现的循环引用。</p>
-<p>栈——&gt;堆时：__block修饰的变量不会被 retain。没用它修饰的就会被 retain。</p>
-<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><table>
-<thead>
-<tr>
-<th>对象操作</th>
-<th>OC 方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>生成并持有对象</td>
-<td>+ alloc、+ new、copy、mutableCopy</td>
-</tr>
-<tr>
-<td>持有对象</td>
-<td>- retain</td>
-</tr>
-<tr>
-<td>释放对象</td>
-<td>- release</td>
-</tr>
-<tr>
-<td>废弃对象</td>
-<td>- dealloc</td>
-</tr>
-</tbody>
-</table>
-<h2 id="strong-和-weak"><a href="#strong-和-weak" class="headerlink" title="__strong 和 __weak"></a><code>__strong</code> 和 <code>__weak</code></h2><p>__strong：表示对对象的强引用。即在超出其作用域被废弃时，随着强引用的释放，引用的对象也会被释放。</p>
-<h2 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h2><p>循环引用容易导致内存泄露。内存泄露就是应当废弃的对象在超出其生存周期后继续存在。</p>
+                <p>如果设置LaunchImage，那么屏幕的启动范围由图片决定</p>
+<p>如果使用 LaunchImage，必须让美工提供各种尺寸的启动图片</p>
+<p>LaunchScreen &gt; LaunchImage</p>
+<p>LaunchScreen可以自动识别尺寸</p>
+<p>iOS 进阶之路</p>
+<ol>
+<li>熟悉各种 UI 控件（达到快速布局）</li>
+<li>多线程</li>
+<li>熟悉各种常用的第三方库及原理（上手就用，不用百度）</li>
+<li>js 交互</li>
+<li>直播、动画、视频、聊天</li>
+</ol>
+<p>iOS 开发笔记</p>
+<ul>
+<li>UI控件</li>
+<li>多线程、rac、Runtime、Runloop、block、通知、代理、缓存</li>
+<li>各种常用的第三方库</li>
+<li>基本原理<ul>
+<li>weak strong 的区别</li>
+<li>—weak —strong —block</li>
+</ul>
+</li>
+<li>self.  和下划线的区别</li>
+</ul>
 
             </div>
 
@@ -264,8 +205,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/闭包、lambda-计算、block/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/15/iOS开发/闭包、lambda-计算、block/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2014/01/10/iOS开发/开发笔记/iOS开发笔记/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2014/01/10/iOS开发/开发笔记/iOS开发笔记/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

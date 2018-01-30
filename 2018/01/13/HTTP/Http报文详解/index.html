@@ -35,7 +35,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/prism_.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -60,7 +60,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/ios开发/">ios开发</a>
 	                    </ul>
 	        </li>
 	        
@@ -120,56 +120,17 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>[TOC]</p>
-<p>#一、URL </p>
-<p>##URL 语法</p>
-<p><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params1>;<params2>?<query>&amp;<query2>#<flag></flag></query2></query></params2></params1></port></host></password></user></scheme></p>
-<p>方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</p>
-<blockquote>
-<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
-<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
-<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
-</blockquote>
-<h2 id="一些常见的概念"><a href="#一些常见的概念" class="headerlink" title="一些常见的概念"></a>一些常见的概念</h2><h3 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h3><p>URI（统一资源标识符）</p>
-<ul>
-<li>URL（统一资源定位符）</li>
-<li>URN（统一资源名）</li>
-</ul>
-<h3 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
-<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
-<h3 id="事物"><a href="#事物" class="headerlink" title="事物"></a>事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
-<p>事物 = 请求 + 响应</p>
-<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<strong><em>转发 HTTP 报文</em></strong>。</p>
-<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
-<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
-<p>作用：</p>
-<ul>
-<li>无差错的数据传输</li>
-<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
-<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
-</ul>
-<h3 id="隧道（tunnel）"><a href="#隧道（tunnel）" class="headerlink" title="隧道（tunnel）"></a>隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
-<h3 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
-<h3 id="代理与-Agent-代理"><a href="#代理与-Agent-代理" class="headerlink" title="代理与 Agent 代理"></a>代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
-<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
-<h3 id="报文流"><a href="#报文流" class="headerlink" title="报文流"></a>报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
-<p>HTTP 使用流入和流出描述<strong><em>事务处理</em></strong>的方向。</p>
-<p>客服端\</p>
-<p>​           服务器</p>
-<p>客户端/</p>
-<p>#二、HTTP报文</p>
-<p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png" alt=""></p>
+<h1 id="一、HTTP报文"><a href="#一、HTTP报文" class="headerlink" title="一、HTTP报文"></a>一、HTTP报文</h1><p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png" alt=""></p>
 <p>Http 报文分为请求报文（request）和响应报文（response），主要分三部分：</p>
 <ul>
-<li><p>起始行</p>
-<ul>
+<li><h2 id="1、起始行"><a href="#1、起始行" class="headerlink" title="1、起始行"></a>1、起始行</h2><ul>
 <li><p>请求行：<strong>包含了一个方法和 URL（路径） 以及 HTTP 版本</strong></p>
 </li>
 <li><p>响应行：包含了 HTTP 版本，状态码和原因短语</p>
 </li>
 <li><p>方法：</p>
 <blockquote>
-<p> 分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
+<p>分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
 </blockquote>
 </li>
 <li><p>状态码：</p>
@@ -190,8 +151,7 @@
 </li>
 </ul>
 </li>
-<li><p>首部（请求头、响应头）</p>
-<ul>
+<li><h2 id="2、首部（请求头、响应头、head）"><a href="#2、首部（请求头、响应头、head）" class="headerlink" title="2、首部（请求头、响应头、head）"></a>2、首部（请求头、响应头、head）</h2><ul>
 <li>通用首部</li>
 <li>请求首部<ul>
 <li>Accept 首部</li>
@@ -212,16 +172,52 @@
 </li>
 </ul>
 </li>
-<li><p>主体（请求体、响应体）</p>
-</li>
+<li><h2 id="3、主体（请求体、响应体、body）"><a href="#3、主体（请求体、响应体、body）" class="headerlink" title="3、主体（请求体、响应体、body）"></a>3、主体（请求体、响应体、body）</h2></li>
 </ul>
 <p><img src="响应报文首部.png" alt="响应报文首部"></p>
-<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><p>###OSI 七层协议和 TCP/IP 五层网络协议</p>
+<p>#二、URL </p>
+<p>##1、URL 语法</p>
+<p><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params1>;<params2>?<query>&amp;<query2>#<flag></flag></query2></query></params2></params1></port></host></password></user></scheme></p>
+<p>方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</p>
+<blockquote>
+<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
+<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
+<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
+</blockquote>
+<h2 id="2、一些常见的概念"><a href="#2、一些常见的概念" class="headerlink" title="2、一些常见的概念"></a>2、一些常见的概念</h2><h3 id="（1）-URI"><a href="#（1）-URI" class="headerlink" title="（1） URI"></a>（1） URI</h3><p>URI（统一资源标识符）</p>
+<ul>
+<li>URL（统一资源定位符）</li>
+<li>URN（统一资源名）</li>
+</ul>
+<h3 id="（1）RFC"><a href="#（1）RFC" class="headerlink" title="（1）RFC"></a>（1）RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
+<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
+<h3 id="（3）事物"><a href="#（3）事物" class="headerlink" title="（3）事物"></a>（3）事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
+<p>事物 = 请求 + 响应</p>
+<h3 id="（4）TCP"><a href="#（4）TCP" class="headerlink" title="（4）TCP"></a>（4）TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<strong><em>转发 HTTP 报文</em></strong>。</p>
+<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
+<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
+<p>作用：</p>
+<ul>
+<li>无差错的数据传输</li>
+<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
+<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
+</ul>
+<h3 id="（5）隧道（tunnel）"><a href="#（5）隧道（tunnel）" class="headerlink" title="（5）隧道（tunnel）"></a>（5）隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
+<h3 id="（6）SSL"><a href="#（6）SSL" class="headerlink" title="（6）SSL"></a>（6）SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
+<h3 id="（7）代理与-Agent-代理"><a href="#（7）代理与-Agent-代理" class="headerlink" title="（7）代理与 Agent 代理"></a>（7）代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
+<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
+<h3 id="（8）报文流"><a href="#（8）报文流" class="headerlink" title="（8）报文流"></a>（8）报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
+<p>HTTP 使用流入和流出描述<strong><em>事务处理</em></strong>的方向。</p>
+<p>客服端\</p>
+<p>​           服务器</p>
+<p>客户端/</p>
+<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><p>###1、OSI 七层协议和 TCP/IP 五层网络协议</p>
 <p>总结为一句话：应表会、传网数物（五层协议中应表会为一层）。</p>
-<p>###TCP 协议中的三次握手</p>
+<p>###2、TCP 协议中的三次握手</p>
 <p>总结为一句话：“船~来~了！船~来~了~吗？船~来~了。”之后服务器把船开往客服端。</p>
 <p><img src="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<h3 id="TCP-慢启动（slow-shtar）"><a href="#TCP-慢启动（slow-shtar）" class="headerlink" title="TCP 慢启动（slow shtar）"></a>TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
+<h3 id="3、TCP-慢启动（slow-shtar）"><a href="#3、TCP-慢启动（slow-shtar）" class="headerlink" title="3、TCP 慢启动（slow shtar）"></a>3、TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
 <blockquote>
 <p> 新建了一座桥。汽车为了试试这个桥能不能走，先慢慢开过去，如果发现没问题，其他汽车再提速过去。</p>
 </blockquote>
