@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -122,17 +122,17 @@
                 <p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
 <h1 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h1><p>早期还有NSURLConnection方法，iOS 9 以后被淘汰了，有几个代理方法不能用了（同步请求，异步请求）</p>
 <p>原生方法：</p>
-<pre><code class="objective-c">    NSURL* url = [NSURL URLWithString:HomeUrl]; //url
+<pre class=" language-objective-c"><code class="language-objective-c">    NSURL* url = [NSURL URLWithString:HomeUrl]; //url
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//请求
     NSURLSession* session = [NSURLSession sharedSession]; //session
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
 
-            NSLog(@&quot;请求失败&quot;);
+            NSLog(@"请求失败");
         }
         else{
 
-            NSLog(@&quot;请求成功&quot;);
+            NSLog(@"请求成功");
             NSString *receiveStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
 
             NSData * jsonData = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];

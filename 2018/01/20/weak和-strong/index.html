@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -120,7 +120,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>@property中 weak 和 strong 的使用先看两段代码：</p>
-<pre><code class="objective-c">@interface ViewController ()
+<pre class=" language-objective-c"><code class="language-objective-c">@interface ViewController ()
 
 @property (nonatomic,strong)UIButton *button1;
 
@@ -134,7 +134,7 @@
     if (!_button1) {
 _button1=[UIButton buttonWithType:UIButtonTypeCustom];
         _button1.frame=CGRectMake(50, 50, 100, 100);
-        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];
+        [_button1 setTitle:@"第一个" forState:UIControlStateNormal];
 _button1.backgroundColor=[UIColor redColor];
     }
 return _button1;
@@ -148,7 +148,7 @@ return _button1;
 
 @end
 </code></pre>
-<pre><code class="objective-c">@interface ViewController ()
+<pre class=" language-objective-c"><code class="language-objective-c">@interface ViewController ()
 
 @property (nonatomic,weak) UIButton *button2;
 
@@ -162,7 +162,7 @@ return _button1;
 
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame=CGRectMake(100, 100, 100, 100);
-    [btn setTitle:@&quot;第二个&quot; forState:UIControlStateNormal];
+    [btn setTitle:@"第二个" forState:UIControlStateNormal];
     btn.backgroundColor=[UIColor yellowColor];
     return btn;
 }

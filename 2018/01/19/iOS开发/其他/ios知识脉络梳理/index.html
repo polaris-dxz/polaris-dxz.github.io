@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -126,7 +126,7 @@
 </li>
 <li><p>不是自己生成的对象，自己也能持有 （需要手动 retain）</p>
 <blockquote>
-<pre><code class="objective-c">id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有
+<pre class=" language-objective-c"><code class="language-objective-c">id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有
 [obj retain]; // 自己持有对象
 </code></pre>
 </blockquote>
@@ -223,10 +223,10 @@
 <li>声明该类遵循 NSCopying 协议或者遵循 NSMutableCopying 协议</li>
 <li>实现 -copyWithZone： 方法，该方法生成并持有该对象的副本。</li>
 </ul>
-<h4 id="2、如何重写带关键字的-setter？"><a href="#2、如何重写带关键字的-setter？" class="headerlink" title="2、如何重写带关键字的 setter？"></a>2、如何重写带关键字的 setter？</h4><pre><code class="objective-c">_obj = [obj copy]; // 返回一个该对象的副本
+<h4 id="2、如何重写带关键字的-setter？"><a href="#2、如何重写带关键字的-setter？" class="headerlink" title="2、如何重写带关键字的 setter？"></a>2、如何重写带关键字的 setter？</h4><pre class=" language-objective-c"><code class="language-objective-c">_obj = [obj copy]; // 返回一个该对象的副本
 </code></pre>
 <h4 id="3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"><a href="#3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？" class="headerlink" title="3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"></a>3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</h4><h4 id="4、深复制（内容复制）和浅复制（指针复制）"><a href="#4、深复制（内容复制）和浅复制（指针复制）" class="headerlink" title="4、深复制（内容复制）和浅复制（指针复制）"></a>4、深复制（内容复制）和浅复制（指针复制）</h4><p>为了弄清这个概念，我们先来弄清楚在 集合与非集合类的 可变和不可变对象分别执行 copy 和 mutableCopy 操作。</p>
-<pre><code class="objective-c">/*
+<pre class=" language-objective-c"><code class="language-objective-c">/*
  * 1、无论是集合类和非集合类，只有不可变对象进行 copy 操作是浅复制，其他情况均是深复制，因为副本的结果是不
  *    可变的。其他情况副本的结果是可变的。
  * 
@@ -295,7 +295,7 @@
 <h4 id="5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"><a href="#5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）" class="headerlink" title="5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"></a>5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）</h4><blockquote>
 <p>每一个类对象中都一个方法列表,方法列表中记录着方法的名称,方法实现,以及参数类型,其实selector本质就是方法名称,通过这个方法名称就可以在方法列表中找到对应的方法实现。</p>
 </blockquote>
-<pre><code class="objective-c">IMP methodIMP = [self methodForSelector:@selector(foo:)];
+<pre class=" language-objective-c"><code class="language-objective-c">IMP methodIMP = [self methodForSelector:@selector(foo:)];
 methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implementation的缩写
 </code></pre>
 <h4 id="6、objc中的类方法和实例方法有什么本质区别和联系？"><a href="#6、objc中的类方法和实例方法有什么本质区别和联系？" class="headerlink" title="6、objc中的类方法和实例方法有什么本质区别和联系？"></a>6、objc中的类方法和实例方法有什么本质区别和联系？</h4><blockquote>

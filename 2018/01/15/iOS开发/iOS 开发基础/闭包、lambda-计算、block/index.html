@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -129,17 +129,17 @@
 <p>###（1）Block</p>
 <p>block 概念：block是带有<strong>自动变量值</strong>的<strong>匿名函数</strong>。也称为闭包（closure）、lambda 计算。</p>
 <p>C语言的标注不允许存在这样的函数，但是可以通过函数指针来直接调用函数。</p>
-<pre><code class="c">// 声明一个函数
-int func(int count);      
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// 声明一个函数</span>
+<span class="token keyword">int</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>      
 
-// 声明一个函数指针，并取出 func 的地址赋给 *funcP
-int (*funcP)(int count) = &amp;func;   //注：函数形参可有可无，视情况而定
+<span class="token comment" spellcheck="true">// 声明一个函数指针，并取出 func 的地址赋给 *funcP</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>funcP<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>func<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//注：函数形参可有可无，视情况而定</span>
 
-// 通过函数名访问这个函数
-int result1 = func(10);   
+<span class="token comment" spellcheck="true">// 通过函数名访问这个函数</span>
+<span class="token keyword">int</span> result1 <span class="token operator">=</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
 
-// 通过函数的指针访问这个函数
-int result2 = (*funcP)(10);
+<span class="token comment" spellcheck="true">// 通过函数的指针访问这个函数</span>
+<span class="token keyword">int</span> result2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>funcP<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 id="（2）函数指针的用途："><a href="#（2）函数指针的用途：" class="headerlink" title="（2）函数指针的用途："></a>（2）函数指针的用途：</h3><p>函数指针的用途有两个：</p>
 <ul>
@@ -147,7 +147,7 @@ int result2 = (*funcP)(10);
 <li>作为函数的参数</li>
 </ul>
 <blockquote>
-<pre><code class="c++">Class* a; // a 是个对象，类型是指针
+<pre class=" language-c++"><code class="language-c++">Class* a; // a 是个对象，类型是指针
 Class *a; // a 是个指针，类型是类
 
 /* 
@@ -191,11 +191,11 @@ Class *a; // a 是个指针，类型是类
 <p><strong>因为block的本质是 OC 对象。</strong>（OC 的 层面）</p>
 <p>block的实质是<strong>栈</strong>上 block 的结构体实例。（C 的层面）这里也可以理解为是一个函数指针。</p>
 <blockquote>
-<pre><code class="objective-c">typedef int(^blk_t)(int); // 声明一个参数为 int 型、返回值为 int 型的 blk_t类型
+<pre class=" language-objective-c"><code class="language-objective-c">typedef int(^blk_t)(int); // 声明一个参数为 int 型、返回值为 int 型的 blk_t类型
 blk_t blk = ^(int count){return count+1;};// 声明一个 blk 变量
 int (^blk)(int) = ^(int count){return count+1;};// 等价于第二行
 
-blk_t *blkptr = &amp;blk;// 声明一个名为 blkptr 的 blk_t型的指针，并指向 blk 的地址。
+blk_t *blkptr = &blk;// 声明一个名为 blkptr 的 blk_t型的指针，并指向 blk 的地址。
 
 (*blkptr)(10); // 利用指针调用这个 blk
 blk(10); // 直接调用这个 blk
@@ -210,7 +210,7 @@ blk(10); // 直接调用这个 blk
 <p>这里面引申一个概念就是 IMP 和SEL，具体以后再分析(runtime)，知道SEL 表示（选择器） IMP 表示<em>函数指针</em>就可以了。</p>
 </blockquote>
 <p><code>__block</code>的实质是栈上<code>__block</code>变量的结构体实例。</p>
-<pre><code class="objective-c">// block的实质结构
+<pre class=" language-objective-c"><code class="language-objective-c">// block的实质结构
 typedef objc_class *Class; //Class 为 objc_class 结构体的指针类型
 
 typedef struct objc_object{
@@ -249,7 +249,7 @@ typedef struct objc_object{
 <h2 id="copy-release"><a href="#copy-release" class="headerlink" title="copy release"></a>copy release</h2><p>ARC 无效的时候，我们需要手动将 Block 从栈复制到堆。</p>
 <p>因为 ARC 无效，所以需要我们手动释放复制的 Block。</p>
 <p>这个时候我们用 copy 方法来复制，release 方法来释放。</p>
-<pre><code class="objective-c">void (^block_on_heap)(void) = [block_on_stack copy];//正常复制
+<pre class=" language-objective-c"><code class="language-objective-c">void (^block_on_heap)(void) = [block_on_stack copy];//正常复制
 
 [block_on_heap release];//正常释放
 

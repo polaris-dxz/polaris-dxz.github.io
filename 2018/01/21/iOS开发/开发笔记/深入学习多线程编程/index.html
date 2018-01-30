@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -123,27 +123,27 @@
 <p>@synchronize（self）{  // 括号内表示的是锁对象，需要全局只创建一次，所以一般用 self </p>
 <p>​    // 操作</p>
 <p>}</p>
-<h2 id="一、NSThread"><a href="#一、NSThread" class="headerlink" title="一、NSThread"></a>一、NSThread</h2><h3 id="1、创建线程"><a href="#1、创建线程" class="headerlink" title="1、创建线程"></a>1、创建线程</h3><pre><code class="objective-c">NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(downloadWithURL:) object:@&quot;传入的参数&quot;];
+<h2 id="一、NSThread"><a href="#一、NSThread" class="headerlink" title="一、NSThread"></a>一、NSThread</h2><h3 id="1、创建线程"><a href="#1、创建线程" class="headerlink" title="1、创建线程"></a>1、创建线程</h3><pre class=" language-objective-c"><code class="language-objective-c">NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(downloadWithURL:) object:@"传入的参数"];
 
 [thread start]; // 启动线程
 </code></pre>
-<h3 id="2、分离线程（创建线程并启动）"><a href="#2、分离线程（创建线程并启动）" class="headerlink" title="2、分离线程（创建线程并启动）"></a>2、分离线程（创建线程并启动）</h3><pre><code class="objective-c"> [NSThread detachNewThreadSelector:@selector(downloadWithURL:) toTarget:self withObject:@&quot;thread3：detach&quot;];
+<h3 id="2、分离线程（创建线程并启动）"><a href="#2、分离线程（创建线程并启动）" class="headerlink" title="2、分离线程（创建线程并启动）"></a>2、分离线程（创建线程并启动）</h3><pre class=" language-objective-c"><code class="language-objective-c"> [NSThread detachNewThreadSelector:@selector(downloadWithURL:) toTarget:self withObject:@"thread3：detach"];
 </code></pre>
-<h3 id="3、隐式创建一个线程"><a href="#3、隐式创建一个线程" class="headerlink" title="3、隐式创建一个线程"></a>3、隐式创建一个线程</h3><pre><code class="objective-c">performSelectorInBackground:
+<h3 id="3、隐式创建一个线程"><a href="#3、隐式创建一个线程" class="headerlink" title="3、隐式创建一个线程"></a>3、隐式创建一个线程</h3><pre class=" language-objective-c"><code class="language-objective-c">performSelectorInBackground:
 </code></pre>
-<h3 id="4、常见方法："><a href="#4、常见方法：" class="headerlink" title="4、常见方法："></a>4、常见方法：</h3><pre><code class="objective-c">// 获取当前线程
+<h3 id="4、常见方法："><a href="#4、常见方法：" class="headerlink" title="4、常见方法："></a>4、常见方法：</h3><pre class=" language-objective-c"><code class="language-objective-c">// 获取当前线程
 [NSThread currentThread];
 // 获取主线程
 [NSThread mainThread];
 </code></pre>
-<h3 id="5、睡眠（暂停）线程；死亡"><a href="#5、睡眠（暂停）线程；死亡" class="headerlink" title="5、睡眠（暂停）线程；死亡"></a>5、睡眠（暂停）线程；死亡</h3><pre><code class="objective-c">+ (void)sleepUntilDate:(NSDate):date;
+<h3 id="5、睡眠（暂停）线程；死亡"><a href="#5、睡眠（暂停）线程；死亡" class="headerlink" title="5、睡眠（暂停）线程；死亡"></a>5、睡眠（暂停）线程；死亡</h3><pre class=" language-objective-c"><code class="language-objective-c">+ (void)sleepUntilDate:(NSDate):date;
 + (void)sleepForTimeInterval(NSTimeInterVal)ti;
 
 + (void)exit; // 线程死亡，并释放内存
 </code></pre>
 <h3 id="6、互斥锁、同步锁（-synchronize）"><a href="#6、互斥锁、同步锁（-synchronize）" class="headerlink" title="6、互斥锁、同步锁（@synchronize）"></a>6、互斥锁、同步锁（@synchronize）</h3><p>① 目的：为了防止多个线程访问同一块内存（数据），从而造成数据竞争的问题。</p>
 <p>②使用：</p>
-<pre><code class="objective-c">// 因为只需要一把锁，所以需要一个静态全局锁对象(保证只创建一次)，一般我们用 self 代替。
+<pre class=" language-objective-c"><code class="language-objective-c">// 因为只需要一把锁，所以需要一个静态全局锁对象(保证只创建一次)，一般我们用 self 代替。
 @synchronize（LockObject）{  
     // 操作
 }
