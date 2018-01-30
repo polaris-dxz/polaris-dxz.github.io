@@ -114,34 +114,19 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3584732535,1447982096&amp;fm=27&amp;gp=0.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ios HTTP请求</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://i0.hdslb.com/bfs/drawyoo/9e9287e1e69f8489cbb9031afb090e1bc893311e.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >股票术语</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
-<h1 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h1><p>早期还有NSURLConnection方法，iOS 9 以后被淘汰了，有几个代理方法不能用了（同步请求，异步请求）</p>
-<p>原生方法：</p>
-<pre><code class="objective-c">    NSURL* url = [NSURL URLWithString:HomeUrl]; //url
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//请求
-    NSURLSession* session = [NSURLSession sharedSession]; //session
-    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error){
-
-            NSLog(@&quot;请求失败&quot;);
-        }
-        else{
-
-            NSLog(@&quot;请求成功&quot;);
-            NSString *receiveStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-
-            NSData * jsonData = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
-
-            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
-        }
-    }];
-    [task resume];
-</code></pre>
+                <p>股票术语</p>
+<p>1、市盈率（P/E ratio）</p>
+<p>市盈率 = （当前每股市场价格）÷ （每股税后利润）</p>
+<p>动态市盈率：还没有真正实现的下一年度预测利润的市盈率。</p>
+<p>2、市净率：</p>
+<p>市净率 = （每股市价 P）÷ （每股净资产 Book Value）</p>
+<p>股票净值主要包括公司资本金、资本公积金、法定公积金、任意公积金、为分配盈余等项目的合计，它代表全体股东共同享有的权益，也称净资产。</p>
+<p>3、<a href="https://baike.baidu.com/item/%E5%85%AC%E7%A7%AF%E9%87%91/1329924?fr=aladdin" target="_blank" rel="noopener">公积金</a>:公积金分为住房公积金和公司公积金，上文特指公司公积金</p>
 
             </div>
 
@@ -204,8 +189,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/16/iOS开发/iOS 开发基础/ios-HTTP请求/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/16/iOS开发/iOS 开发基础/ios-HTTP请求/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/18/股票投资/股票术语/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/18/股票投资/股票术语/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
