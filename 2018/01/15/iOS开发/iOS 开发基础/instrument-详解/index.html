@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-<link rel="stylesheet" href="/css/prism-duotone-space.css" type="text/css"></head>
+</head>
     
 		
 <!-- Layouts -->
@@ -165,27 +165,27 @@
 </blockquote>
 </li>
 </ul>
-<pre class=" language-objective-c"><code class="language-objective-c">// clean memory
+<pre><code class="objective-c">// clean memory
 - (IBAction)clickAction1{
   char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@"%p",buf);
+  NSLog(@&quot;%p&quot;,buf);
 }
 
 // dirty memory
 - (IBAction)clickAction2{
   char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@"%p",buf);
-  for(int i=0; i < 3*1024*1024; ++i){ //分配3M 物理内存，剩余97M 虚拟内存
+  NSLog(@&quot;%p&quot;,buf);
+  for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存，剩余97M 虚拟内存
     buf[i] = rand();
   }
 }
 
 - (void)cleanOrDirtyMemory{
 
-      NSString* str1 = [NSString stringWithString:@"dirty"];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)
-    NSString* str2 = @"w";//存在只读数据段里面 
+      NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)
+    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 
     char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)
-    for(int i=0; i < 3*1024*1024; ++i){ //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)
+    for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)
     buf[i] = rand();//dirty
   }
 }

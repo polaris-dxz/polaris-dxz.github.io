@@ -27,7 +27,7 @@
     <script src="/js/util.js"></script>
     <script src="/js/main.js"></script>
 	
-<link rel="stylesheet" href="/css/prism-duotone-space.css" type="text/css"></head>
+</head>
     
 		
 <!-- Layouts -->
@@ -120,7 +120,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <p>@property中 weak 和 strong 的使用先看两段代码：</p>
-<pre class=" language-objective-c"><code class="language-objective-c">@interface ViewController ()
+<pre><code class="objective-c">@interface ViewController ()
 
 @property (nonatomic,strong)UIButton *button1;
 
@@ -132,7 +132,7 @@
     if (!_button1) {
 _button1=[UIButton buttonWithType:UIButtonTypeCustom];
         _button1.frame=CGRectMake(50, 50, 100, 100);
-        [_button1 setTitle:@"第一个" forState:UIControlStateNormal];
+        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];
 _button1.backgroundColor=[UIColor redColor];
     }
 return _button1;
@@ -146,29 +146,29 @@ return _button1;
 
 @end
 </code></pre>
-<pre class=" language-objectivec"><code class="language-objectivec"><span class="token keyword">@interface</span> <span class="token function">ViewController</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre><code class="objectivec">@interface ViewController ()
 
-<span class="token keyword">@property</span> <span class="token punctuation">(</span>nonatomic<span class="token punctuation">,</span>weak<span class="token punctuation">)</span> UIButton <span class="token operator">*</span>button2<span class="token punctuation">;</span>
+@property (nonatomic,weak) UIButton *button2;
 
-<span class="token keyword">@end</span>
+@end
 
-<span class="token keyword">@implementation</span> ViewController
+@implementation ViewController
 
-<span class="token operator">-</span><span class="token punctuation">(</span>UIButton <span class="token operator">*</span><span class="token punctuation">)</span>button2<span class="token punctuation">{</span> 
+-(UIButton *)button2{ 
 
-    UIButton <span class="token operator">*</span>btn<span class="token operator">=</span><span class="token punctuation">[</span>UIButton buttonWithType<span class="token punctuation">:</span>UIButtonTypeCustom<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    btn<span class="token punctuation">.</span>frame<span class="token operator">=</span><span class="token function">CGRectMake</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">[</span>btn setTitle<span class="token punctuation">:</span><span class="token string">@"第二个"</span> forState<span class="token punctuation">:</span>UIControlStateNormal<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    btn<span class="token punctuation">.</span>backgroundColor<span class="token operator">=</span><span class="token punctuation">[</span>UIColor yellowColor<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> btn<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(100, 100, 100, 100);
+    [btn setTitle:@&quot;第二个&quot; forState:UIControlStateNormal];
+    btn.backgroundColor=[UIColor yellowColor];
+    return btn;
+}
 
-<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLoad <span class="token punctuation">{</span>
-    <span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLoad<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">[</span><span class="token keyword">self</span><span class="token punctuation">.</span>view addSubview<span class="token punctuation">:</span><span class="token keyword">self</span><span class="token punctuation">.</span>button2<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.button2];
+}
 
-<span class="token keyword">@end</span>
+@end
 </code></pre>
 <p>@property：strong：视图被移除时，因为有强引用指向他，所以不再次释放一下，则引用计数就是1</p>
 <p>@property：weak：从父视图移除时，这个 button 就直接释放了，因为是弱引用，所以不对引用计数造成影响（就像 assign）（xib 用 weak）</p>
