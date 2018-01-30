@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
+title: 温故而知新
+subtitle: 我的全栈之路
 description:
-author: 猫不语兮
+author: 
 language:
 timezone:
 
@@ -38,8 +38,8 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace:
   
@@ -71,6 +71,12 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess 在浏览器实时解析代码/预处理节点代码
+  theme: 'Duotone Space'
+  line_number: false    # default false
+  highlight:
+    enable: true
 
 ## Themes: https://hexo.io/themes/
 theme: miccall

@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/icon.png"/>
+	 <link rel="shortcut icon" href="/img/icon.png">
+	
+			
+    <title>
+    温故而知新
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">亚古兽进化！</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/股票投资/">股票投资</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="/archives/2017/12/">December 2017</a></li><li><a class="archive-link" href="/archives/2014/01/">January 2014</a></li><li><a class="archive-link" href="/archives/2013/04/">April 2013</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="友情链接">
+		                友情链接
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="about">
+		                about
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1516119417386&amp;di=f9810c82af31ee64a32e2e4ca05c91bb&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.wmpic.me%2Fwp-content%2Fuploads%2F2014%2F03%2F20140325103402919.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >cUrl使用心得</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="一、常用参数"><a href="#一、常用参数" class="headerlink" title="一、常用参数"></a>一、常用参数</h1><pre><code class="shell"># -i：include全部HTTP报文
+# -v：显示请求过程
+# -d：HTTP POST DATA 
+# -X：自定义请求方法。如-X POST
+# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;
+# -G： --get  Send the -d data with a HTTP GET (H)
+# -o：输出
+# -s：静音模式，不输出任何东西
+# -S, --show-error    Show error. With -s, make curl show errors when they occur
+# -f, --fail         连接失败时不显示http错误 (H)
+
+# 调试的话暂时用到这么多，其他的命令想到在更。这种东西可以直接看英文文档。
+</code></pre>
+<h1 id="二、get-请求"><a href="#二、get-请求" class="headerlink" title="二、get 请求"></a>二、get 请求</h1><pre><code class="shell"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
+curl &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;  
+
+# 显示全部信息:包括起始行、响应头、响应体
+# -i: --include       Include protocol headers in the output (H/F)
+curl -i &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;
+
+# 显示get请求全过程解析 *表示解析过程  &gt;表示请求 &lt;表示响应 
+# -v: --verbose 冗长的
+curl -v &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot; #--verbose
+</code></pre>
+<h1 id="三、post请求"><a href="#三、post请求" class="headerlink" title="三、post请求"></a>三、post请求</h1><pre><code class="shell">#  -d: --data DATA     HTTP POST data (H)
+curl -d &quot;param1=value1&amp;param2=value2&quot; &quot;http://www.baidu.com&quot;
+</code></pre>
+<h1 id="四、JSON-格式的-post-请求"><a href="#四、JSON-格式的-post-请求" class="headerlink" title="四、JSON 格式的 post 请求"></a>四、JSON 格式的 post 请求</h1><pre><code class="shell"># -H: --header LINE   Pass custom header LINE to server (H)
+# -X: --request COMMAND  Specify request command to use
+# -d: --data DATA     HTTP POST data (H)
+curl -l -H &quot;Content-type: application/json&quot; -X POST -d &#39;{&quot;phone&quot;:&quot;13521389587&quot;,&quot;password&quot;:&quot;test&quot;}&#39; http://domain/apis/users.json
+</code></pre>
+<h1 id="五、实例"><a href="#五、实例" class="headerlink" title="五、实例"></a>五、实例</h1><pre><code>URL ：http://7xssni.com1.z0.glb.clouddn.com/home.txt
+</code></pre><pre><code>{
+  &quot;headUrl&quot; : {
+    &quot;headList&quot; : [
+      &quot;http://7xssni.com1.z0.glb.clouddn.com/home1.jpg&quot;,
+      &quot;http://7xssni.com1.z0.glb.clouddn.com/home2.jpg&quot;,
+      &quot;http://7xssni.com1.z0.glb.clouddn.com/home3.jpg&quot;,
+      &quot;http://7xssni.com1.z0.glb.clouddn.com/home4.jpg&quot;
+    ]
+  },
+  &quot;homeUrl&quot; : {
+    &quot;dataList&quot; : [
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/1.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;PVC实体塑木板&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/2.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;3D印花地毯&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/3.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;金刚木板&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/4.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;经典菱形软包&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/5.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;经典防水木板&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/6.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;经典花纹墙纸&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/7.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;经典使用木板&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      },
+      {
+        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/8.jpg&quot;,
+        &quot;materialList&quot; : &quot;进口&quot;,
+        &quot;titleStr&quot; : &quot;非洲柚木地板&quot;,
+        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
+      }
+    ]
+  }
+}
+</code></pre><h2 id="五、常用命令："><a href="#五、常用命令：" class="headerlink" title="五、常用命令："></a>五、常用命令：</h2><pre><code> -a, --append        Append to target file when uploading (F/SFTP)
+ -E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)
+ -K, --config FILE   Read config from FILE
+ -C, --continue-at OFFSET  Resumed transfer OFFSET
+ -b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)
+ -c, --cookie-jar FILE  Write cookies to FILE after operation (H)
+ -d, --data DATA     HTTP POST data (H)
+ -D, --dump-header FILE  Write the received headers to FILE
+ -f, --fail          Fail silently (no output at all) on HTTP errors (H)
+ -F, --form CONTENT  Specify HTTP multipart POST data (H)
+ -P, --ftp-port ADR  Use PORT with given address instead of PASV (F)
+ -G, --get           Send the -d data with a HTTP GET (H)
+ -g, --globoff       Disable URL sequences and ranges using {} and []
+ -H, --header LINE   Pass custom header LINE to server (H)
+ -I, --head          Show document info only
+ -h, --help          This help text
+ -i, --include       Include protocol headers in the output (H/F)
+ -k, --insecure      Allow connections to SSL sites without certs (H)
+ -j, --junk-session-cookies  Ignore session cookies read from file (H)
+ -l, --list-only     List only mode (F/POP3)
+ -L, --location      Follow redirects (H)
+ -M, --manual        Display the full manual
+ -m, --max-time SECONDS  Maximum time allowed for the transfer
+ -n, --netrc         Must read .netrc for user name and password
+ -N, --no-buffer     Disable buffering of the output stream
+ -o, --output FILE   Write to FILE instead of stdout
+ -U, --proxy-user USER[:PASSWORD]  Proxy user and password
+     --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port
+ -p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)
+     --pubkey KEY    Public key file name (SSH)
+ -Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
+     --random-file FILE  File for reading random data from (SSL)
+ -r, --range RANGE   Retrieve only the bytes within RANGE
+     --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)
+ -e, --referer       Referer URL (H)
+ -J, --remote-header-name  Use the header-provided filename (H)
+ -O, --remote-name   Write output to a file named as the remote file
+     --remote-name-all  Use the remote file name for all URLs
+ -R, --remote-time   Set the remote file&#39;s time on the local output
+ -X, --request COMMAND  Specify request command to use
+ -S, --show-error    Show error. With -s, make curl show errors when they occur
+ -s, --silent        Silent mode (don&#39;t output anything)
+ -Y, --speed-limit RATE  Stop transfers below RATE for &#39;speed-time&#39; secs
+ -y, --speed-time SECONDS  Trigger &#39;speed-limit&#39; abort after SECONDS (default: 30)
+ -t, --telnet-option OPT=VAL  Set telnet option
+     --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)
+     --tftp-no-options  Do not send TFTP options requests
+ -z, --time-cond TIME   Transfer based on a time condition
+ -T, --upload-file FILE  Transfer FILE to destination
+     --url URL       URL to work with
+ -B, --use-ascii     Use ASCII/text transfer
+ -u, --user USER[:PASSWORD]  Server user and password
+ -A, --user-agent STRING  Send User-Agent STRING to server (H)
+ -v, --verbose       Make the operation more talkative
+ -V, --version       Show version number and quit
+ -w, --write-out FORMAT  Use output FORMAT after completion
+ -q, --disable       Disable .curlrc (must be first parameter)
+</code></pre>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-Ydddrasill-7C9'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2018/01/13/Linux/cUrl使用心得/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2018/01/13/Linux/cUrl使用心得/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-Ydddrasill-7C9.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

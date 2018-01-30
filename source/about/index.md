@@ -1,6 +1,7 @@
 ---
 title: about me
 date: 2018-01-09 16:25:51
+thumbnail: "http://tupian.aladd.net/2018/1/7/bizhitupian4.jpg"
 ---
 
 # about 
@@ -16,16 +17,10 @@ date: 2018-01-09 16:25:51
 | `categories` | 分类（不适用于分页） |        |
 | `permalink`  | 覆盖文章网址     |        |
 
-未做的事情
-
-* categories && tags
 
 
+掌握的技能：
 
-* categories
-  * iOS 开发
-  * 股票投资
-  * github
-  * linux
-* tags
-  * ​
+* 能熟练使用 UML、思维导图、流程图、网络拓扑图
+* lldb
+* ​
