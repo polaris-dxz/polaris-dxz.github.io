@@ -1970,7 +1970,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e40bff;
+  background: #346545;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3290,4 +3290,10 @@ img:hover {
   .pagination {
     margin: 8px 0 0;
   }
+}
+* {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
+}
+:active {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
 }
