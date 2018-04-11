@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/icon.png"/>
+	 <link rel="shortcut icon" href="/img/icon.png">
+	
+			
+    <title>
+    温故而知新
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">亚古兽进化！</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Http/">Http</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/git-svn/">git&svn</a></li><li><a class="category-link" href="/categories/iOS开发/">iOS开发</a></li><li><a class="category-link" href="/categories/股票投资/">股票投资</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="/archives/2017/12/">December 2017</a></li><li><a class="archive-link" href="/archives/2016/06/">June 2016</a></li><li><a class="archive-link" href="/archives/2014/05/">May 2014</a></li><li><a class="archive-link" href="/archives/2014/01/">January 2014</a></li><li><a class="archive-link" href="/archives/2013/05/">May 2013</a></li><li><a class="archive-link" href="/archives/2013/04/">April 2013</a></li><li><a class="archive-link" href="/archives/2013/01/">January 2013</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="友情链接">
+		                友情链接
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/about/" title="about">
+		                about
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1515664615&amp;di=e299224babfec2bfc85a87315fc28e89&amp;src=http://a3.topitme.com/3/af/64/1128834126ba564af3o.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >git 深入学习</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="（一）git深入学习"><a href="#（一）git深入学习" class="headerlink" title="（一）git深入学习"></a>（一）git深入学习</h1><h3 id="一、官方说明"><a href="#一、官方说明" class="headerlink" title="一、官方说明"></a>一、官方说明</h3><h5 id="start-a-working-area-see-also-git-help-tutorial"><a href="#start-a-working-area-see-also-git-help-tutorial" class="headerlink" title="start a working area (see also: git help tutorial)"></a>start a working area (see also: git help tutorial)</h5><ul>
+<li><p>clone      Clone a repository into a new directory</p>
+<blockquote>
+<p>克隆一个 repo 到一个新的目录</p>
+</blockquote>
+</li>
+<li><p>init       Create an empty Git repository or reinitialize（重置） an existing one</p>
+<blockquote>
+<p>创建一个空的 git repo 或者重置一个</p>
+</blockquote>
+<p>​</p>
+</li>
+</ul>
+<h5 id="work-on-the-current-change-see-also-git-help-everyday"><a href="#work-on-the-current-change-see-also-git-help-everyday" class="headerlink" title="work on the current change (see also: git help everyday)"></a>work on the current change (see also: git help everyday)</h5><ul>
+<li><p>add        Add file contents to the index</p>
+<blockquote>
+<p>add all</p>
+<pre><code>git add .
+</code></pre></blockquote>
+</li>
+<li><p>mv         Move or rename a file, a directory, or a symlink</p>
+</li>
+<li><p>reset      Reset current HEAD to the specified state</p>
+<blockquote>
+<p>重置当前 HEAD 区到指定的状态</p>
+</blockquote>
+</li>
+<li><p>rm         Remove files from the working tree and from the index</p>
+</li>
+</ul>
+<h5 id="examine-the-history-and-state-see-also-git-help-revisions"><a href="#examine-the-history-and-state-see-also-git-help-revisions" class="headerlink" title="examine the history and state (see also: git help revisions)"></a>examine the history and state (see also: git help revisions)</h5><ul>
+<li><p>bisect     Use binary search to find the commit that introduced a bug</p>
+<blockquote>
+<p>使用二分法查找</p>
+</blockquote>
+</li>
+<li><p>grep       Print lines matching a pattern</p>
+<blockquote>
+<p><em>grep</em> (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)</p>
+</blockquote>
+</li>
+<li><p>log        Show commit logs</p>
+</li>
+<li><p>show       Show various types of objects</p>
+</li>
+<li><p>status     Show the working tree status</p>
+<blockquote>
+<p>显示当前工作树的状态</p>
+</blockquote>
+<p>​</p>
+<h5 id="grow-mark-and-tweak-your-common-history"><a href="#grow-mark-and-tweak-your-common-history" class="headerlink" title="grow, mark and tweak your common history"></a>grow, mark and tweak your common history</h5></li>
+<li><p>branch     List, create, or delete branches（分支）</p>
+</li>
+<li><p>checkout   Switch branches or restore working tree files（检出）</p>
+</li>
+<li><p>commit     Record changes to the repository（提交到版本库）</p>
+</li>
+<li><p>diff       Show changes between commits, commit and working tree, etc</p>
+</li>
+<li><p>merge      Join two or more development histories together（合并）</p>
+<blockquote>
+<p>多人开发</p>
+</blockquote>
+</li>
+<li><p>rebase     Reapply commits on top of another base tip</p>
+</li>
+<li><p>tag        Create, list, delete or verify a tag object signed with GPG</p>
+</li>
+</ul>
+<h5 id="collaborate-see-also-git-help-workflows"><a href="#collaborate-see-also-git-help-workflows" class="headerlink" title="collaborate (see also: git help workflows)"></a>collaborate (see also: git help workflows)</h5><ul>
+<li><p>fetch      Download objects and refs from another repository</p>
+<blockquote>
+<p>从远程的分支获取最新版本到本地，不会自动 merge</p>
+<pre><code>#从远程的origin 的 master主分支下载最新的版本到 origin/master分支上 
+git fetch origin master:tmp 
+
+#比较本地的 master 分支和 origin/master 分支的区别
+git diff tmp 
+
+#合并
+git merge tmp
+</code></pre><p> git fetch 相对比 git pull 安全些</p>
+</blockquote>
+</li>
+<li><p>pull       Fetch from and integrate with another repository or a local branch</p>
+<blockquote>
+<p>从远程的分支获取最新的版本，并 merge 到本地</p>
+<pre><code>git pull origin master
+</code></pre><p><strong>fetch + merge = pull</strong></p>
+</blockquote>
+</li>
+<li><p>push       Update remote refs along with associated objects</p>
+</li>
+</ul>
+<h3 id="二、其他用法"><a href="#二、其他用法" class="headerlink" title="二、其他用法"></a>二、其他用法</h3><ul>
+<li><p>remote </p>
+<blockquote>
+<pre><code>git remote    #列出已经存在的分支
+</code></pre><pre><code>git remote -v #列出详细信息，每个名字后面加上地址
+</code></pre></blockquote>
+</li>
+</ul>
+<h3 id="三、具体步骤"><a href="#三、具体步骤" class="headerlink" title="三、具体步骤"></a>三、具体步骤</h3><pre><code>$cd yourRepoDict
+$git init 
+$git add .
+$git commit -m &quot;xxxxx&quot;
+$git remote add origin https://github.com/Yggdrasill-7C9/blog.git
+$git push -u origin master
+</code></pre><h1 id="（二）git深入学习"><a href="#（二）git深入学习" class="headerlink" title="（二）git深入学习"></a>（二）git深入学习</h1><h2 id="一、常见概念"><a href="#一、常见概念" class="headerlink" title="一、常见概念"></a>一、常见概念</h2><p>1、<strong>Git 的核心是一个对象数据库。</strong>所有提交的文件、目录、以及相关的元数据都被储存在该数据库中。</p>
+<ul>
+<li>Blob 对象：储存文件内容。</li>
+<li>Tree 对象：储存目录数据。</li>
+</ul>
+<p>2、提交图：<code>git log --graph</code></p>
+<p>3、Git 主要有两个层面构成：</p>
+<ul>
+<li>瓷质命令（porcelain command）</li>
+<li>管道（plumbing）</li>
+</ul>
+<p>4、快速合并：</p>
+<ul>
+<li>有两个分支 a 和 b。其中 b 并未对内容做任何修改。所以合并 ab的时候，实际就是将指针指向了a    。</li>
+<li>非快进操作：<code>--no-ff</code>：强制产生一次新的提交</li>
+</ul>
+<p>a —— b —— c ——d \</p>
+<p>​             \ ——————e</p>
+<p>创建并切换新分支<code>git checkout -b newbranch</code></p>
+<p>强制切换新分支<code>git checkout --force newbranch</code> </p>
+<p>删除分支 <code>git branch -d nowbranch</code></p>
+<p>强制删除当前分支 <code>git branch -D nowbranch</code> </p>
+<h2 id="二、储藏"><a href="#二、储藏" class="headerlink" title="二、储藏"></a>二、储藏</h2><p>希望在不提交的情况下修改当前版本的其他内容</p>
+<h3 id="1、git-stash"><a href="#1、git-stash" class="headerlink" title="1、git stash"></a>1、git stash</h3><p>git shash 可以将工作区和暂存区中修改 保存在<strong>*储藏栈（stash stack）</strong></p>
+<h3 id="2、git-shash-pop"><a href="#2、git-shash-pop" class="headerlink" title="2、git shash pop"></a>2、git shash pop</h3><p>回复栈顶的被储存修改到<em>工作区</em>中</p>
+<h3 id="3、git-shash-list"><a href="#3、git-shash-list" class="headerlink" title="3、git shash list"></a>3、git shash list</h3><p>查看储藏的修改内容</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><p>push</p>
+<p>pull</p>
+<p>merge</p>
+<p>fetch</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-Ydddrasill-7C9'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://Yggdrasill-7C9.github.io/2013/04/24/Git &amp; SVN/github-使用手册/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://Yggdrasill-7C9.github.io/2013/04/24/Git &amp; SVN/github-使用手册/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-Ydddrasill-7C9.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
