@@ -1,6 +1,6 @@
 ---
 title: ios知识脉络梳理
-date: 2018-01-19 23:34:21
+date: 2014-05-19 23:34:21
 tags: 
 categories: iOS开发
 thumbnail: https://i0.hdslb.com/bfs/drawyoo/71c32ae66719b070ef7b565cc7e3c6237915e385.jpg
@@ -60,14 +60,14 @@ thumbnail: https://i0.hdslb.com/bfs/drawyoo/71c32ae66719b070ef7b565cc7e3c6237915
 
 #### 4、property声明的属性与所有权修饰符的对应关系
 
-| property 声明中的属性           | 所有权修饰符                 |
-| ------------------------- | ---------------------- |
-| `assign`                  | `__unsafe_unretained`  |
-| ``unsafe_unretained`copy` | `__unsafe_unretained`  |
-| `retain`                  | `__strong`             |
-| `strong`                  | `__strong`             |
-| `copy`                    | `__strong`(赋值的是被复制的对象) |
-| `weak`                    | `__weak`               |
+| property 声明中的属性                          | 所有权修饰符                 |
+| ---------------------------------------- | ---------------------- |
+| `assign`                                 | `__unsafe_unretained`  |
+| ``unsafe_unretained`copy` | `__unsafe_unretained` |                        |
+| `retain`                                 | `__strong`             |
+| `strong`                                 | `__strong`             |
+| `copy`                                   | `__strong`(赋值的是被复制的对象) |
+| `weak`                                   | `__weak`               |
 
 #### 5、objc使用什么机制管理对象内存？
 

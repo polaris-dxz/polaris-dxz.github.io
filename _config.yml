@@ -78,9 +78,17 @@ prism_plugin:
   highlight:
     enable: true
 
-## Themes: https://hexo.io/themes/
-theme: miccall
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
 
+## Themes: https://hexo.io/themes/
+theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

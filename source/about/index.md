@@ -1,7 +1,7 @@
 ---
 title: about me
 date: 2018-01-09 16:25:51
-thumbnail: "http://tupian.aladd.net/2018/1/7/bizhitupian4.jpg"
+thumbnail: "http://acg.bakayun.cn/randbg.php?t=dfproject"
 ---
 
 # about 
