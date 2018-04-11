@@ -405,16 +405,21 @@
       
         
           
-            <p>股票术语</p>
-<p>1、市盈率（P/E ratio）</p>
-<p>市盈率 = （当前每股市场价格）÷ （每股税后利润）</p>
-<p>动态市盈率：还没有真正实现的下一年度预测利润的市盈率。</p>
-<p>2、市净率：</p>
-<p>市净率 = （每股市价 P）÷ （每股净资产 Book Value）</p>
-<p>股票净值主要包括公司资本金、资本公积金、法定公积金、任意公积金、为分配盈余等项目的合计，它代表全体股东共同享有的权益，也称净资产。</p>
-<p>3、<a href="https://baike.baidu.com/item/%E5%85%AC%E7%A7%AF%E9%87%91/1329924?fr=aladdin" target="_blank" rel="noopener">公积金</a>:公积金分为住房公积金和公司公积金，上文特指公司公积金</p>
-
-          
+          股票术语
+1、市盈率（P/E ratio）
+市盈率 = （当前每股市场价格）÷ （每股税后利润）
+动态市盈率：还没有真正实现的下一年度预测利润的市盈率。
+2、市净率：
+市净率 = （每股市价 P）÷ （每股净资产 Book Value）
+股票净值主要包括公司资本金、资本公积金、法定公积金、任意公积金
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/18/股票投资/股票术语/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -565,15 +570,19 @@
       
         
           
-            <h1 id="从微信跳一跳学习逆向开发-iOS"><a href="#从微信跳一跳学习逆向开发-iOS" class="headerlink" title="从微信跳一跳学习逆向开发 iOS"></a>从微信跳一跳学习逆向开发 iOS</h1><p>[TOC]</p>
-<h3 id="一、libimobiledevice与-adb"><a href="#一、libimobiledevice与-adb" class="headerlink" title="一、libimobiledevice与 adb"></a>一、libimobiledevice与 adb</h3><p>libimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议</p>
-<p>adb：安卓下调试工具</p>
-<h3 id="二、安装libimobiledevice"><a href="#二、安装libimobiledevice" class="headerlink" title="二、安装libimobiledevice"></a>二、安装libimobiledevice</h3><pre><code>$ brew update
-$ brew install libimobiledevice
-#libimobiledevice中并不包含ipa的安装命令，所以还需要安装
-$ brew install ideviceinstaller
-</code></pre>
-          
+          从微信跳一跳学习逆向开发 iOS[TOC]
+一、libimobiledevice与 adblibimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议
+adb：安卓下调试工具
+二、安装libimobiledevice$ brew update
+$ brew insta
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/29/iOS开发/iOS 逆向开发/从微信跳一跳学习逆向开发iOS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -724,26 +733,26 @@ $ brew install ideviceinstaller
       
         
           
-            <h1 id="分享几个常用的插件工具"><a href="#分享几个常用的插件工具" class="headerlink" title="分享几个常用的插件工具"></a>分享几个常用的插件工具</h1><h2 id="一、gem"><a href="#一、gem" class="headerlink" title="一、gem"></a>一、gem</h2><h3 id="1、synx"><a href="#1、synx" class="headerlink" title="1、synx"></a>1、synx</h3><ol>
-<li><p>介绍：</p>
-<p>synx：同步 xcode 工程中的 group 至当前的 finder 中</p>
-</li>
-<li><p>安装：</p>
-<pre><code class="shell">$ gem install synx
-</code></pre>
-</li>
-</ol>
-<ol>
-<li><p>使用：</p>
-<pre><code class="shell">$ synx your/product/path/project.xcodeproj #项目中有 pod 时一样用xcodeproj
-</code></pre>
-</li>
-<li><p>注意事项：</p>
-<p>导入 .a 和 .framework文件时，或者 支付宝 SDK 时可能会出现一些问题</p>
-</li>
-</ol>
+          分享几个常用的插件工具一、gem1、synx
+介绍：
+synx：同步 xcode 工程中的 group 至当前的 finder 中
 
-          
+安装：
+$ gem install synx
+
+
+
+
+使用：
+$ synx your/product/path/project.xcodeproj #项目中有 pod
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/12/Linux/分享几个常用的插件工具/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -894,62 +903,22 @@ $ brew install ideviceinstaller
       
         
           
-            <p>@property中 weak 和 strong 的使用先看两段代码：</p>
-<pre><code class="Objective-c">@interface ViewController ()
+          @property中 weak 和 strong 的使用先看两段代码：
+@interface ViewController ()
 
 @property (nonatomic,strong)UIButton *button1;
 
 @end
 
 @implementation ViewController
-
--(UIButton *)button1{
-    if (!_button1) {
-_button1=[UIButton buttonWithType:UIButtonTypeCustom];
-        _button1.frame=CGRectMake(50, 50, 100, 100);
-        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];
-_button1.backgroundColor=[UIColor redColor];
-    }
-return _button1;
-
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view addSubview:self.button1];
-}
-
-@end
-</code></pre>
-<pre><code class="objectivec">@interface ViewController ()
-
-@property (nonatomic,weak) UIButton *button2;
-
-@end
-
-@implementation ViewController
-
--(UIButton *)button2{ 
-
-    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(100, 100, 100, 100);
-    [btn setTitle:@&quot;第二个&quot; forState:UIControlStateNormal];
-    btn.backgroundColor=[UIColor yellowColor];
-    return btn;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view addSubview:self.button2];
-}
-
-@end
-</code></pre>
-<p>@property：strong：视图被移除时，因为有强引用指向他，所以不再次释放一下，则引用计数就是1</p>
-<p>@property：weak：从父视图移除时，这个 button 就直接释放了，因为是弱引用，所以不对引用计数造成影响（就像 assign）（xib 用 weak）</p>
-<p>weak 的机制：weak 变量能够在引用计数为 0 时被自动设置成 nil，显然是有运行时逻辑在工作的。</p>
-
-          
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/20/iOS开发/iOS 开发基础/weak和-strong/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1100,212 +1069,23 @@ return _button1;
       
         
           
-            <p>目录</p>
-<p>[TOC]</p>
-<h2 id="（一）、Foundation-相关知识点"><a href="#（一）、Foundation-相关知识点" class="headerlink" title="（一）、Foundation 相关知识点"></a>（一）、Foundation 相关知识点</h2><h3 id="一、内存管理的思考方式"><a href="#一、内存管理的思考方式" class="headerlink" title="一、内存管理的思考方式"></a>一、内存管理的思考方式</h3><h4 id="1、内存管理的原则："><a href="#1、内存管理的原则：" class="headerlink" title="1、内存管理的原则："></a>1、内存管理的原则：</h4><ul>
-<li><p>自己生成的对象，自己持有</p>
-</li>
-<li><p>不是自己生成的对象，自己也能持有 （需要手动 retain）</p>
-<blockquote>
-<pre><code class="objective-c">id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有
-[obj retain]; // 自己持有对象
-</code></pre>
-</blockquote>
-</li>
-<li><p>不是自己持有的对象，自己无法释放</p>
-</li>
-<li><p>不在需要自己持有的对象时，就要释放</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>对象操作</th>
-<th>OC 方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>生成并持有</td>
-<td>+new/+alloc/-copy/-mutableCopy</td>
-</tr>
-<tr>
-<td>持有对象</td>
-<td>-retain</td>
-</tr>
-<tr>
-<td>释放对象</td>
-<td>- release</td>
-</tr>
-<tr>
-<td>废弃对象</td>
-<td>- dealloc</td>
-</tr>
-</tbody>
-</table>
-<h4 id="2、autorelease：（与-release-的区别）"><a href="#2、autorelease：（与-release-的区别）" class="headerlink" title="2、autorelease：（与 release 的区别）"></a>2、autorelease：（与 release 的区别）</h4><ul>
-<li>autorelease 可以取得对象的存在，但是自己不持有对象；</li>
-<li>autorelease 可以是对象在超出指定的生存空间时能够自动并正确的释放；</li>
-<li>autorelease 不是立即释放对象的，而是将该对象注册到 autoreleasepool 中，pool 结束时（drain）自动调用 release</li>
-</ul>
-<h4 id="3、-所有权修饰符：（一共四种）"><a href="#3、-所有权修饰符：（一共四种）" class="headerlink" title="3、 所有权修饰符：（一共四种）"></a>3、 所有权修饰符：（一共四种）</h4><ul>
-<li><p><code>__weak</code>（__weak修饰的变量所引用的对象被废弃时，会将 nil 赋给该变量）</p>
-</li>
-<li><p><code>__strong</code></p>
-</li>
-<li><p><code>__unsafe_unretained</code></p>
-</li>
-<li><p><code>__autoreleasing</code></p>
-<p>​</p>
-</li>
-</ul>
-<h4 id="4、property声明的属性与所有权修饰符的对应关系"><a href="#4、property声明的属性与所有权修饰符的对应关系" class="headerlink" title="4、property声明的属性与所有权修饰符的对应关系"></a>4、property声明的属性与所有权修饰符的对应关系</h4><table>
-<thead>
-<tr>
-<th>property 声明中的属性</th>
-<th>所有权修饰符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>assign</code></td>
-<td><code>__unsafe_unretained</code></td>
-</tr>
-<tr>
-<td><code>`unsafe_unretained</code>copy`</td>
-<td><code>__unsafe_unretained</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>retain</code></td>
-<td><code>__strong</code></td>
-</tr>
-<tr>
-<td><code>strong</code></td>
-<td><code>__strong</code></td>
-</tr>
-<tr>
-<td><code>copy</code></td>
-<td><code>__strong</code>(赋值的是被复制的对象)</td>
-</tr>
-<tr>
-<td><code>weak</code></td>
-<td><code>__weak</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="5、objc使用什么机制管理对象内存？"><a href="#5、objc使用什么机制管理对象内存？" class="headerlink" title="5、objc使用什么机制管理对象内存？"></a>5、objc使用什么机制管理对象内存？</h4><blockquote>
-<p>通过 retainCount 的机制来决定对象是否需要释放。 每次 runloop 的时候，都会检查对象的 retainCount，如果retainCount 为 0，说明该对象没有地方需要继续使用了，可以释放掉了。</p>
-</blockquote>
-<p>6、ARC通过什么方式帮助开发者管理内存？</p>
-<p>7、不手动指定autoreleasepool的前提下，一个autorealese对象在什么时刻释放？（比如在一个vc的viewDidLoad中创建）</p>
-<p>8、苹果是如何实现autoreleasepool的？</p>
-<h3 id="二、block-与内存管理"><a href="#二、block-与内存管理" class="headerlink" title="二、block 与内存管理"></a>二、block 与内存管理</h3><h4 id="1、使用block时什么情况会发生引用循环，如何解决？"><a href="#1、使用block时什么情况会发生引用循环，如何解决？" class="headerlink" title="1、使用block时什么情况会发生引用循环，如何解决？"></a>1、使用block时什么情况会发生引用循环，如何解决？</h4><h4 id="2、在block内如何修改block外部变量？"><a href="#2、在block内如何修改block外部变量？" class="headerlink" title="2、在block内如何修改block外部变量？"></a>2、在block内如何修改block外部变量？</h4><h4 id="3、使用系统的某些block-api（如UIView的block版本写动画时），是否也考虑引用循环问题？"><a href="#3、使用系统的某些block-api（如UIView的block版本写动画时），是否也考虑引用循环问题？" class="headerlink" title="3、使用系统的某些block api（如UIView的block版本写动画时），是否也考虑引用循环问题？"></a>3、使用系统的某些block api（如UIView的block版本写动画时），是否也考虑引用循环问题？</h4><h3 id="三、关于-Copy-的一些问题"><a href="#三、关于-Copy-的一些问题" class="headerlink" title="三、关于 Copy 的一些问题"></a>三、关于 Copy 的一些问题</h3><h4 id="1、如何让自己的类用-copy-修饰符？"><a href="#1、如何让自己的类用-copy-修饰符？" class="headerlink" title="1、如何让自己的类用 copy 修饰符？"></a>1、如何让自己的类用 copy 修饰符？</h4><p>让自己的类用 copy 修饰符：</p>
-<ul>
-<li>声明该类遵循 NSCopying 协议或者遵循 NSMutableCopying 协议</li>
-<li>实现 -copyWithZone： 方法，该方法生成并持有该对象的副本。</li>
-</ul>
-<h4 id="2、如何重写带关键字的-setter？"><a href="#2、如何重写带关键字的-setter？" class="headerlink" title="2、如何重写带关键字的 setter？"></a>2、如何重写带关键字的 setter？</h4><pre><code class="objective-c">_obj = [obj copy]; // 返回一个该对象的副本
-</code></pre>
-<h4 id="3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"><a href="#3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？" class="headerlink" title="3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"></a>3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</h4><h4 id="4、深复制（内容复制）和浅复制（指针复制）"><a href="#4、深复制（内容复制）和浅复制（指针复制）" class="headerlink" title="4、深复制（内容复制）和浅复制（指针复制）"></a>4、深复制（内容复制）和浅复制（指针复制）</h4><p>为了弄清这个概念，我们先来弄清楚在 集合与非集合类的 可变和不可变对象分别执行 copy 和 mutableCopy 操作。</p>
-<pre><code class="objective-c">/*
- * 1、无论是集合类和非集合类，只有不可变对象进行 copy 操作是浅复制，其他情况均是深复制，因为副本的结果是不
- *    可变的。其他情况副本的结果是可变的。
- * 
- * 2、集合对象的内容复制仅局限于本身，对于元素来说，仍然是指针复制（浅复制）。所以，集合对象的深复制是单层
- *    深复制。
- */
+          目录
+[TOC]
+（一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则：
+自己生成的对象，自己持有
 
-[immutableObject copy] // 浅复制
-[immutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)
-[mutableObject copy] //深复制 (对集合类来说，是单层深复制)
-[mutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)
-</code></pre>
-<blockquote>
-<p>关于叫复制还是叫拷贝，我觉得叫复制更为准确些，这个过程有点像 OSX 复制一个文件的副本的感觉</p>
-<p><a href="http://blog.csdn.net/yi_zz32/article/details/49952727" title="多线程——原子、非原子，自旋锁和互斥锁" target="_blank" rel="noopener">1</a>: <a href="https://www.zybuluo.com/MicroCai/note/50592" target="_blank" rel="noopener">https://www.zybuluo.com/MicroCai/note/50592</a>    “iOS 集合的深复制与浅复制”</p>
-</blockquote>
-<h3 id="四、关于-property"><a href="#四、关于-property" class="headerlink" title="四、关于@property"></a>四、关于@property</h3><h4 id="1、-property中有哪些属性关键字？-property-后面可以有哪些修饰符？"><a href="#1、-property中有哪些属性关键字？-property-后面可以有哪些修饰符？" class="headerlink" title="1、 @property中有哪些属性关键字？/ @property 后面可以有哪些修饰符？"></a>1、 @property中有哪些属性关键字？/ @property 后面可以有哪些修饰符？</h4><ul>
-<li>原子性：nonatomic、atomic （默认是 atomic）（atomic 需要消耗大量内存资源，故ios 不推荐使用）</li>
-<li>读写：readonly、readwrite （默认是readwrite）</li>
-<li>内存管理：strong、weak、assign、copy、unsafe_unretained（默认是 strong 或assign）</li>
-<li>重命名方法名：<ul>
-<li><del>setter=&lt;#name#&gt;</del>不常用，也不推荐使用</li>
-<li>getter=&lt;#name#&gt;</li>
-</ul>
-</li>
-</ul>
-<h4 id="2、-protocol-和-category-中如何使用-property"><a href="#2、-protocol-和-category-中如何使用-property" class="headerlink" title="2、 @protocol 和 category 中如何使用 @property"></a>2、 @protocol 和 category 中如何使用 @property</h4><ul>
-<li>在 protocol 中使用 property 只会生成 setter 和 getter 方法声明,我们使用属性的目的,是希望遵守我协议的对象能实现该属性</li>
-<li>category 使用 @property 也是只会生成 setter 和 getter 方法的声明,如果我们真的需要给 category 增加属性的实现,需要借助于运行时的两个函数：<ul>
-<li><code>objc_setAssociatedObject</code></li>
-<li><code>objc_getAssociatedObject</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="3、weak属性需要在dealloc中置nil么？"><a href="#3、weak属性需要在dealloc中置nil么？" class="headerlink" title="3、weak属性需要在dealloc中置nil么？"></a>3、weak属性需要在dealloc中置nil么？</h4><p>不需要。ARC 下无论是 strong 还是 weak 都不需要置nil，ARC 会自动帮我们做这件事情。</p>
-<h4 id="4、-synthesize和-dynamic分别有什么作用？"><a href="#4、-synthesize和-dynamic分别有什么作用？" class="headerlink" title="4、@synthesize和@dynamic分别有什么作用？"></a>4、@synthesize和@dynamic分别有什么作用？</h4><p>一般情况下：成员变量 +  @synthesize = @property</p>
-<blockquote>
-<ol>
-<li>@property有两个对应的词，一个是 @synthesize，一个是 @dynamic。如果 @synthesize和 @dynamic都没写，那么默认的就是<code>@syntheszie var = _var;</code></li>
-<li>@synthesize 的语义是如果你没有手动实现 setter 方法和 getter 方法，那么编译器会自动为你加上这两个方法。</li>
-<li>@dynamic 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。（当然对于 readonly 的属性只需提供 getter 即可）。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter方法和 @getter 方法，编译的时候没问题，但是当程序运行到 <code>instance.var = someVar</code>，由于缺 setter 方法会导致程序崩溃；或者当运行到 <code>someVar = var</code> 时，由于缺 getter 方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。</li>
-</ol>
-</blockquote>
-<h4 id="5、什么情况需要-synthesize"><a href="#5、什么情况需要-synthesize" class="headerlink" title="5、什么情况需要@synthesize"></a>5、什么情况需要@synthesize</h4><ul>
-<li><strong>同时重写了 setter 和 getter 时</strong>（这种情况访问下划线变量会报错）</li>
-<li>重写了<em>只读属性的 getter</em> 时</li>
-<li>使用了 @dynamic 时</li>
-<li>在 @protocol 中定义的所有属性</li>
-<li>在 category 中定义的所有属性</li>
-<li>重载的属性</li>
-</ul>
-<h4 id="6、IBOutlet连出来的视图属性为什么可以被设置成weak"><a href="#6、IBOutlet连出来的视图属性为什么可以被设置成weak" class="headerlink" title="6、IBOutlet连出来的视图属性为什么可以被设置成weak?"></a>6、IBOutlet连出来的视图属性为什么可以被设置成weak?</h4><h3 id="五、关于运行时-Runtime"><a href="#五、关于运行时-Runtime" class="headerlink" title="五、关于运行时 Runtime"></a>五、关于运行时 Runtime</h3><p>Objective-C 是一门动态语言，主要就体现在Runtime 上。</p>
-<h4 id="1、向对象发送一个消息和objc-sendMessage-receiver-SEL：MethodID-函数有什么关系？"><a href="#1、向对象发送一个消息和objc-sendMessage-receiver-SEL：MethodID-函数有什么关系？" class="headerlink" title="1、向对象发送一个消息和objc_sendMessage(receiver, SEL：MethodID)函数有什么关系？"></a>1、向对象发送一个消息和<code>objc_sendMessage(receiver, SEL：MethodID)</code>函数有什么关系？</h4><blockquote>
-<p>[obj foo];在objc编译时，会被转意为：<code>objc_msgSend(obj, @selector(foo));</code>。</p>
-</blockquote>
-<h4 id="2、什么时候会报unrecognized（未被承认的）-selector的异常？"><a href="#2、什么时候会报unrecognized（未被承认的）-selector的异常？" class="headerlink" title="2、什么时候会报unrecognized（未被承认的） selector的异常？"></a>2、什么时候会报unrecognized（未被承认的） selector的异常？</h4><h4 id="3、一个objc对象的isa的指针指向什么？有什么作用？"><a href="#3、一个objc对象的isa的指针指向什么？有什么作用？" class="headerlink" title="3、一个objc对象的isa的指针指向什么？有什么作用？"></a>3、一个objc对象的isa的指针指向什么？有什么作用？</h4><p>指向该对象的类对象。</p>
-<blockquote>
-<p>@interface Chinese : People</p>
-<p>Chinese isa People</p>
-</blockquote>
-<h4 id="4、super-和-self-有什么区别？"><a href="#4、super-和-self-有什么区别？" class="headerlink" title="4、super 和 self 有什么区别？"></a>4、super 和 self 有什么区别？</h4><blockquote>
-<p>super的本质是一个编译器标示符，和 self 是指向的同一个消息接受者！他们两个的不同点在于：super 会告诉编译器，调用 class 这个方法时，要去父类的方法，而不是本类里的。</p>
-</blockquote>
-<p>super：先找父类的方法，没有在找子类；</p>
-<p>self：先从当前类的列表里开始找，如果没有在去父类那找。</p>
-<h4 id="5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"><a href="#5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）" class="headerlink" title="5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"></a>5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）</h4><blockquote>
-<p>每一个类对象中都一个方法列表,方法列表中记录着方法的名称,方法实现,以及参数类型,其实selector本质就是方法名称,通过这个方法名称就可以在方法列表中找到对应的方法实现。</p>
-</blockquote>
-<pre><code class="objective-c">IMP methodIMP = [self methodForSelector:@selector(foo:)];
-methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implementation的缩写
-</code></pre>
-<h4 id="6、objc中的类方法和实例方法有什么本质区别和联系？"><a href="#6、objc中的类方法和实例方法有什么本质区别和联系？" class="headerlink" title="6、objc中的类方法和实例方法有什么本质区别和联系？"></a>6、objc中的类方法和实例方法有什么本质区别和联系？</h4><blockquote>
-<p>类方法：</p>
-<ol>
-<li>类方法是属于类对象的</li>
-<li>类方法只能通过类对象调用</li>
-<li>类方法中的self是类对象</li>
-<li>类方法可以调用其他的类方法</li>
-<li>类方法中不能访问成员变量</li>
-<li>类方法中不能直接调用对象方法</li>
-</ol>
-<p>实例方法：</p>
-<ol>
-<li>实例方法是属于实例对象的</li>
-<li>实例方法只能通过实例对象调用</li>
-<li>实例方法中的self是实例对象</li>
-<li>实例方法中可以访问成员变量</li>
-<li>实例方法中直接调用实例方法</li>
-<li>实例方法中也可以调用类方法(通过类名</li>
-</ol>
-</blockquote>
-<h4 id="7、-objc-msgForward函数是做什么的，直接调用它将会发生什么？"><a href="#7、-objc-msgForward函数是做什么的，直接调用它将会发生什么？" class="headerlink" title="7、_objc_msgForward函数是做什么的，直接调用它将会发生什么？"></a>7、<code>_objc_msgForward</code>函数是做什么的，直接调用它将会发生什么？</h4><h4 id="8、-runtime如何实现weak变量的自动置nil？"><a href="#8、-runtime如何实现weak变量的自动置nil？" class="headerlink" title="8、 runtime如何实现weak变量的自动置nil？"></a>8、 runtime如何实现weak变量的自动置nil？</h4><h4 id="9、能否向编译后得到的类中增加实例变量？能否向运行时创建的类中添加实例变量？为什么？"><a href="#9、能否向编译后得到的类中增加实例变量？能否向运行时创建的类中添加实例变量？为什么？" class="headerlink" title="9、能否向编译后得到的类中增加实例变量？能否向运行时创建的类中添加实例变量？为什么？"></a>9、能否向编译后得到的类中增加实例变量？能否向运行时创建的类中添加实例变量？为什么？</h4><h4 id="10、-IB中User-Defined-Runtime-Attributes如何使用？"><a href="#10、-IB中User-Defined-Runtime-Attributes如何使用？" class="headerlink" title="10、 IB中User Defined Runtime Attributes如何使用？"></a>10、 IB中User Defined Runtime Attributes如何使用？</h4><h3 id="六、RunLoop-和多线程"><a href="#六、RunLoop-和多线程" class="headerlink" title="六、RunLoop 和多线程"></a>六、RunLoop 和多线程</h3><h4 id="1、runloop和线程有什么关系？"><a href="#1、runloop和线程有什么关系？" class="headerlink" title="1、runloop和线程有什么关系？"></a>1、runloop和线程有什么关系？</h4><h4 id="2、runloop的mode作用是什么？"><a href="#2、runloop的mode作用是什么？" class="headerlink" title="2、runloop的mode作用是什么？"></a>2、runloop的mode作用是什么？</h4><h4 id="3、-以-scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"><a href="#3、-以-scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？" class="headerlink" title="3、 以+ scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？"></a>3、 以+ scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？</h4><h4 id="4、猜想runloop内部是如何实现的？"><a href="#4、猜想runloop内部是如何实现的？" class="headerlink" title="4、猜想runloop内部是如何实现的？"></a>4、猜想runloop内部是如何实现的？</h4><h4 id="5、如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）"><a href="#5、如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）" class="headerlink" title="5、如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）"></a>5、如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）</h4><h4 id="6、dispatch-barrier-async的作用是什么？"><a href="#6、dispatch-barrier-async的作用是什么？" class="headerlink" title="6、dispatch_barrier_async的作用是什么？"></a>6、<code>dispatch_barrier_async</code>的作用是什么？</h4><h4 id="7、苹果为什么要废弃dispatch-get-current-queue？"><a href="#7、苹果为什么要废弃dispatch-get-current-queue？" class="headerlink" title="7、苹果为什么要废弃dispatch_get_current_queue？"></a>7、苹果为什么要废弃<code>dispatch_get_current_queue</code>？</h4><p>因为容易造成死锁</p>
-<h4 id="8、多线程原子性与非原子性、自旋锁与互斥锁的问题"><a href="#8、多线程原子性与非原子性、自旋锁与互斥锁的问题" class="headerlink" title="8、多线程原子性与非原子性、自旋锁与互斥锁的问题"></a>8、多线程原子性与非原子性、自旋锁与互斥锁的问题</h4><h3 id="七、KVO、单例、代理"><a href="#七、KVO、单例、代理" class="headerlink" title="七、KVO、单例、代理"></a>七、KVO、单例、代理</h3><h4 id="1、addObserver-forKeyPath-options-context-各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？"><a href="#1、addObserver-forKeyPath-options-context-各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？" class="headerlink" title="1、addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？"></a>1、addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？</h4><h4 id="2、如何手动触发一个value的KVO"><a href="#2、如何手动触发一个value的KVO" class="headerlink" title="2、如何手动触发一个value的KVO"></a>2、如何手动触发一个value的KVO</h4><h4 id="3、-KVC的keyPath中的集合运算符如何使用？"><a href="#3、-KVC的keyPath中的集合运算符如何使用？" class="headerlink" title="3、 KVC的keyPath中的集合运算符如何使用？"></a>3、 KVC的keyPath中的集合运算符如何使用？</h4><h4 id="4、-KVC和KVO的keyPath一定是属性么？"><a href="#4、-KVC和KVO的keyPath一定是属性么？" class="headerlink" title="4、 KVC和KVO的keyPath一定是属性么？"></a>4、 KVC和KVO的keyPath一定是属性么？</h4><h4 id="5、何关闭默认的KVO的默认实现，并进入自定义的KVO实现？"><a href="#5、何关闭默认的KVO的默认实现，并进入自定义的KVO实现？" class="headerlink" title="5、何关闭默认的KVO的默认实现，并进入自定义的KVO实现？"></a>5、何关闭默认的KVO的默认实现，并进入自定义的KVO实现？</h4><h4 id="6、apple用什么方式实现对一个对象的KVO？"><a href="#6、apple用什么方式实现对一个对象的KVO？" class="headerlink" title="6、apple用什么方式实现对一个对象的KVO？"></a>6、apple用什么方式实现对一个对象的KVO？</h4><h3 id="八、调试与-LLDB"><a href="#八、调试与-LLDB" class="headerlink" title="八、调试与 LLDB"></a>八、调试与 LLDB</h3><h4 id="1、如何调试BAD-ACCESS错误"><a href="#1、如何调试BAD-ACCESS错误" class="headerlink" title="1、如何调试BAD_ACCESS错误"></a>1、如何调试BAD_ACCESS错误</h4><h4 id="2、-lldb（gdb）常用的调试命令？"><a href="#2、-lldb（gdb）常用的调试命令？" class="headerlink" title="2、 lldb（gdb）常用的调试命令？"></a>2、 lldb（gdb）常用的调试命令？</h4><h4 id="3、BAD-ACCESS在什么情况下出现？"><a href="#3、BAD-ACCESS在什么情况下出现？" class="headerlink" title="3、BAD_ACCESS在什么情况下出现？"></a>3、BAD_ACCESS在什么情况下出现？</h4><h3 id="九、基础知识"><a href="#九、基础知识" class="headerlink" title="九、基础知识"></a>九、基础知识</h3><h4 id="1、iOS中self-和下划线的区别？"><a href="#1、iOS中self-和下划线的区别？" class="headerlink" title="1、iOS中self.和下划线的区别？"></a>1、iOS中self.和下划线的区别？</h4><p><a href="https://www.jianshu.com/p/4295cd39604e?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="2、懒加载与单例模式的区别？"><a href="#2、懒加载与单例模式的区别？" class="headerlink" title="2、懒加载与单例模式的区别？"></a>2、懒加载与单例模式的区别？</h4><p>懒加载是重写的 get 方法，懒加载也称延迟加载，即在使用的时候才加载，不用在 viewDidLoad 里就全部分配内存，保证了用的时候在分配内存</p>
-<p>单例模式指的是某个类的对象是系统的唯一实例。</p>
+不是自己生成的对象，自己也能持有 （需要手动 retain）
 
-          
+id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有
+[
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/19/iOS开发/其他/ios知识脉络梳理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1456,31 +1236,16 @@ methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implem
       
         
           
-            <p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
-<h1 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h1><p>早期还有NSURLConnection方法，iOS 9 以后被淘汰了，有几个代理方法不能用了（同步请求，异步请求）</p>
-<p>原生方法：</p>
-<pre><code class="objective-c">    NSURL* url = [NSURL URLWithString:HomeUrl]; //url
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];//请求
-    NSURLSession* session = [NSURLSession sharedSession]; //session
-    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error){
-
-            NSLog(@&quot;请求失败&quot;);
-        }
-        else{
-
-            NSLog(@&quot;请求成功&quot;);
-            NSString *receiveStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-
-            NSData * jsonData = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
-
-            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:nil];
-        }
-    }];
-    [task resume];
-</code></pre>
-
-          
+          iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。
+POST 请求早期还有NSURLConnection方法，iO
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/16/iOS开发/iOS 开发基础/ios-HTTP请求/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1631,130 +1396,33 @@ methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implem
       
         
           
-            <p>[TOC]</p>
-<p><img src="instrument.png" alt=""></p>
-<h2 id="一、Blank"><a href="#一、Blank" class="headerlink" title="一、Blank"></a>一、Blank</h2><h2 id="二、Activity-Monitor（活动监视器）"><a href="#二、Activity-Monitor（活动监视器）" class="headerlink" title="二、Activity Monitor（活动监视器）"></a>二、Activity Monitor（活动监视器）</h2><h2 id="三、Allocations（内存分配）"><a href="#三、Allocations（内存分配）" class="headerlink" title="三、Allocations（内存分配）"></a>三、Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
-<h3 id="1、程序员对内存关注的点"><a href="#1、程序员对内存关注的点" class="headerlink" title="1、程序员对内存关注的点"></a>1、程序员对内存关注的点</h3><ul>
-<li><p>正确使用</p>
-<ul>
-<li><p>避免非法访问</p>
-<blockquote>
-<p>即避免访问被释放掉的内存。release 后不能再 retain。</p>
-</blockquote>
-</li>
-<li><p>避免内存泄漏</p>
-</li>
-</ul>
-</li>
-<li><p>高效使用</p>
-<ul>
-<li>降低内存峰值</li>
-<li>处理内存警告</li>
-<li>Cache</li>
-</ul>
-</li>
-</ul>
-<h3 id="2、Regions（区域）"><a href="#2、Regions（区域）" class="headerlink" title="2、Regions（区域）"></a>2、Regions（区域）</h3><p>以下内容参考自 <a href="https://stackoverflow.com/questions/13437365/what-is-resident-and-dirty-memory-of-ios!" target="_blank" rel="noopener">Stack Overflow</a></p>
-<p>视频链接：<a href="https://www.imooc.com/video/11075" target="_blank" rel="noopener">iOS内存管理及优化</a></p>
-<ul>
-<li>Clean Memory：在闪存中有备份，能够再次读取。主要包括<code>system framework</code>、<code>binary executable of your app</code>、<code>memory mapped files</code></li>
-<li>Dirty Memory：所有非<code>Clean Memory</code>，<strong>系统无法回收</strong>。包括<code>Heap allocation</code>、<code>caches</code>、<code>decompressed images</code>（解压的图片）</li>
-</ul>
-<h3 id="3、虚拟内存之间的关系"><a href="#3、虚拟内存之间的关系" class="headerlink" title="3、虚拟内存之间的关系"></a>3、虚拟内存之间的关系</h3><ul>
-<li><p>虚拟内存层面：（逻辑内存）</p>
-<blockquote>
-<p> virtual memory = clean memory + dirty memory.</p>
-</blockquote>
-</li>
-<li><p>物理内存层面：</p>
-<blockquote>
-<p>resident memory= dirty memory+clean memory that loaded in physical memory</p>
-</blockquote>
-</li>
-<li><p>总结：</p>
-<blockquote>
-<p>virtual memory == (clean memory + dirty memory) &gt; resident memory &gt;dirty memory</p>
-</blockquote>
-</li>
-</ul>
-<pre><code class="objective-c">// clean memory
-- (IBAction)clickAction1{
-  char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@&quot;%p&quot;,buf);
-}
+          [TOC]
 
-// dirty memory
-- (IBAction)clickAction2{
-  char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@&quot;%p&quot;,buf);
-  for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存，剩余97M 虚拟内存
-    buf[i] = rand();
-  }
-}
+一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配）
+1、程序员对内存关注的点
+正确使用
 
-- (void)cleanOrDirtyMemory{
+避免非法访问
 
-      NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)
-    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 
-    char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)
-    for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)
-    buf[i] = rand();//dirty
-  }
-}
-</code></pre>
-<h3 id="4、VMTracker："><a href="#4、VMTracker：" class="headerlink" title="4、VMTracker："></a>4、VMTracker：</h3><blockquote>
-<pre><code>官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program
-</code></pre></blockquote>
-<ul>
-<li>Dirty Size：</li>
-<li>Swapped Size：</li>
-<li>Resident Size：</li>
-</ul>
-<h3 id="5、参数："><a href="#5、参数：" class="headerlink" title="5、参数："></a>5、参数：</h3><ul>
-<li><p>图形列（Graph）：</p>
-<blockquote>
-<p>当指定类别的复选框被勾选时,instrument工具在跟踪面板里面显示特定类别的图形。 Instruments 应用通常给每个图形类别赋一个颜色。</p>
-</blockquote>
-</li>
-<li><p>类别(Category)：</p>
-<blockquote>
-<p>通常是一个 Core Foundation 对象、Objective-C 类、或者 malloc 出来的内存空间。</p>
-</blockquote>
-</li>
-<li><p>净分配字节数(Persistent Bytes)：</p>
-<blockquote>
-<p>当前已经分配内存但是仍然没有被释放的字节的总数。</p>
-</blockquote>
-</li>
-<li><p>净分配数(#Persistent)：</p>
-<blockquote>
-<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
-</blockquote>
-</li>
-<li><p>临时分配数(#Transient)：</p>
-<blockquote>
-<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
-</blockquote>
-</li>
-<li><p>总分配字节数(Total Bytes)：</p>
-<blockquote>
-<p>所有已经分配内存,而且包括已经被释放了的字节的总数。</p>
-</blockquote>
-</li>
-<li><p>总分配数(#Total)：</p>
-<blockquote>
-<p>所有当前已经分配内存,包括已经被释放了的对象或内存 块的总数。</p>
-</blockquote>
-</li>
-<li><p>临时分配/全部内存分配(Transient/Total Bytes)：</p>
-<blockquote>
-<p>当前和全部分配数的直方图。如上图所示当比例变化时,直方条会变颜色，Instruments 应用通常给它们标示不同的颜色来指出分配模式以便进行进一步的研究。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="四、Cocoa-Layout"><a href="#四、Cocoa-Layout" class="headerlink" title="四、Cocoa Layout"></a>四、Cocoa Layout</h2><h2 id="五、Core-Animation"><a href="#五、Core-Animation" class="headerlink" title="五、Core Animation"></a>五、Core Animation</h2><h2 id="六、Core-Data"><a href="#六、Core-Data" class="headerlink" title="六、Core Data"></a>六、Core Data</h2><h2 id="七、Counters（计数器）"><a href="#七、Counters（计数器）" class="headerlink" title="七、Counters（计数器）"></a>七、Counters（计数器）</h2><h2 id="八、Energy-Log"><a href="#八、Energy-Log" class="headerlink" title="八、Energy Log"></a>八、Energy Log</h2><h2 id="九、File-Activity"><a href="#九、File-Activity" class="headerlink" title="九、File Activity"></a>九、File Activity</h2><h2 id="十、Leaks（内存泄漏）"><a href="#十、Leaks（内存泄漏）" class="headerlink" title="十、Leaks（内存泄漏）"></a>十、Leaks（内存泄漏）</h2><h2 id="十一、Metal-System-Trace"><a href="#十一、Metal-System-Trace" class="headerlink" title="十一、Metal System Trace"></a>十一、Metal System Trace</h2><h2 id="十二、Network"><a href="#十二、Network" class="headerlink" title="十二、Network"></a>十二、Network</h2><h2 id="十三、SceneKit"><a href="#十三、SceneKit" class="headerlink" title="十三、SceneKit"></a>十三、SceneKit</h2><h2 id="十四、System-Trace（系统跟踪）"><a href="#十四、System-Trace（系统跟踪）" class="headerlink" title="十四、System Trace（系统跟踪）"></a>十四、System Trace（系统跟踪）</h2><h2 id="十五、System-Usage"><a href="#十五、System-Usage" class="headerlink" title="十五、System Usage"></a>十五、System Usage</h2><p> ios 模拟器暂不支持</p>
-<h2 id="十六、Time-profiler"><a href="#十六、Time-profiler" class="headerlink" title="十六、Time profiler"></a>十六、Time profiler</h2><h2 id="十七、Zombies（僵尸）"><a href="#十七、Zombies（僵尸）" class="headerlink" title="十七、Zombies（僵尸）"></a>十七、Zombies（僵尸）</h2>
-          
+即避免访问被释放掉的内存。release 后不能再 retain。
+
+
+避免内存泄漏
+
+
+
+高效使用
+
+降低内存峰值
+处理内存警
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/15/iOS开发/iOS 开发基础/instrument-详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1905,179 +1573,24 @@ methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implem
       
         
           
-            <h1 id="block"><a href="#block" class="headerlink" title="block"></a>block</h1><p>导读：</p>
-<ul>
-<li>什么是 block？</li>
-<li>block 基本原理是什么？</li>
-<li>使用 block 需要避免哪些问题？</li>
-</ul>
-<p>##1、什么是 block</p>
-<p>###（1）Block</p>
-<p>block 概念：block是带有<strong>自动变量值</strong>的<strong>匿名函数</strong>。也称为闭包（closure）、lambda 计算。</p>
-<p>C语言的标注不允许存在这样的函数，但是可以通过函数指针来直接调用函数。</p>
-<pre><code class="c">// 声明一个函数
-int func(int count);      
+          block导读：
 
-// 声明一个函数指针，并取出 func 的地址赋给 *funcP
-int (*funcP)(int count) = &amp;func;   //注：函数形参可有可无，视情况而定
+什么是 block？
+block 基本原理是什么？
+使用 block 需要避免哪些问题？
 
-// 通过函数名访问这个函数
-int result1 = func(10);   
-
-// 通过函数的指针访问这个函数
-int result2 = (*funcP)(10);
-</code></pre>
-<h3 id="（2）函数指针的用途："><a href="#（2）函数指针的用途：" class="headerlink" title="（2）函数指针的用途："></a>（2）函数指针的用途：</h3><p>函数指针的用途有两个：</p>
-<ul>
-<li>调用函数</li>
-<li>作为函数的参数</li>
-</ul>
-<blockquote>
-<pre><code class="c++">Class* a; // a 是个对象，类型是指针
-Class *a; // a 是个指针，类型是类
-
-/* 
-*  虽然上述写法均表示声明一个指针型变量，但是着重点不同。
-*  前者意在声明一个变量，后者意在声明一个指针。
-*  这种自行体会就好，不要拘泥于写法。
-*/
-</code></pre>
-</blockquote>
-<h3 id="（3）悬浮指针的出现及避免"><a href="#（3）悬浮指针的出现及避免" class="headerlink" title="（3）悬浮指针的出现及避免"></a>（3）悬浮指针的出现及避免</h3><p>声明一个指针需要注意的问题：</p>
-<ul>
-<li>避免出现<strong>悬浮指针</strong>（也称迷途指针、失控指针）</li>
-</ul>
-<p>悬浮指针的出现：dealloc 一个指针后，没有把指针置空（nil）。</p>
-<p><em>如果再次调用该指针并没有重新赋值，就会出现问题</em>。</p>
-<blockquote>
-<p>注意：空指针 ！= 迷途指针。空指针指向的地址为空。</p>
-<p>指针的指针即本身</p>
-</blockquote>
-<h3 id="（4）函数中可能使用的变量："><a href="#（4）函数中可能使用的变量：" class="headerlink" title="（4）函数中可能使用的变量："></a>（4）函数中可能使用的变量：</h3><ul>
-<li><p>函数的参数</p>
-</li>
-<li><p>局部变量（自动变量）</p>
-</li>
-<li><p>静态变量（静态局部变量）</p>
-</li>
-<li><p>全局变量</p>
-</li>
-<li><p>静态全局变量</p>
-<blockquote>
-<p>使用全局变量会占用更多的内存（因为其生命期长），不过在计算机配置很高的今天，这个不应该算什么问题，除非使用的是巨大对象的全局变量，能避免就一定要避免。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="（5）OC-中函数和方法的区别"><a href="#（5）OC-中函数和方法的区别" class="headerlink" title="（5）OC 中函数和方法的区别"></a>（5）OC 中函数和方法的区别</h3><p>函数和对象无关，方法和对象有关。最主要的是，函数和方法写法不一样啊！</p>
-<blockquote>
-<p>函数是指把一个值通过一系列计算得到一个新的值。</p>
-<p>而方法更多考虑的是事情。如让一个人通过一系列动作制造一个新的东西。</p>
-</blockquote>
-<h3 id="（6）为什么-Block-可以作为函数参数和返回值？"><a href="#（6）为什么-Block-可以作为函数参数和返回值？" class="headerlink" title="（6）为什么 Block 可以作为函数参数和返回值？"></a>（6）为什么 Block 可以作为函数参数和返回值？</h3><p>函数的参数和返回值可以是 void、int，也可以是一个类对象，当然也可以是指针（int<em> char</em>）。而 block 为什么可以作为函数的参数甚至是返回值呢？</p>
-<p><strong>因为block的本质是 OC 对象。</strong>（OC 的 层面）</p>
-<p>block的实质是<strong>栈</strong>上 block 的结构体实例。（C 的层面）这里也可以理解为是一个函数指针。</p>
-<blockquote>
-<pre><code class="objective-c">typedef int(^blk_t)(int); // 声明一个参数为 int 型、返回值为 int 型的 blk_t类型
-blk_t blk = ^(int count){return count+1;};// 声明一个 blk 变量
-int (^blk)(int) = ^(int count){return count+1;};// 等价于第二行
-
-blk_t *blkptr = &amp;blk;// 声明一个名为 blkptr 的 blk_t型的指针，并指向 blk 的地址。
-
-(*blkptr)(10); // 利用指针调用这个 blk
-blk(10); // 直接调用这个 blk
-</code></pre>
-</blockquote>
-<h3 id="（7）-block-说明符"><a href="#（7）-block-说明符" class="headerlink" title="（7）__block 说明符"></a>（7）__block 说明符</h3><p>引入<code>__block</code>的目的是用来声明变量的作用域的，意思就是 block 外用<code>__block</code>声明的变量，block 内也能访问到。虽然这货和全局变量有些类似，但是老机器全局变量用多了会导致浪费内存啊！（因为全局变量生命周期比较长）。</p>
-<p>吐槽：乖乖用__block吧，特大的对象做全局变量的时候，也是会出现问题的。</p>
-<h3 id="（8）block-的实质"><a href="#（8）block-的实质" class="headerlink" title="（8）block 的实质"></a>（8）block 的实质</h3><p>block的实质是<strong>栈</strong>上 block 的结构体实例。（吐槽，说白了就是通过指针访问的）</p>
-<p>（写一个代码用 clang rewrite 一下就明白了，因为有 Foundation 框架，一个5行的代码能重写成将近10万行。。不过核心代码在最后几行，翻到最后看就可以了）</p>
-<blockquote>
-<p>重写代码的时候会发现有三个结构体，一个是<code>__block_imp1</code>另一个是<code>__main_block_imp1_0</code>还有一个是<code>__main_block_desc_0</code></p>
-<p>这里面引申一个概念就是 IMP 和SEL，具体以后再分析(runtime)，知道SEL 表示（选择器） IMP 表示<em>函数指针</em>就可以了。</p>
-</blockquote>
-<p><code>__block</code>的实质是栈上<code>__block</code>变量的结构体实例。</p>
-<pre><code class="objective-c">// block的实质结构
-typedef objc_class *Class; //Class 为 objc_class 结构体的指针类型
-
-typedef struct objc_object{
-  Class isa;
-} *id; //id为 objc_objec 结构体的指针类型
-</code></pre>
-<p>将 block源码转换为 C++源码：<code>clang -rewrite-objc filename</code></p>
-<table>
-<thead>
-<tr>
-<th>__block变量的配置存储域</th>
-<th>Block 从栈复制到堆是的影响</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>栈（stack）</td>
-<td>从栈复制到堆并被 Block 持有</td>
-</tr>
-<tr>
-<td>堆（heap/maclloc）</td>
-<td>被 Block 持有</td>
-</tr>
-</tbody>
-</table>
-<p>栈上的 block ：变量作用域结束时，栈上的 __block变量和 block 被废弃</p>
-<p>堆上的 block：变量作用域结束时不受影响，需要手动释放。 </p>
-<h2 id="block-循环引用的问题"><a href="#block-循环引用的问题" class="headerlink" title="block 循环引用的问题"></a>block 循环引用的问题</h2><p>如果在 Block 中使用__strong修饰的对象和变量，那么当 Block 从栈复制到堆上的时候，该对象就会被 Block所持有。这样就会引起循环引用。</p>
-<blockquote>
-<p>循环引用这里有个重点，Block 是存储在栈上的，普通对象和变量是存储在堆上的。堆（malloc）上的内存需要我们手动管理（需要 dealloc），而栈上的内存顾名思义是按照数据结构中栈的方式管理，即由系统进行分配。</p>
-</blockquote>
-<p><strong>对象持有 block =&gt; block持有 self =&gt; self 持有对象，即形成循环引用。</strong>（这里的 self 也包含当前类的其他属性，因为在调用属性的同时也截获了 self）。</p>
-<blockquote>
-<p>编译器能查出循环引用。</p>
-</blockquote>
-<h2 id="copy-release"><a href="#copy-release" class="headerlink" title="copy release"></a>copy release</h2><p>ARC 无效的时候，我们需要手动将 Block 从栈复制到堆。</p>
-<p>因为 ARC 无效，所以需要我们手动释放复制的 Block。</p>
-<p>这个时候我们用 copy 方法来复制，release 方法来释放。</p>
-<pre><code class="objective-c">void (^block_on_heap)(void) = [block_on_stack copy];//正常复制
-
-[block_on_heap release];//正常释放
-
-[block_on_heap retain]; // 因为block 在堆上，所以可以被 retain
-
-[block_on_stack retain];// 因为现在 block 在栈上，所以这个方法没用
-</code></pre>
-<blockquote>
-<p>ARC 是苹果公司在iOS 5 以后推出的内存管理机制。。iOS 5以前是手动管理的。。如果还问我 ARC 的话，那我基本不考虑你们公司了。。。。</p>
-</blockquote>
-<h2 id="block的作用"><a href="#block的作用" class="headerlink" title="__block的作用"></a>__block的作用</h2><p>ARC 无效__block用来避免 Block 中出现的循环引用。</p>
-<p>栈——&gt;堆时：__block修饰的变量不会被 retain。没用它修饰的就会被 retain。</p>
-<h2 id="ARC"><a href="#ARC" class="headerlink" title="ARC"></a>ARC</h2><table>
-<thead>
-<tr>
-<th>对象操作</th>
-<th>OC 方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>生成并持有对象</td>
-<td>+ alloc、+ new、copy、mutableCopy</td>
-</tr>
-<tr>
-<td>持有对象</td>
-<td>- retain</td>
-</tr>
-<tr>
-<td>释放对象</td>
-<td>- release</td>
-</tr>
-<tr>
-<td>废弃对象</td>
-<td>- dealloc</td>
-</tr>
-</tbody>
-</table>
-<h2 id="strong-和-weak"><a href="#strong-和-weak" class="headerlink" title="__strong 和 __weak"></a><code>__strong</code> 和 <code>__weak</code></h2><p>__strong：表示对对象的强引用。即在超出其作用域被废弃时，随着强引用的释放，引用的对象也会被释放。</p>
-<h2 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h2><p>循环引用容易导致内存泄露。内存泄露就是应当废弃的对象在超出其生存周期后继续存在。</p>
-
-          
+##1、什么是 block
+###（1）Block
+block 概念：block是带有自动变量值的匿名函数。也称为闭包（closure）、lambda 计算。
+C语言的标注不允许存在这样的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/15/iOS开发/iOS 开发基础/闭包、lambda-计算、block/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2228,65 +1741,41 @@ typedef struct objc_object{
       
         
           
-            <ul>
-<li>UITableView<strong>DataSource</strong><ul>
-<li>必要的<ul>
-<li>设置 tableview cell</li>
-<li>设置行数</li>
-</ul>
-</li>
-<li>可选的<ul>
-<li>​</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>UITableView<strong>Delegate</strong><ul>
-<li>可选的<ul>
-<li>设置行高</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>UITableView<strong>DataSource</strong></p>
-<ul>
-<li>required<ul>
-<li>UITableViewCell </li>
-<li>numberOfRowsInSection</li>
-</ul>
-</li>
-<li>optional<ul>
-<li>numberOfSectionsInTableView </li>
-<li>titleForHeaderViewOrFooterView</li>
-<li>index<ul>
-<li>sectionForSectionIndexTitle</li>
-<li>sectionIndexTitlesForTableView</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>UITableView<strong>Delegate</strong></p>
-<ul>
-<li>optional<ul>
-<li>Display customization</li>
-<li>Variable (estimated) height support</li>
-<li>Section header &amp; footer information.返回一个 view</li>
-<li>Accessories</li>
-<li>should or did (Un)HighlightRowAtIndexPath</li>
-<li>Called before the user changes the selection.</li>
-<li>Editing</li>
-</ul>
-</li>
-</ul>
-<p>​</p>
-</li>
-</ul>
-
           
+UITableViewDataSource
+必要的
+设置 tableview cell
+设置行数
+
+
+可选的
+​
+
+
+
+
+UITableViewDelegate
+可选的
+设置行高
+
+
+
+
+
+
+UITableViewDataSource
+
+required
+UITableViewCell 
+numb
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/05/14/iOS开发/控件/UITableView详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2437,12 +1926,19 @@ typedef struct objc_object{
       
         
           
-            <p>1、合理使用读写权限以及作用域修饰符。</p>
-<p>2、合理使用向前声明@class</p>
-<p>3、暴露必要的接口</p>
-<p>4、定义枚举:NS_ENUM、NS_OPTIONS、字符串枚举</p>
+          1、合理使用读写权限以及作用域修饰符。
+2、合理使用向前声明@class
+3、暴露必要的接口
+4、定义枚举:NS_ENUM、NS_OPTIONS、字符串枚举
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2014/01/10/iOS开发/开发笔记/iOS开发笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2742,7 +2238,7 @@ typedef struct objc_object{
   
 
     
-      <script id="dsq-count-scr" src="https://https://yggdrasill-7c9.github.io/.disqus.com/count.js" async></script>
+      <script id="dsq-count-scr" src="https://https-yggdrasill-7c9-github-io.disqus.com/count.js" async></script>
     
 
     

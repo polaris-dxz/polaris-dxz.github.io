@@ -405,114 +405,26 @@
       
         
           
-            <p>[TOC]</p>
-<h1 id="一、HTTP报文"><a href="#一、HTTP报文" class="headerlink" title="一、HTTP报文"></a>一、HTTP报文</h1><p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png" alt=""></p>
-<p>Http 报文分为请求报文（request）和响应报文（response），主要分三部分：</p>
-<ul>
-<li><h2 id="1、起始行"><a href="#1、起始行" class="headerlink" title="1、起始行"></a>1、起始行</h2><ul>
-<li><p>请求行：<strong>包含了一个方法和 URL（路径） 以及 HTTP 版本</strong></p>
-</li>
-<li><p>响应行：包含了 HTTP 版本，状态码和原因短语</p>
-</li>
-<li><p>方法：</p>
-<blockquote>
-<p>分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
-</blockquote>
-</li>
-<li><p>状态码：</p>
-<blockquote>
-<p>状态码位于响应的起始行中；</p>
-<p>状态码数在每条响应报文的起始行中返回的；</p>
-</blockquote>
-</li>
-<li><p>原因短语：</p>
-<blockquote>
-<p>通常与状态码成对出现，如200 OK（描述操作状态的、文本的形式的原因短语）</p>
-</blockquote>
-</li>
-<li><p>版本号：</p>
-<blockquote>
-<p><strong>注意，版本号不会被当做小数处理，2.22要比2.3要大</strong> </p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><h2 id="2、首部（请求头、响应头、head）"><a href="#2、首部（请求头、响应头、head）" class="headerlink" title="2、首部（请求头、响应头、head）"></a>2、首部（请求头、响应头、head）</h2><ul>
-<li>通用首部</li>
-<li>请求首部<ul>
-<li>Accept 首部</li>
-<li>条件请求首部</li>
-<li>安全请求首部</li>
-<li>代理请求首部</li>
-</ul>
-</li>
-<li>响应首部<ul>
-<li>协商首部</li>
-<li>安全响应首部</li>
-</ul>
-</li>
-<li>实体首部<ul>
-<li>内容首部（Content）</li>
-<li>实体缓存首部</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h2 id="3、主体（请求体、响应体、body）"><a href="#3、主体（请求体、响应体、body）" class="headerlink" title="3、主体（请求体、响应体、body）"></a>3、主体（请求体、响应体、body）</h2></li>
-</ul>
-<p><img src="响应报文首部.png" alt="响应报文首部"></p>
-<p>#二、URL </p>
-<p>##1、URL 语法</p>
-<p><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params1>;<params2>?<query>&amp;<query2>#<flag></flag></query2></query></params2></params1></port></host></password></user></scheme></p>
-<p>方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</p>
-<blockquote>
-<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
-<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
-<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
-</blockquote>
-<h2 id="2、一些常见的概念"><a href="#2、一些常见的概念" class="headerlink" title="2、一些常见的概念"></a>2、一些常见的概念</h2><h3 id="（1）-URI"><a href="#（1）-URI" class="headerlink" title="（1） URI"></a>（1） URI</h3><p>URI（统一资源标识符）</p>
-<ul>
-<li>URL（统一资源定位符）</li>
-<li>URN（统一资源名）</li>
-</ul>
-<h3 id="（1）RFC"><a href="#（1）RFC" class="headerlink" title="（1）RFC"></a>（1）RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
-<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
-<h3 id="（3）事物"><a href="#（3）事物" class="headerlink" title="（3）事物"></a>（3）事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
-<p>事物 = 请求 + 响应</p>
-<h3 id="（4）TCP"><a href="#（4）TCP" class="headerlink" title="（4）TCP"></a>（4）TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<strong><em>转发 HTTP 报文</em></strong>。</p>
-<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
-<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
-<p>作用：</p>
-<ul>
-<li>无差错的数据传输</li>
-<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
-<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
-</ul>
-<h3 id="（5）隧道（tunnel）"><a href="#（5）隧道（tunnel）" class="headerlink" title="（5）隧道（tunnel）"></a>（5）隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
-<h3 id="（6）SSL"><a href="#（6）SSL" class="headerlink" title="（6）SSL"></a>（6）SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
-<h3 id="（7）代理与-Agent-代理"><a href="#（7）代理与-Agent-代理" class="headerlink" title="（7）代理与 Agent 代理"></a>（7）代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
-<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
-<h3 id="（8）报文流"><a href="#（8）报文流" class="headerlink" title="（8）报文流"></a>（8）报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
-<p>HTTP 使用流入和流出描述<strong><em>事务处理</em></strong>的方向。</p>
-<p>客服端\</p>
-<p>​           服务器</p>
-<p>客户端/</p>
-<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><p>###1、OSI 七层协议和 TCP/IP 五层网络协议</p>
-<p>总结为一句话：应表会、传网数物（五层协议中应表会为一层）。</p>
-<p>###2、TCP 协议中的三次握手</p>
-<p>总结为一句话：“船~来~了！船~来~了~吗？船~来~了。”之后服务器把船开往客服端。</p>
-<p><img src="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
-<h3 id="3、TCP-慢启动（slow-shtar）"><a href="#3、TCP-慢启动（slow-shtar）" class="headerlink" title="3、TCP 慢启动（slow shtar）"></a>3、TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
-<blockquote>
-<p> 新建了一座桥。汽车为了试试这个桥能不能走，先慢慢开过去，如果发现没问题，其他汽车再提速过去。</p>
-</blockquote>
-<p>在提速的过程中，有个概念叫<strong><em>打开拥塞窗口</em></strong>。</p>
-<blockquote>
-<p>有一个车队要过一座桥。一开始先派一辆车过去，确认没事的话派两个车试试，如果还没事的话派四辆车过去，这个过程就叫打开拥塞窗口。</p>
-</blockquote>
+          [TOC]
+一、HTTP报文
+Http 报文分为请求报文（request）和响应报文（response），主要分三部分：
 
-          
+1、起始行
+请求行：包含了一个方法和 URL（路径） 以及 HTTP 版本
+
+响应行：包含了 HTTP 版本，状态码和原因短语
+
+方法：
+
+分为常用的7种 HTTP 方法和对 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/05/13/HTTP/Http报文详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -663,96 +575,20 @@
       
         
           
-            <h1 id="gem-rvm使用心得"><a href="#gem-rvm使用心得" class="headerlink" title="gem,rvm使用心得"></a>gem,rvm使用心得</h1><h5 id="rvm-和-gem-的关系"><a href="#rvm-和-gem-的关系" class="headerlink" title="rvm 和 gem 的关系"></a>rvm 和 gem 的关系</h5><ul>
-<li>rvm 全称是 Ruby Version Manager，即Ruby 版本管理器。</li>
-<li>gem，即RubyGems，是一个用于对 Ruby 组件进行打包 Ruby 的打包系统，可以从远程服务器下载并安装 Rails。</li>
-</ul>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/Ruby" target="_blank" rel="noopener">Ruby</a> on Rails 是一个用于开发数据库驱动的网络应用程序的完整框架。Rails基于<a href="https://baike.baidu.com/item/MVC" target="_blank" rel="noopener">MVC</a>（模型- 视图- 控制器）设计模式。从视图中的<a href="https://baike.baidu.com/item/Ajax" target="_blank" rel="noopener">Ajax</a>应用，到控制器中的访问请求和反馈，到封装数据库的模型，Rails 为你提供一个纯Ruby的开发环境。发布网站时，你只需要一个数据库和一个网络服务器即可。</p>
-<p>Ruby On Rails是一个用于编写网络应用程序的软件包.它基于一种计算机软件语言Ruby,给程序开发人员提供了强大的框架支持.你可以用比以前少的多的代码和 短的多的时间编写出一流的网络软件。</p>
-</blockquote>
-<p><strong>查看gem 源</strong>：</p>
-<pre><code>$ gem source
-</code></pre><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-a</td>
-<td>–add SOURCE_URI</td>
-<td>添加源</td>
-</tr>
-<tr>
-<td>-l</td>
-<td>–list</td>
-<td>列表</td>
-</tr>
-<tr>
-<td>-r</td>
-<td>–remove SOURCE_URI</td>
-<td>删除</td>
-</tr>
-<tr>
-<td>-c</td>
-<td>–clear-all</td>
-<td>清除所有</td>
-</tr>
-<tr>
-<td>-u</td>
-<td>–update</td>
-<td>更新</td>
-</tr>
-</tbody>
-</table>
-<pre><code>$ gem sources -r http://rubygems.org/ #删除默认的源
+          gem,rvm使用心得rvm 和 gem 的关系
+rvm 全称是 Ruby Version Manager，即Ruby 版本管理器。
+gem，即RubyGems，是一个用于对 Ruby 组件进行打包 Ruby 的打包系统，可以从远程服务器下载并安装 Rails。
 
-$ gem sources -a https://ruby.taobao.org #添加淘宝源
-</code></pre><ul>
-<li><p>Mac OSX 必须要安装的库</p>
-<pre><code>$ brew install libxml2 libxslt libiconv
-</code></pre></li>
-<li><p>载入 RVM 环境</p>
-<pre><code>$ source ~/.rvm/scripts/rvm
-</code></pre></li>
-<li><p>用 RVM 安装 ruby 环境</p>
-<pre><code>$ rvm requirements
-$ rvm install 2.3.0
-</code></pre></li>
-<li><p>安装 Bundler</p>
-<pre><code>$ gem install bundler
-</code></pre></li>
-<li><p>安装 Rails 环境</p>
-<pre><code>$ gem install rails
-</code></pre></li>
-<li><p>homebrew 安装 ruby</p>
-<pre><code>$ brew install ruby
-</code></pre></li>
-<li><p>RVM 安装</p>
-<pre><code>$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-$ \curl -sSL https://get.rvm.io | bash -s stable
-$ source ~/.bashrc
-$ source ~/.bash_profile
-</code></pre></li>
-<li><p>列出以及 ruby 版本</p>
-<pre><code>$ rvm list known
-</code></pre></li>
-<li><p>切换 ruby 版本</p>
-<pre><code>$ rvm use 2.2.0
-</code></pre><p>​</p>
-</li>
-<li><p>修改 RVM 下载 Ruby 的源，到 Ruby China 的镜像:</p>
-<pre><code>$ echo &quot;ruby_url=https://cache.ruby-china.org/pub/ruby&quot; &gt; ~/.rvm/user/db
-</code></pre><p>​</p>
-</li>
-</ul>
-<p>  ​</p>
 
-          
+Ruby on Rails 是一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/04/25/Linux/gem、rvm使用心得/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -903,146 +739,21 @@ $ source ~/.bash_profile
       
         
           
-            <h1 id="（一）git深入学习"><a href="#（一）git深入学习" class="headerlink" title="（一）git深入学习"></a>（一）git深入学习</h1><h3 id="一、官方说明"><a href="#一、官方说明" class="headerlink" title="一、官方说明"></a>一、官方说明</h3><h5 id="start-a-working-area-see-also-git-help-tutorial"><a href="#start-a-working-area-see-also-git-help-tutorial" class="headerlink" title="start a working area (see also: git help tutorial)"></a>start a working area (see also: git help tutorial)</h5><ul>
-<li><p>clone      Clone a repository into a new directory</p>
-<blockquote>
-<p>克隆一个 repo 到一个新的目录</p>
-</blockquote>
-</li>
-<li><p>init       Create an empty Git repository or reinitialize（重置） an existing one</p>
-<blockquote>
-<p>创建一个空的 git repo 或者重置一个</p>
-</blockquote>
-<p>​</p>
-</li>
-</ul>
-<h5 id="work-on-the-current-change-see-also-git-help-everyday"><a href="#work-on-the-current-change-see-also-git-help-everyday" class="headerlink" title="work on the current change (see also: git help everyday)"></a>work on the current change (see also: git help everyday)</h5><ul>
-<li><p>add        Add file contents to the index</p>
-<blockquote>
-<p>add all</p>
-<pre><code>git add .
-</code></pre></blockquote>
-</li>
-<li><p>mv         Move or rename a file, a directory, or a symlink</p>
-</li>
-<li><p>reset      Reset current HEAD to the specified state</p>
-<blockquote>
-<p>重置当前 HEAD 区到指定的状态</p>
-</blockquote>
-</li>
-<li><p>rm         Remove files from the working tree and from the index</p>
-</li>
-</ul>
-<h5 id="examine-the-history-and-state-see-also-git-help-revisions"><a href="#examine-the-history-and-state-see-also-git-help-revisions" class="headerlink" title="examine the history and state (see also: git help revisions)"></a>examine the history and state (see also: git help revisions)</h5><ul>
-<li><p>bisect     Use binary search to find the commit that introduced a bug</p>
-<blockquote>
-<p>使用二分法查找</p>
-</blockquote>
-</li>
-<li><p>grep       Print lines matching a pattern</p>
-<blockquote>
-<p><em>grep</em> (global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来)</p>
-</blockquote>
-</li>
-<li><p>log        Show commit logs</p>
-</li>
-<li><p>show       Show various types of objects</p>
-</li>
-<li><p>status     Show the working tree status</p>
-<blockquote>
-<p>显示当前工作树的状态</p>
-</blockquote>
-<p>​</p>
-<h5 id="grow-mark-and-tweak-your-common-history"><a href="#grow-mark-and-tweak-your-common-history" class="headerlink" title="grow, mark and tweak your common history"></a>grow, mark and tweak your common history</h5></li>
-<li><p>branch     List, create, or delete branches（分支）</p>
-</li>
-<li><p>checkout   Switch branches or restore working tree files（检出）</p>
-</li>
-<li><p>commit     Record changes to the repository（提交到版本库）</p>
-</li>
-<li><p>diff       Show changes between commits, commit and working tree, etc</p>
-</li>
-<li><p>merge      Join two or more development histories together（合并）</p>
-<blockquote>
-<p>多人开发</p>
-</blockquote>
-</li>
-<li><p>rebase     Reapply commits on top of another base tip</p>
-</li>
-<li><p>tag        Create, list, delete or verify a tag object signed with GPG</p>
-</li>
-</ul>
-<h5 id="collaborate-see-also-git-help-workflows"><a href="#collaborate-see-also-git-help-workflows" class="headerlink" title="collaborate (see also: git help workflows)"></a>collaborate (see also: git help workflows)</h5><ul>
-<li><p>fetch      Download objects and refs from another repository</p>
-<blockquote>
-<p>从远程的分支获取最新版本到本地，不会自动 merge</p>
-<pre><code>#从远程的origin 的 master主分支下载最新的版本到 origin/master分支上 
-git fetch origin master:tmp 
+          （一）git深入学习一、官方说明start a working area (see also: git help tutorial)
+clone      Clone a repository into a new directory
 
-#比较本地的 master 分支和 origin/master 分支的区别
-git diff tmp 
+克隆一个 repo 到一个新的目录
 
-#合并
-git merge tmp
-</code></pre><p> git fetch 相对比 git pull 安全些</p>
-</blockquote>
-</li>
-<li><p>pull       Fetch from and integrate with another repository or a local branch</p>
-<blockquote>
-<p>从远程的分支获取最新的版本，并 merge 到本地</p>
-<pre><code>git pull origin master
-</code></pre><p><strong>fetch + merge = pull</strong></p>
-</blockquote>
-</li>
-<li><p>push       Update remote refs along with associated objects</p>
-</li>
-</ul>
-<h3 id="二、其他用法"><a href="#二、其他用法" class="headerlink" title="二、其他用法"></a>二、其他用法</h3><ul>
-<li><p>remote </p>
-<blockquote>
-<pre><code>git remote    #列出已经存在的分支
-</code></pre><pre><code>git remote -v #列出详细信息，每个名字后面加上地址
-</code></pre></blockquote>
-</li>
-</ul>
-<h3 id="三、具体步骤"><a href="#三、具体步骤" class="headerlink" title="三、具体步骤"></a>三、具体步骤</h3><pre><code>$cd yourRepoDict
-$git init 
-$git add .
-$git commit -m &quot;xxxxx&quot;
-$git remote add origin https://github.com/Yggdrasill-7C9/blog.git
-$git push -u origin master
-</code></pre><h1 id="（二）git深入学习"><a href="#（二）git深入学习" class="headerlink" title="（二）git深入学习"></a>（二）git深入学习</h1><h2 id="一、常见概念"><a href="#一、常见概念" class="headerlink" title="一、常见概念"></a>一、常见概念</h2><p>1、<strong>Git 的核心是一个对象数据库。</strong>所有提交的文件、目录、以及相关的元数据都被储存在该数据库中。</p>
-<ul>
-<li>Blob 对象：储存文件内容。</li>
-<li>Tree 对象：储存目录数据。</li>
-</ul>
-<p>2、提交图：<code>git log --graph</code></p>
-<p>3、Git 主要有两个层面构成：</p>
-<ul>
-<li>瓷质命令（porcelain command）</li>
-<li>管道（plumbing）</li>
-</ul>
-<p>4、快速合并：</p>
-<ul>
-<li>有两个分支 a 和 b。其中 b 并未对内容做任何修改。所以合并 ab的时候，实际就是将指针指向了a    。</li>
-<li>非快进操作：<code>--no-ff</code>：强制产生一次新的提交</li>
-</ul>
-<p>a —— b —— c ——d \</p>
-<p>​             \ ——————e</p>
-<p>创建并切换新分支<code>git checkout -b newbranch</code></p>
-<p>强制切换新分支<code>git checkout --force newbranch</code> </p>
-<p>删除分支 <code>git branch -d nowbranch</code></p>
-<p>强制删除当前分支 <code>git branch -D nowbranch</code> </p>
-<h2 id="二、储藏"><a href="#二、储藏" class="headerlink" title="二、储藏"></a>二、储藏</h2><p>希望在不提交的情况下修改当前版本的其他内容</p>
-<h3 id="1、git-stash"><a href="#1、git-stash" class="headerlink" title="1、git stash"></a>1、git stash</h3><p>git shash 可以将工作区和暂存区中修改 保存在<strong>*储藏栈（stash stack）</strong></p>
-<h3 id="2、git-shash-pop"><a href="#2、git-shash-pop" class="headerlink" title="2、git shash pop"></a>2、git shash pop</h3><p>回复栈顶的被储存修改到<em>工作区</em>中</p>
-<h3 id="3、git-shash-list"><a href="#3、git-shash-list" class="headerlink" title="3、git shash list"></a>3、git shash list</h3><p>查看储藏的修改内容</p>
-<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><p>push</p>
-<p>pull</p>
-<p>merge</p>
-<p>fetch</p>
 
-          
+init       
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/04/24/Git & SVN/github-使用手册/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1193,160 +904,20 @@ $git push -u origin master
       
         
           
-            <h1 id="一、常用参数"><a href="#一、常用参数" class="headerlink" title="一、常用参数"></a>一、常用参数</h1><pre><code class="shell"># -i：include全部HTTP报文
+          一、常用参数# -i：include全部HTTP报文
 # -v：显示请求过程
 # -d：HTTP POST DATA 
 # -X：自定义请求方法。如-X POST
 # -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;
-# -G： --get  Send the -d data with a HTTP GET (H)
-# -o：输出
-# -s：静音模式，不输出任何东西
-# -S, --show-error    Show error. With -s, make curl show errors when they occur
-# -f, --fail         连接失败时不显示http错误 (H)
-
-# 调试的话暂时用到这么多，其他的命令想到在更。这种东西可以直接看英文文档。
-</code></pre>
-<h1 id="二、get-请求"><a href="#二、get-请求" class="headerlink" title="二、get 请求"></a>二、get 请求</h1><pre><code class="shell"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
-curl &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;  
-
-# 显示全部信息:包括起始行、响应头、响应体
-# -i: --include       Include protocol headers in the output (H/F)
-curl -i &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;
-
-# 显示get请求全过程解析 *表示解析过程  &gt;表示请求 &lt;表示响应 
-# -v: --verbose 冗长的
-curl -v &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot; #--verbose
-</code></pre>
-<h1 id="三、post请求"><a href="#三、post请求" class="headerlink" title="三、post请求"></a>三、post请求</h1><pre><code class="shell">#  -d: --data DATA     HTTP POST data (H)
-curl -d &quot;param1=value1&amp;param2=value2&quot; &quot;http://www.baidu.com&quot;
-</code></pre>
-<h1 id="四、JSON-格式的-post-请求"><a href="#四、JSON-格式的-post-请求" class="headerlink" title="四、JSON 格式的 post 请求"></a>四、JSON 格式的 post 请求</h1><pre><code class="shell"># -H: --header LINE   Pass custom header LINE to server (H)
-# -X: --request COMMAND  Specify request command to use
-# -d: --data DATA     HTTP POST data (H)
-curl -l -H &quot;Content-type: application/json&quot; -X POST -d &#39;{&quot;phone&quot;:&quot;13521389587&quot;,&quot;password&quot;:&quot;test&quot;}&#39; http://domain/apis/users.json
-</code></pre>
-<h1 id="五、实例"><a href="#五、实例" class="headerlink" title="五、实例"></a>五、实例</h1><pre><code>URL ：http://7xssni.com1.z0.glb.clouddn.com/home.txt
-</code></pre><pre><code>{
-  &quot;headUrl&quot; : {
-    &quot;headList&quot; : [
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home1.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home2.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home3.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home4.jpg&quot;
-    ]
-  },
-  &quot;homeUrl&quot; : {
-    &quot;dataList&quot; : [
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/1.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;PVC实体塑木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/2.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;3D印花地毯&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/3.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;金刚木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/4.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典菱形软包&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/5.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典防水木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/6.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典花纹墙纸&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/7.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典使用木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/8.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;非洲柚木地板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      }
-    ]
-  }
-}
-</code></pre><h2 id="五、常用命令："><a href="#五、常用命令：" class="headerlink" title="五、常用命令："></a>五、常用命令：</h2><pre><code> -a, --append        Append to target file when uploading (F/SFTP)
- -E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)
- -K, --config FILE   Read config from FILE
- -C, --continue-at OFFSET  Resumed transfer OFFSET
- -b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)
- -c, --cookie-jar FILE  Write cookies to FILE after operation (H)
- -d, --data DATA     HTTP POST data (H)
- -D, --dump-header FILE  Write the received headers to FILE
- -f, --fail          Fail silently (no output at all) on HTTP errors (H)
- -F, --form CONTENT  Specify HTTP multipart POST data (H)
- -P, --ftp-port ADR  Use PORT with given address instead of PASV (F)
- -G, --get           Send the -d data with a HTTP GET (H)
- -g, --globoff       Disable URL sequences and ranges using {} and []
- -H, --header LINE   Pass custom header LINE to server (H)
- -I, --head          Show document info only
- -h, --help          This help text
- -i, --include       Include protocol headers in the output (H/F)
- -k, --insecure      Allow connections to SSL sites without certs (H)
- -j, --junk-session-cookies  Ignore session cookies read from file (H)
- -l, --list-only     List only mode (F/POP3)
- -L, --location      Follow redirects (H)
- -M, --manual        Display the full manual
- -m, --max-time SECONDS  Maximum time allowed for the transfer
- -n, --netrc         Must read .netrc for user name and password
- -N, --no-buffer     Disable buffering of the output stream
- -o, --output FILE   Write to FILE instead of stdout
- -U, --proxy-user USER[:PASSWORD]  Proxy user and password
-     --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port
- -p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)
-     --pubkey KEY    Public key file name (SSH)
- -Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
-     --random-file FILE  File for reading random data from (SSL)
- -r, --range RANGE   Retrieve only the bytes within RANGE
-     --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)
- -e, --referer       Referer URL (H)
- -J, --remote-header-name  Use the header-provided filename (H)
- -O, --remote-name   Write output to a file named as the remote file
-     --remote-name-all  Use the remote file name for all URLs
- -R, --remote-time   Set the remote file&#39;s time on the local output
- -X, --request COMMAND  Specify request command to use
- -S, --show-error    Show error. With -s, make curl show errors when they occur
- -s, --silent        Silent mode (don&#39;t output anything)
- -Y, --speed-limit RATE  Stop transfers below RATE for &#39;speed-time&#39; secs
- -y, --speed-time SECONDS  Trigger &#39;speed-limit&#39; abort after SECONDS (default: 30)
- -t, --telnet-option OPT=VAL  Set telnet option
-     --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)
-     --tftp-no-options  Do not send TFTP options requests
- -z, --time-cond TIME   Transfer based on a time condition
- -T, --upload-file FILE  Transfer FILE to destination
-     --url URL       URL to work with
- -B, --use-ascii     Use ASCII/text transfer
- -u, --user USER[:PASSWORD]  Server user and password
- -A, --user-agent STRING  Send User-Agent STRING to server (H)
- -v, --verbose       Make the operation more talkative
- -V, --version       Show version number and quit
- -w, --write-out FORMAT  Use output FORMAT after completion
- -q, --disable       Disable .curlrc (must be first parameter)
-</code></pre>
-          
+# -G： --
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/01/13/Linux/cUrl使用心得/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1646,7 +1217,7 @@ curl -l -H &quot;Content-type: application/json&quot; -X POST -d &#39;{&quot;pho
   
 
     
-      <script id="dsq-count-scr" src="https://https://yggdrasill-7c9.github.io/.disqus.com/count.js" async></script>
+      <script id="dsq-count-scr" src="https://https-yggdrasill-7c9-github-io.disqus.com/count.js" async></script>
     
 
     
