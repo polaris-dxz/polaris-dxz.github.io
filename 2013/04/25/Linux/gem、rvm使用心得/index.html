@@ -538,21 +538,6 @@ $ source ~/.bash_profile
 
       
       
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        
-        </div>
-      
       
 
       
@@ -716,12 +701,6 @@ $ source ~/.bash_profile
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
-                  <span class="links-of-author-item">
-                    <a href="http://www.baidu.com" target="_blank" title="掘金">
-                      
-                        <i class="fa fa-fw fa-spinner"></i>掘金</a>
-                  </span>
-                
             </div>
           
 
@@ -831,6 +810,12 @@ $ source ~/.bash_profile
     
 
     
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
 
   </div>
 
@@ -857,18 +842,9 @@ $ source ~/.bash_profile
 
 
 
-  
-  
 
 
 
-  
-  
-
-
-
-  
-  
 
 
 
@@ -907,26 +883,6 @@ $ source ~/.bash_profile
   
   
     <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 
@@ -1366,18 +1322,18 @@ $ source ~/.bash_profile
 
   <script>
     
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
     
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 
