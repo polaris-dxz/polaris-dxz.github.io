@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()  @property (nonatomic,strong)UIButton *button1;  @end  @implementation ViewController  -(UIButton *)button1{     if (!_button1) { _butt">
+<meta name="description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()@property (nonatomic,strong)UIButton *button1;@end@implementation ViewController-(UIButton *)button1&amp;#123;    if (!_button1) &amp;#123;_butt">
 <meta name="keywords" content="weak&amp;strong">
 <meta property="og:type" content="article">
 <meta property="og:title" content="weak和 strong">
 <meta property="og:url" content="https://Yggdrasill-7C9.github.io/2014/05/20/iOS开发/iOS 开发基础/weak和-strong/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()  @property (nonatomic,strong)UIButton *button1;  @end  @implementation ViewController  -(UIButton *)button1{     if (!_button1) { _butt">
+<meta property="og:description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()@property (nonatomic,strong)UIButton *button1;@end@implementation ViewController-(UIButton *)button1&amp;#123;    if (!_button1) &amp;#123;_butt">
 <meta property="og:updated_time" content="2018-01-31T08:46:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weak和 strong">
-<meta name="twitter:description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()  @property (nonatomic,strong)UIButton *button1;  @end  @implementation ViewController  -(UIButton *)button1{     if (!_button1) { _butt">
+<meta name="twitter:description" content="@property中 weak 和 strong 的使用先看两段代码： @interface ViewController ()@property (nonatomic,strong)UIButton *button1;@end@implementation ViewController-(UIButton *)button1&amp;#123;    if (!_button1) &amp;#123;_butt">
 
 
 
@@ -407,56 +407,8 @@
 
       
         <p>@property中 weak 和 strong 的使用先看两段代码：</p>
-<pre><code class="Objective-c">@interface ViewController ()
-
-@property (nonatomic,strong)UIButton *button1;
-
-@end
-
-@implementation ViewController
-
--(UIButton *)button1{
-    if (!_button1) {
-_button1=[UIButton buttonWithType:UIButtonTypeCustom];
-        _button1.frame=CGRectMake(50, 50, 100, 100);
-        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];
-_button1.backgroundColor=[UIColor redColor];
-    }
-return _button1;
-
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view addSubview:self.button1];
-}
-
-@end
-</code></pre>
-<pre><code class="objectivec">@interface ViewController ()
-
-@property (nonatomic,weak) UIButton *button2;
-
-@end
-
-@implementation ViewController
-
--(UIButton *)button2{ 
-
-    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(100, 100, 100, 100);
-    [btn setTitle:@&quot;第二个&quot; forState:UIControlStateNormal];
-    btn.backgroundColor=[UIColor yellowColor];
-    return btn;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view addSubview:self.button2];
-}
-
-@end
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic,strong)UIButton *button1;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">-(UIButton *)button1&#123;</span><br><span class="line">    if (!_button1) &#123;</span><br><span class="line">_button1=[UIButton buttonWithType:UIButtonTypeCustom];</span><br><span class="line">        _button1.frame=CGRectMake(50, 50, 100, 100);</span><br><span class="line">        [_button1 setTitle:@&quot;第一个&quot; forState:UIControlStateNormal];</span><br><span class="line">_button1.backgroundColor=[UIColor redColor];</span><br><span class="line">    &#125;</span><br><span class="line">return _button1;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    [self.view addSubview:self.button1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">weak</span>) <span class="built_in">UIButton</span> *button2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line"></span><br><span class="line">-(<span class="built_in">UIButton</span> *)button2&#123; </span><br><span class="line">	</span><br><span class="line">    <span class="built_in">UIButton</span> *btn=[<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">    btn.frame=<span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">    [btn setTitle:<span class="string">@"第二个"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    btn.backgroundColor=[<span class="built_in">UIColor</span> yellowColor];</span><br><span class="line">    <span class="keyword">return</span> btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.button2];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <p>@property：strong：视图被移除时，因为有强引用指向他，所以不再次释放一下，则引用计数就是1</p>
 <p>@property：weak：从父视图移除时，这个 button 就直接释放了，因为是弱引用，所以不对引用计数造成影响（就像 assign）（xib 用 weak）</p>
 <p>weak 的机制：weak 变量能够在引用计数为 0 时被自动设置成 nil，显然是有运行时逻辑在工作的。</p>

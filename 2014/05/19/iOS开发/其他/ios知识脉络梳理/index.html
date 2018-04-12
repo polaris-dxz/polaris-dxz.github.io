@@ -88,16 +88,16 @@
 
 
 
-<meta name="description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有 [obj retain]; // 自己持有对象    不是自己持有的对象，自己无法释放  不在需要自己">
+<meta name="description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios知识脉络梳理">
 <meta property="og:url" content="https://Yggdrasill-7C9.github.io/2014/05/19/iOS开发/其他/ios知识脉络梳理/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有 [obj retain]; // 自己持有对象    不是自己持有的对象，自己无法释放  不在需要自己">
+<meta property="og:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
 <meta property="og:updated_time" content="2018-01-31T08:46:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios知识脉络梳理">
-<meta name="twitter:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有 [obj retain]; // 自己持有对象    不是自己持有的对象，自己无法释放  不在需要自己">
+<meta name="twitter:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
 
 
 
@@ -412,9 +412,7 @@
 </li>
 <li><p>不是自己生成的对象，自己也能持有 （需要手动 retain）</p>
 <blockquote>
-<pre><code class="objective-c">id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有
-[obj retain]; // 自己持有对象
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有</span><br><span class="line">&gt; [obj retain]; // 自己持有对象</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p>不是自己持有的对象，自己无法释放</p>
@@ -510,22 +508,9 @@
 <li>声明该类遵循 NSCopying 协议或者遵循 NSMutableCopying 协议</li>
 <li>实现 -copyWithZone： 方法，该方法生成并持有该对象的副本。</li>
 </ul>
-<h4 id="2、如何重写带关键字的-setter？"><a href="#2、如何重写带关键字的-setter？" class="headerlink" title="2、如何重写带关键字的 setter？"></a>2、如何重写带关键字的 setter？</h4><pre><code class="objective-c">_obj = [obj copy]; // 返回一个该对象的副本
-</code></pre>
+<h4 id="2、如何重写带关键字的-setter？"><a href="#2、如何重写带关键字的-setter？" class="headerlink" title="2、如何重写带关键字的 setter？"></a>2、如何重写带关键字的 setter？</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">_obj = [obj copy]; // 返回一个该对象的副本</span><br></pre></td></tr></table></figure>
 <h4 id="3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"><a href="#3、用-property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？" class="headerlink" title="3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？"></a>3、用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</h4><h4 id="4、深复制（内容复制）和浅复制（指针复制）"><a href="#4、深复制（内容复制）和浅复制（指针复制）" class="headerlink" title="4、深复制（内容复制）和浅复制（指针复制）"></a>4、深复制（内容复制）和浅复制（指针复制）</h4><p>为了弄清这个概念，我们先来弄清楚在 集合与非集合类的 可变和不可变对象分别执行 copy 和 mutableCopy 操作。</p>
-<pre><code class="objective-c">/*
- * 1、无论是集合类和非集合类，只有不可变对象进行 copy 操作是浅复制，其他情况均是深复制，因为副本的结果是不
- *    可变的。其他情况副本的结果是可变的。
- * 
- * 2、集合对象的内容复制仅局限于本身，对于元素来说，仍然是指针复制（浅复制）。所以，集合对象的深复制是单层
- *    深复制。
- */
-
-[immutableObject copy] // 浅复制
-[immutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)
-[mutableObject copy] //深复制 (对集合类来说，是单层深复制)
-[mutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 1、无论是集合类和非集合类，只有不可变对象进行 copy 操作是浅复制，其他情况均是深复制，因为副本的结果是不</span><br><span class="line"> *    可变的。其他情况副本的结果是可变的。</span><br><span class="line"> * </span><br><span class="line"> * 2、集合对象的内容复制仅局限于本身，对于元素来说，仍然是指针复制（浅复制）。所以，集合对象的深复制是单层</span><br><span class="line"> *    深复制。</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">[immutableObject copy] // 浅复制</span><br><span class="line">[immutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)</span><br><span class="line">[mutableObject copy] //深复制 (对集合类来说，是单层深复制)</span><br><span class="line">[mutableObject mutableCopy] //深复制 (对集合类来说，是单层深复制)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>关于叫复制还是叫拷贝，我觉得叫复制更为准确些，这个过程有点像 OSX 复制一个文件的副本的感觉</p>
 <p><a href="http://blog.csdn.net/yi_zz32/article/details/49952727" title="多线程——原子、非原子，自旋锁和互斥锁" target="_blank" rel="noopener">1</a>: <a href="https://www.zybuluo.com/MicroCai/note/50592" target="_blank" rel="noopener">https://www.zybuluo.com/MicroCai/note/50592</a>    “iOS 集合的深复制与浅复制”</p>
@@ -582,9 +567,7 @@
 <h4 id="5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"><a href="#5、-runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）" class="headerlink" title="5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）"></a>5、 runtime如何通过selector找到对应的IMP地址？（分别考虑类方法和实例方法）</h4><blockquote>
 <p>每一个类对象中都一个方法列表,方法列表中记录着方法的名称,方法实现,以及参数类型,其实selector本质就是方法名称,通过这个方法名称就可以在方法列表中找到对应的方法实现。</p>
 </blockquote>
-<pre><code class="objective-c">IMP methodIMP = [self methodForSelector:@selector(foo:)];
-methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implementation的缩写
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IMP methodIMP = [self methodForSelector:@selector(foo:)];</span><br><span class="line">methodIMP(); // 所以 IMP 实际上是一个指针，此处 IMP 应该是Implementation的缩写</span><br></pre></td></tr></table></figure>
 <h4 id="6、objc中的类方法和实例方法有什么本质区别和联系？"><a href="#6、objc中的类方法和实例方法有什么本质区别和联系？" class="headerlink" title="6、objc中的类方法和实例方法有什么本质区别和联系？"></a>6、objc中的类方法和实例方法有什么本质区别和联系？</h4><blockquote>
 <p>类方法：</p>
 <ol>

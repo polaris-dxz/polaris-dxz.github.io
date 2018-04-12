@@ -101,9 +101,7 @@
         
         
           &lt;p&gt;@property中 weak 和 strong 的使用先看两段代码：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;Objective-c&quot;&gt;@interface ViewController ()
-
-@property
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@interface
         
       
     
@@ -376,8 +374,7 @@
       
         
         
-          &lt;h1 id=&quot;一、常用参数&quot;&gt;&lt;a href=&quot;#一、常用参数&quot; class=&quot;headerlink&quot; title=&quot;一、常用参数&quot;&gt;&lt;/a&gt;一、常用参数&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;# -i：include全部HTTP报文
-#
+          &lt;h1 id=&quot;一、常用参数&quot;&gt;&lt;a href=&quot;#一、常用参数&quot; class=&quot;headerlink&quot; title=&quot;一、常用参数&quot;&gt;&lt;/a&gt;一、常用参数&lt;/h1&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     

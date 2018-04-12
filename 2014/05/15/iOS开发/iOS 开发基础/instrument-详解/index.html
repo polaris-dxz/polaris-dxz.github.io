@@ -455,34 +455,10 @@
 </blockquote>
 </li>
 </ul>
-<pre><code class="objective-c">// clean memory
-- (IBAction)clickAction1{
-  char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@&quot;%p&quot;,buf);
-}
-
-// dirty memory
-- (IBAction)clickAction2{
-  char *buf = malloc(100*1024*1024); //100M 虚拟内存
-  NSLog(@&quot;%p&quot;,buf);
-  for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存，剩余97M 虚拟内存
-    buf[i] = rand();
-  }
-}
-
-- (void)cleanOrDirtyMemory{
-
-      NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)
-    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 
-    char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)
-    for(int i=0; i &lt; 3*1024*1024; ++i){ //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)
-    buf[i] = rand();//dirty
-  }
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// clean memory</span><br><span class="line">- (IBAction)clickAction1&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// dirty memory</span><br><span class="line">- (IBAction)clickAction2&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">  for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存，剩余97M 虚拟内存</span><br><span class="line">    buf[i] = rand();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)cleanOrDirtyMemory&#123;</span><br><span class="line">  </span><br><span class="line">  	NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)</span><br><span class="line">    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 </span><br><span class="line">    char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)</span><br><span class="line">    for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)</span><br><span class="line">    buf[i] = rand();//dirty</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="4、VMTracker："><a href="#4、VMTracker：" class="headerlink" title="4、VMTracker："></a>4、VMTracker：</h3><blockquote>
-<pre><code>官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program
-</code></pre></blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
 <ul>
 <li>Dirty Size：</li>
 <li>Swapped Size：</li>

@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="一、常用参数# -i：include全部HTTP报文 # -v：显示请求过程 # -d：HTTP POST DATA  # -X：自定义请求方法。如-X POST # -H：自定义请求头 如 -H &amp;quot;Content-type: application/json&amp;quot; # -G： --get  Send the -d data with a HTTP GET (H) # -o：输出">
+<meta name="description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
 <meta name="keywords" content="cUrl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cUrl使用心得">
 <meta property="og:url" content="https://Yggdrasill-7C9.github.io/2013/01/13/Linux/cUrl使用心得/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="一、常用参数# -i：include全部HTTP报文 # -v：显示请求过程 # -d：HTTP POST DATA  # -X：自定义请求方法。如-X POST # -H：自定义请求头 如 -H &amp;quot;Content-type: application/json&amp;quot; # -G： --get  Send the -d data with a HTTP GET (H) # -o：输出">
+<meta property="og:description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
 <meta property="og:updated_time" content="2018-01-31T08:47:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cUrl使用心得">
-<meta name="twitter:description" content="一、常用参数# -i：include全部HTTP报文 # -v：显示请求过程 # -d：HTTP POST DATA  # -X：自定义请求方法。如-X POST # -H：自定义请求头 如 -H &amp;quot;Content-type: application/json&amp;quot; # -G： --get  Send the -d data with a HTTP GET (H) # -o：输出">
+<meta name="twitter:description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
 
 
 
@@ -406,159 +406,14 @@
       
 
       
-        <h1 id="一、常用参数"><a href="#一、常用参数" class="headerlink" title="一、常用参数"></a>一、常用参数</h1><pre><code class="shell"># -i：include全部HTTP报文
-# -v：显示请求过程
-# -d：HTTP POST DATA 
-# -X：自定义请求方法。如-X POST
-# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;
-# -G： --get  Send the -d data with a HTTP GET (H)
-# -o：输出
-# -s：静音模式，不输出任何东西
-# -S, --show-error    Show error. With -s, make curl show errors when they occur
-# -f, --fail         连接失败时不显示http错误 (H)
+        <h1 id="一、常用参数"><a href="#一、常用参数" class="headerlink" title="一、常用参数"></a>一、常用参数</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> -i：include全部HTTP报文</span><br><span class="line"><span class="meta">#</span> -v：显示请求过程</span><br><span class="line"><span class="meta">#</span> -d：HTTP POST DATA </span><br><span class="line"><span class="meta">#</span> -X：自定义请求方法。如-X POST</span><br><span class="line"><span class="meta">#</span> -H：自定义请求头 如 -H "Content-type: application/json"</span><br><span class="line"><span class="meta">#</span> -G： --get  Send the -d data with a HTTP GET (H)</span><br><span class="line"><span class="meta">#</span> -o：输出</span><br><span class="line"><span class="meta">#</span> -s：静音模式，不输出任何东西</span><br><span class="line"><span class="meta">#</span> -S, --show-error    Show error. With -s, make curl show errors when they occur</span><br><span class="line"><span class="meta">#</span> -f, --fail         连接失败时不显示http错误 (H)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 调试的话暂时用到这么多，其他的命令想到在更。这种东西可以直接看英文文档。</span><br></pre></td></tr></table></figure>
+<h1 id="二、get-请求"><a href="#二、get-请求" class="headerlink" title="二、get 请求"></a>二、get 请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span><br><span class="line">curl "http://7xssni.com1.z0.glb.clouddn.com/home.txt"  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 显示全部信息:包括起始行、响应头、响应体</span><br><span class="line"><span class="meta">#</span> -i: --include       Include protocol headers in the output (H/F)</span><br><span class="line">curl -i "http://7xssni.com1.z0.glb.clouddn.com/home.txt"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 显示get请求全过程解析 *表示解析过程  &gt;表示请求 &lt;表示响应 </span><br><span class="line"><span class="meta">#</span> -v: --verbose 冗长的</span><br><span class="line">curl -v "http://7xssni.com1.z0.glb.clouddn.com/home.txt" #--verbose</span><br></pre></td></tr></table></figure>
+<h1 id="三、post请求"><a href="#三、post请求" class="headerlink" title="三、post请求"></a>三、post请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span>  -d: --data DATA     HTTP POST data (H)</span><br><span class="line">curl -d "param1=value1&amp;param2=value2" "http://www.baidu.com"</span><br></pre></td></tr></table></figure>
+<h1 id="四、JSON-格式的-post-请求"><a href="#四、JSON-格式的-post-请求" class="headerlink" title="四、JSON 格式的 post 请求"></a>四、JSON 格式的 post 请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> -H: --header LINE   Pass custom header LINE to server (H)</span><br><span class="line"><span class="meta">#</span> -X: --request COMMAND  Specify request command to use</span><br><span class="line"><span class="meta">#</span> -d: --data DATA     HTTP POST data (H)</span><br><span class="line">curl -l -H "Content-type: application/json" -X POST -d '&#123;"phone":"13521389587","password":"test"&#125;' http://domain/apis/users.json</span><br></pre></td></tr></table></figure>
+<h1 id="五、实例"><a href="#五、实例" class="headerlink" title="五、实例"></a>五、实例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">URL ：http://7xssni.com1.z0.glb.clouddn.com/home.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;headUrl&quot; : &#123;</span><br><span class="line">    &quot;headList&quot; : [</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home1.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home2.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home3.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home4.jpg&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;homeUrl&quot; : &#123;</span><br><span class="line">    &quot;dataList&quot; : [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/1.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;PVC实体塑木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/2.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;3D印花地毯&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/3.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;金刚木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/4.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典菱形软包&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/5.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典防水木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/6.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典花纹墙纸&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/7.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典使用木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/8.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;非洲柚木地板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五、常用命令："><a href="#五、常用命令：" class="headerlink" title="五、常用命令："></a>五、常用命令：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-a, --append        Append to target file when uploading (F/SFTP)</span><br><span class="line">-E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)</span><br><span class="line">-K, --config FILE   Read config from FILE</span><br><span class="line">-C, --continue-at OFFSET  Resumed transfer OFFSET</span><br><span class="line">-b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)</span><br><span class="line">-c, --cookie-jar FILE  Write cookies to FILE after operation (H)</span><br><span class="line">-d, --data DATA     HTTP POST data (H)</span><br><span class="line">-D, --dump-header FILE  Write the received headers to FILE</span><br><span class="line">-f, --fail          Fail silently (no output at all) on HTTP errors (H)</span><br><span class="line">-F, --form CONTENT  Specify HTTP multipart POST data (H)</span><br><span class="line">-P, --ftp-port ADR  Use PORT with given address instead of PASV (F)</span><br><span class="line">-G, --get           Send the -d data with a HTTP GET (H)</span><br><span class="line">-g, --globoff       Disable URL sequences and ranges using &#123;&#125; and []</span><br><span class="line">-H, --header LINE   Pass custom header LINE to server (H)</span><br><span class="line">-I, --head          Show document info only</span><br><span class="line">-h, --help          This help text</span><br><span class="line">-i, --include       Include protocol headers in the output (H/F)</span><br><span class="line">-k, --insecure      Allow connections to SSL sites without certs (H)</span><br><span class="line">-j, --junk-session-cookies  Ignore session cookies read from file (H)</span><br><span class="line">-l, --list-only     List only mode (F/POP3)</span><br><span class="line">-L, --location      Follow redirects (H)</span><br><span class="line">-M, --manual        Display the full manual</span><br><span class="line">-m, --max-time SECONDS  Maximum time allowed for the transfer</span><br><span class="line">-n, --netrc         Must read .netrc for user name and password</span><br><span class="line">-N, --no-buffer     Disable buffering of the output stream</span><br><span class="line">-o, --output FILE   Write to FILE instead of stdout</span><br><span class="line">-U, --proxy-user USER[:PASSWORD]  Proxy user and password</span><br><span class="line">    --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port</span><br><span class="line">-p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)</span><br><span class="line">    --pubkey KEY    Public key file name (SSH)</span><br><span class="line">-Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)</span><br><span class="line">    --random-file FILE  File for reading random data from (SSL)</span><br><span class="line">-r, --range RANGE   Retrieve only the bytes within RANGE</span><br><span class="line">    --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)</span><br><span class="line">-e, --referer       Referer URL (H)</span><br><span class="line">-J, --remote-header-name  Use the header-provided filename (H)</span><br><span class="line">-O, --remote-name   Write output to a file named as the remote file</span><br><span class="line">    --remote-name-all  Use the remote file name for all URLs</span><br><span class="line">-R, --remote-time   Set the remote file&apos;s time on the local output</span><br><span class="line">-X, --request COMMAND  Specify request command to use</span><br><span class="line">-S, --show-error    Show error. With -s, make curl show errors when they occur</span><br><span class="line">-s, --silent        Silent mode (don&apos;t output anything)</span><br><span class="line">-Y, --speed-limit RATE  Stop transfers below RATE for &apos;speed-time&apos; secs</span><br><span class="line">-y, --speed-time SECONDS  Trigger &apos;speed-limit&apos; abort after SECONDS (default: 30)</span><br><span class="line">-t, --telnet-option OPT=VAL  Set telnet option</span><br><span class="line">    --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)</span><br><span class="line">    --tftp-no-options  Do not send TFTP options requests</span><br><span class="line">-z, --time-cond TIME   Transfer based on a time condition</span><br><span class="line">-T, --upload-file FILE  Transfer FILE to destination</span><br><span class="line">    --url URL       URL to work with</span><br><span class="line">-B, --use-ascii     Use ASCII/text transfer</span><br><span class="line">-u, --user USER[:PASSWORD]  Server user and password</span><br><span class="line">-A, --user-agent STRING  Send User-Agent STRING to server (H)</span><br><span class="line">-v, --verbose       Make the operation more talkative</span><br><span class="line">-V, --version       Show version number and quit</span><br><span class="line">-w, --write-out FORMAT  Use output FORMAT after completion</span><br><span class="line">-q, --disable       Disable .curlrc (must be first parameter)</span><br></pre></td></tr></table></figure>
 
-# 调试的话暂时用到这么多，其他的命令想到在更。这种东西可以直接看英文文档。
-</code></pre>
-<h1 id="二、get-请求"><a href="#二、get-请求" class="headerlink" title="二、get 请求"></a>二、get 请求</h1><pre><code class="shell"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
-curl &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;  
-
-# 显示全部信息:包括起始行、响应头、响应体
-# -i: --include       Include protocol headers in the output (H/F)
-curl -i &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot;
-
-# 显示get请求全过程解析 *表示解析过程  &gt;表示请求 &lt;表示响应 
-# -v: --verbose 冗长的
-curl -v &quot;http://7xssni.com1.z0.glb.clouddn.com/home.txt&quot; #--verbose
-</code></pre>
-<h1 id="三、post请求"><a href="#三、post请求" class="headerlink" title="三、post请求"></a>三、post请求</h1><pre><code class="shell">#  -d: --data DATA     HTTP POST data (H)
-curl -d &quot;param1=value1&amp;param2=value2&quot; &quot;http://www.baidu.com&quot;
-</code></pre>
-<h1 id="四、JSON-格式的-post-请求"><a href="#四、JSON-格式的-post-请求" class="headerlink" title="四、JSON 格式的 post 请求"></a>四、JSON 格式的 post 请求</h1><pre><code class="shell"># -H: --header LINE   Pass custom header LINE to server (H)
-# -X: --request COMMAND  Specify request command to use
-# -d: --data DATA     HTTP POST data (H)
-curl -l -H &quot;Content-type: application/json&quot; -X POST -d &#39;{&quot;phone&quot;:&quot;13521389587&quot;,&quot;password&quot;:&quot;test&quot;}&#39; http://domain/apis/users.json
-</code></pre>
-<h1 id="五、实例"><a href="#五、实例" class="headerlink" title="五、实例"></a>五、实例</h1><pre><code>URL ：http://7xssni.com1.z0.glb.clouddn.com/home.txt
-</code></pre><pre><code>{
-  &quot;headUrl&quot; : {
-    &quot;headList&quot; : [
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home1.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home2.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home3.jpg&quot;,
-      &quot;http://7xssni.com1.z0.glb.clouddn.com/home4.jpg&quot;
-    ]
-  },
-  &quot;homeUrl&quot; : {
-    &quot;dataList&quot; : [
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/1.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;PVC实体塑木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/2.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;3D印花地毯&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/3.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;金刚木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/4.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典菱形软包&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/5.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典防水木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/6.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典花纹墙纸&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/7.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;经典使用木板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      },
-      {
-        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/8.jpg&quot;,
-        &quot;materialList&quot; : &quot;进口&quot;,
-        &quot;titleStr&quot; : &quot;非洲柚木地板&quot;,
-        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;
-      }
-    ]
-  }
-}
-</code></pre><h2 id="五、常用命令："><a href="#五、常用命令：" class="headerlink" title="五、常用命令："></a>五、常用命令：</h2><pre><code> -a, --append        Append to target file when uploading (F/SFTP)
- -E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)
- -K, --config FILE   Read config from FILE
- -C, --continue-at OFFSET  Resumed transfer OFFSET
- -b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)
- -c, --cookie-jar FILE  Write cookies to FILE after operation (H)
- -d, --data DATA     HTTP POST data (H)
- -D, --dump-header FILE  Write the received headers to FILE
- -f, --fail          Fail silently (no output at all) on HTTP errors (H)
- -F, --form CONTENT  Specify HTTP multipart POST data (H)
- -P, --ftp-port ADR  Use PORT with given address instead of PASV (F)
- -G, --get           Send the -d data with a HTTP GET (H)
- -g, --globoff       Disable URL sequences and ranges using {} and []
- -H, --header LINE   Pass custom header LINE to server (H)
- -I, --head          Show document info only
- -h, --help          This help text
- -i, --include       Include protocol headers in the output (H/F)
- -k, --insecure      Allow connections to SSL sites without certs (H)
- -j, --junk-session-cookies  Ignore session cookies read from file (H)
- -l, --list-only     List only mode (F/POP3)
- -L, --location      Follow redirects (H)
- -M, --manual        Display the full manual
- -m, --max-time SECONDS  Maximum time allowed for the transfer
- -n, --netrc         Must read .netrc for user name and password
- -N, --no-buffer     Disable buffering of the output stream
- -o, --output FILE   Write to FILE instead of stdout
- -U, --proxy-user USER[:PASSWORD]  Proxy user and password
-     --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port
- -p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)
-     --pubkey KEY    Public key file name (SSH)
- -Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)
-     --random-file FILE  File for reading random data from (SSL)
- -r, --range RANGE   Retrieve only the bytes within RANGE
-     --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)
- -e, --referer       Referer URL (H)
- -J, --remote-header-name  Use the header-provided filename (H)
- -O, --remote-name   Write output to a file named as the remote file
-     --remote-name-all  Use the remote file name for all URLs
- -R, --remote-time   Set the remote file&#39;s time on the local output
- -X, --request COMMAND  Specify request command to use
- -S, --show-error    Show error. With -s, make curl show errors when they occur
- -s, --silent        Silent mode (don&#39;t output anything)
- -Y, --speed-limit RATE  Stop transfers below RATE for &#39;speed-time&#39; secs
- -y, --speed-time SECONDS  Trigger &#39;speed-limit&#39; abort after SECONDS (default: 30)
- -t, --telnet-option OPT=VAL  Set telnet option
-     --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)
-     --tftp-no-options  Do not send TFTP options requests
- -z, --time-cond TIME   Transfer based on a time condition
- -T, --upload-file FILE  Transfer FILE to destination
-     --url URL       URL to work with
- -B, --use-ascii     Use ASCII/text transfer
- -u, --user USER[:PASSWORD]  Server user and password
- -A, --user-agent STRING  Send User-Agent STRING to server (H)
- -v, --verbose       Make the operation more talkative
- -V, --version       Show version number and quit
- -w, --write-out FORMAT  Use output FORMAT after completion
- -q, --disable       Disable .curlrc (must be first parameter)
-</code></pre>
       
     </div>
     
