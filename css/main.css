@@ -1760,9 +1760,11 @@ pre .javascript .function {
   -webkit-animation: play 0.5s infinite linear;
   animation: play 0.5s infinite linear;
 /* 鼠标经过头像旋转360度 */
+/*
   -webkit-transition: -webkit-transform 0.5s ease-out;
   -moz-transition: -moz-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
+  */
 }
 .site-author-name {
   margin: 0;
@@ -1777,9 +1779,9 @@ pre .javascript .function {
   color: #999;
 }
 img:hover {
-/* 鼠标经过停止头像旋转
-  -webkit-animation-play-state:paused;
-  animation-play-state:paused;*/
+/* 鼠标经过停止头像旋转 */
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 /* 设置动画，貌似没什么卵用
   -webkit-animation-name: resize;
   -webkit-animation-duration: 0.5s;
@@ -2040,7 +2042,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8fffc7;
+  background: #96ff17;
 }
 .links-of-blogroll {
   font-size: 13px;
