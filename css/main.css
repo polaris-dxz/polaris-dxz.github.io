@@ -1756,8 +1756,7 @@ pre .javascript .function {
   box-shadow: inset 0 -1px 0 #333 sf;
 /* 设置循环动画 [animation: (play)动画名称 (2s)动画播放时长单位秒或微秒 (ase-out)动画播放的速度曲线为以低速结束
     (1s)等待1秒然后开始动画 (1)动画播放次数(infinite为循环播放) ]*/
-  -webkit-animation: play 3s linear infinite;
-  animation: play 3s linear infinite;
+  animation: play 2s ase-out 1s 1 infinite;
 /* 鼠标经过头像旋转360度 */
   -webkit-transition: -webkit-transform 0.5s ease-out;
   -moz-transition: -moz-transform 0.5s ease-out;
@@ -2039,7 +2038,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ed5596;
+  background: #b4ff8c;
 }
 .links-of-blogroll {
   font-size: 13px;
