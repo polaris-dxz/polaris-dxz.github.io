@@ -1761,6 +1761,13 @@ pre .javascript .function {
   -moz-transition: -moz-transform 1s ease-out;
   transition: transform 1s ease-out;
 }
+.site-author-image .site-author-image:hover {
+  -webkit-animation-name: resize;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 4;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+}
 .site-author-name {
   margin: 0;
   text-align: center;
@@ -1934,7 +1941,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe99d;
+  background: #3398aa;
 }
 .links-of-blogroll {
   font-size: 13px;
