@@ -1749,7 +1749,7 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
-/* 头像圆形 */
+/* 头像圆形 头像一直转，鼠标经过头像停止转动，可以说我就是鬼畜本人了 */
   border-radius: 80px;
   -webkit-border-radius: 80px;
   -moz-border-radius: 80px;
@@ -2042,7 +2042,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #96ff17;
+  background: #ffff9c;
 }
 .links-of-blogroll {
   font-size: 13px;
