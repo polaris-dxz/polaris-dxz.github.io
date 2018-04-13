@@ -6,36 +6,15 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:www.agumon.top/"/>
-  <updated>2018-04-12T08:59:56.000Z</updated>
+  <updated>2018-01-12T06:51:05.000Z</updated>
   <id>http:www.agumon.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>股票术语</title>
-    <link href="http:www.agumon.top/2018/01/18/%E8%82%A1%E7%A5%A8%E6%9C%AF%E8%AF%AD/"/>
-    <id>http:www.agumon.top/2018/01/18/股票术语/</id>
-    <published>2018-01-18T15:34:23.000Z</published>
-    <updated>2018-04-12T08:59:56.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;股票术语&lt;/p&gt;
-&lt;p&gt;1、市盈率（P/E ratio）&lt;/p&gt;
-&lt;p&gt;市盈率 = （当前每股市场价格）÷ （每股税后利润）&lt;/p&gt;
-&lt;p&gt;动态市盈率：还没有真正实现的下一年度预测利润的市盈率。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="股票投资" scheme="http:www.agumon.top/categories/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>从微信跳一跳学习逆向开发iOS</title>
-    <link href="http:www.agumon.top/2017/12/29/iOS%E5%BC%80%E5%8F%91/iOS%20%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
-    <id>http:www.agumon.top/2017/12/29/iOS开发/iOS 逆向开发/从微信跳一跳学习逆向开发iOS/</id>
+    <link href="http:www.agumon.top/2017/12/29/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
+    <id>http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/</id>
     <published>2017-12-29T09:05:40.000Z</published>
     <updated>2018-01-12T06:51:05.000Z</updated>
     
@@ -59,39 +38,11 @@
   </entry>
   
   <entry>
-    <title>分享几个常用的插件工具</title>
-    <link href="http:www.agumon.top/2016/06/12/Linux/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    <id>http:www.agumon.top/2016/06/12/Linux/分享几个常用的插件工具/</id>
-    <published>2016-06-12T07:12:25.000Z</published>
-    <updated>2018-01-31T08:47:20.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http:www.agumon.top/categories/Linux/"/>
-    
-    
-      <category term="tools" scheme="http:www.agumon.top/tags/tools/"/>
-    
-      <category term="plugins" scheme="http:www.agumon.top/tags/plugins/"/>
-    
-  </entry>
-  
-  <entry>
     <title>weak和 strong</title>
-    <link href="http:www.agumon.top/2014/05/20/iOS%E5%BC%80%E5%8F%91/iOS%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/weak%E5%92%8C-strong/"/>
-    <id>http:www.agumon.top/2014/05/20/iOS开发/iOS 开发基础/weak和-strong/</id>
+    <link href="http:www.agumon.top/2014/05/20/weak%E5%92%8C-strong/"/>
+    <id>http:www.agumon.top/2014/05/20/weak和-strong/</id>
     <published>2014-05-20T02:53:58.000Z</published>
-    <updated>2018-01-31T08:46:39.000Z</updated>
+    <updated>2018-04-13T09:31:20.000Z</updated>
     
     <summary type="html">
     
@@ -114,10 +65,10 @@
   
   <entry>
     <title>ios知识脉络梳理</title>
-    <link href="http:www.agumon.top/2014/05/19/iOS%E5%BC%80%E5%8F%91/%E5%85%B6%E4%BB%96/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
-    <id>http:www.agumon.top/2014/05/19/iOS开发/其他/ios知识脉络梳理/</id>
+    <link href="http:www.agumon.top/2014/05/19/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
+    <id>http:www.agumon.top/2014/05/19/ios知识脉络梳理/</id>
     <published>2014-05-19T15:34:21.000Z</published>
-    <updated>2018-01-31T08:46:09.000Z</updated>
+    <updated>2018-04-13T09:30:38.000Z</updated>
     
     <summary type="html">
     
@@ -138,10 +89,10 @@
   
   <entry>
     <title>ios HTTP请求</title>
-    <link href="http:www.agumon.top/2014/05/16/iOS%E5%BC%80%E5%8F%91/iOS%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
-    <id>http:www.agumon.top/2014/05/16/iOS开发/iOS 开发基础/ios-HTTP请求/</id>
+    <link href="http:www.agumon.top/2014/05/16/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>http:www.agumon.top/2014/05/16/ios-HTTP请求/</id>
     <published>2014-05-16T12:56:40.000Z</published>
-    <updated>2018-01-31T08:46:33.000Z</updated>
+    <updated>2018-04-13T09:29:34.000Z</updated>
     
     <summary type="html">
     
@@ -164,8 +115,8 @@
   
   <entry>
     <title>instrument 详解</title>
-    <link href="http:www.agumon.top/2014/05/15/iOS%E5%BC%80%E5%8F%91/iOS%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/instrument-%E8%AF%A6%E8%A7%A3/"/>
-    <id>http:www.agumon.top/2014/05/15/iOS开发/iOS 开发基础/instrument-详解/</id>
+    <link href="http:www.agumon.top/2014/05/15/instrument-%E8%AF%A6%E8%A7%A3/"/>
+    <id>http:www.agumon.top/2014/05/15/instrument-详解/</id>
     <published>2014-05-15T15:26:11.000Z</published>
     <updated>2018-04-13T02:27:51.000Z</updated>
     
@@ -190,8 +141,8 @@
   
   <entry>
     <title> 闭包、lambda 计算、block</title>
-    <link href="http:www.agumon.top/2014/05/15/iOS%E5%BC%80%E5%8F%91/iOS%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
-    <id>http:www.agumon.top/2014/05/15/iOS开发/iOS 开发基础/闭包、lambda-计算、block/</id>
+    <link href="http:www.agumon.top/2014/05/15/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
+    <id>http:www.agumon.top/2014/05/15/闭包、lambda-计算、block/</id>
     <published>2014-05-15T07:07:23.000Z</published>
     <updated>2018-04-13T09:20:35.000Z</updated>
     
@@ -212,59 +163,9 @@
   </entry>
   
   <entry>
-    <title>UITableView详解</title>
-    <link href="http:www.agumon.top/2014/05/14/iOS%E5%BC%80%E5%8F%91/%E6%8E%A7%E4%BB%B6/UITableView%E8%AF%A6%E8%A7%A3/"/>
-    <id>http:www.agumon.top/2014/05/14/iOS开发/控件/UITableView详解/</id>
-    <published>2014-05-14T00:32:25.000Z</published>
-    <updated>2018-01-31T08:51:01.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="UITableView" scheme="http:www.agumon.top/tags/UITableView/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>@interface编写规范</title>
-    <link href="http:www.agumon.top/2014/01/10/iOS%E5%BC%80%E5%8F%91/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/iOS%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
-    <id>http:www.agumon.top/2014/01/10/iOS开发/开发笔记/iOS开发笔记/</id>
-    <published>2014-01-10T12:58:02.000Z</published>
-    <updated>2018-02-03T16:05:06.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Http - Web 基础概述</title>
-    <link href="http:www.agumon.top/2013/05/13/HTTP/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"/>
-    <id>http:www.agumon.top/2013/05/13/HTTP/Http报文详解/</id>
+    <link href="http:www.agumon.top/2013/05/13/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"/>
+    <id>http:www.agumon.top/2013/05/13/Http报文详解/</id>
     <published>2013-05-13T08:58:34.000Z</published>
     <updated>2018-01-31T08:45:46.000Z</updated>
     
@@ -286,86 +187,6 @@
       <category term="Http 报文" scheme="http:www.agumon.top/tags/Http-%E6%8A%A5%E6%96%87/"/>
     
       <category term="URL" scheme="http:www.agumon.top/tags/URL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gem、rvm使用心得</title>
-    <link href="http:www.agumon.top/2013/04/25/Linux/gem%E3%80%81rvm%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
-    <id>http:www.agumon.top/2013/04/25/Linux/gem、rvm使用心得/</id>
-    <published>2013-04-25T09:06:37.000Z</published>
-    <updated>2018-01-16T03:16:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http:www.agumon.top/categories/Linux/"/>
-    
-    
-      <category term="gem" scheme="http:www.agumon.top/tags/gem/"/>
-    
-      <category term="rvm" scheme="http:www.agumon.top/tags/rvm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 深入学习</title>
-    <link href="http:www.agumon.top/2013/04/24/lowb/github-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
-    <id>http:www.agumon.top/2013/04/24/lowb/github-使用手册/</id>
-    <published>2013-04-24T09:07:16.000Z</published>
-    <updated>2018-01-16T03:14:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="git&amp;svn" scheme="http:www.agumon.top/categories/git-svn/"/>
-    
-    
-      <category term="github" scheme="http:www.agumon.top/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cUrl使用心得</title>
-    <link href="http:www.agumon.top/2013/01/13/Linux/cUrl%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
-    <id>http:www.agumon.top/2013/01/13/Linux/cUrl使用心得/</id>
-    <published>2013-01-13T06:32:40.000Z</published>
-    <updated>2018-01-31T08:47:01.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http:www.agumon.top/categories/Linux/"/>
-    
-    
-      <category term="cUrl" scheme="http:www.agumon.top/tags/cUrl/"/>
     
   </entry>
   
