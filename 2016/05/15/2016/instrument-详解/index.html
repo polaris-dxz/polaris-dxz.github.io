@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="instrument," />
 
 
 
@@ -88,13 +88,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http:www.agumon.top/categories/index.html">
+<meta name="description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta name="keywords" content="instrument">
+<meta property="og:type" content="article">
+<meta property="og:title" content="instrument 详解">
+<meta property="og:url" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:updated_time" content="2018-04-11T07:28:55.000Z">
+<meta property="og:description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta property="og:image" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/instrument.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:updated_time" content="2018-04-13T09:38:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
+<meta name="twitter:title" content="instrument 详解">
+<meta name="twitter:description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta name="twitter:image" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/instrument.png">
 
 
 
@@ -124,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http:www.agumon.top/categories/"/>
+  <link rel="canonical" href="http:www.agumon.top/2016/05/15/2016/instrument-详解/"/>
 
 
 
 
 
-  <title>All categories | 温故而知新</title>
+  <title>instrument 详解 | 温故而知新</title>
   
 
 
@@ -285,40 +292,324 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2016/05/15/2016/instrument-详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温故而知新">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">All categories</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 5 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Http/">Http</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS开发/">iOS开发</a><span class="category-list-count">6</span></li></ul>
-            </div>
-          </div>
+          <h2 class="post-title" itemprop="name headline">instrument 详解</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T23:26:11+08:00">
+                2016-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>[TOC]</p>
+<p><img src="instrument.png" alt=""></p>
+<h2 id="一、Blank"><a href="#一、Blank" class="headerlink" title="一、Blank"></a>一、Blank</h2><h2 id="二、Activity-Monitor（活动监视器）"><a href="#二、Activity-Monitor（活动监视器）" class="headerlink" title="二、Activity Monitor（活动监视器）"></a>二、Activity Monitor（活动监视器）</h2><h2 id="三、Allocations（内存分配）"><a href="#三、Allocations（内存分配）" class="headerlink" title="三、Allocations（内存分配）"></a>三、Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<h3 id="1、程序员对内存关注的点"><a href="#1、程序员对内存关注的点" class="headerlink" title="1、程序员对内存关注的点"></a>1、程序员对内存关注的点</h3><ul>
+<li><p>正确使用</p>
+<ul>
+<li><p>避免非法访问</p>
+<blockquote>
+<p>即避免访问被释放掉的内存。release 后不能再 retain。</p>
+</blockquote>
+</li>
+<li><p>避免内存泄漏</p>
+</li>
+</ul>
+</li>
+<li><p>高效使用</p>
+<ul>
+<li>降低内存峰值</li>
+<li>处理内存警告</li>
+<li>Cache</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、Regions（区域）"><a href="#2、Regions（区域）" class="headerlink" title="2、Regions（区域）"></a>2、Regions（区域）</h3><p>以下内容参考自 <a href="https://stackoverflow.com/questions/13437365/what-is-resident-and-dirty-memory-of-ios!" target="_blank" rel="noopener">Stack Overflow</a></p>
+<p>视频链接：<a href="https://www.imooc.com/video/11075" target="_blank" rel="noopener">iOS内存管理及优化</a></p>
+<ul>
+<li>Clean Memory：在闪存中有备份，能够再次读取。主要包括<code>system framework</code>、<code>binary executable of your app</code>、<code>memory mapped files</code></li>
+<li>Dirty Memory：所有非<code>Clean Memory</code>，<strong>系统无法回收</strong>。包括<code>Heap allocation</code>、<code>caches</code>、<code>decompressed images</code>（解压的图片）</li>
+</ul>
+<h3 id="3、虚拟内存之间的关系"><a href="#3、虚拟内存之间的关系" class="headerlink" title="3、虚拟内存之间的关系"></a>3、虚拟内存之间的关系</h3><ul>
+<li><p>虚拟内存层面：（逻辑内存）</p>
+<blockquote>
+<p> virtual memory = clean memory + dirty memory.</p>
+</blockquote>
+</li>
+<li><p>物理内存层面：</p>
+<blockquote>
+<p>resident memory= dirty memory+clean memory that loaded in physical memory</p>
+</blockquote>
+</li>
+<li><p>总结：</p>
+<blockquote>
+<p>virtual memory == (clean memory + dirty memory) &gt; resident memory &gt;dirty memory</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// clean memory</span><br><span class="line">- (IBAction)clickAction1&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// dirty memory</span><br><span class="line">- (IBAction)clickAction2&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">  for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存，剩余97M 虚拟内存</span><br><span class="line">    buf[i] = rand();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)cleanOrDirtyMemory&#123;</span><br><span class="line">  </span><br><span class="line">  	NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)</span><br><span class="line">    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 </span><br><span class="line">    char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)</span><br><span class="line">    for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)</span><br><span class="line">    buf[i] = rand();//dirty</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、VMTracker："><a href="#4、VMTracker：" class="headerlink" title="4、VMTracker："></a>4、VMTracker：</h3><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>Dirty Size：</li>
+<li>Swapped Size：</li>
+<li>Resident Size：</li>
+</ul>
+<h3 id="5、参数："><a href="#5、参数：" class="headerlink" title="5、参数："></a>5、参数：</h3><ul>
+<li><p>图形列（Graph）：</p>
+<blockquote>
+<p>当指定类别的复选框被勾选时,instrument工具在跟踪面板里面显示特定类别的图形。 Instruments 应用通常给每个图形类别赋一个颜色。</p>
+</blockquote>
+</li>
+<li><p>类别(Category)：</p>
+<blockquote>
+<p>通常是一个 Core Foundation 对象、Objective-C 类、或者 malloc 出来的内存空间。</p>
+</blockquote>
+</li>
+<li><p>净分配字节数(Persistent Bytes)：</p>
+<blockquote>
+<p>当前已经分配内存但是仍然没有被释放的字节的总数。</p>
+</blockquote>
+</li>
+<li><p>净分配数(#Persistent)：</p>
+<blockquote>
+<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
+</blockquote>
+</li>
+<li><p>临时分配数(#Transient)：</p>
+<blockquote>
+<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
+</blockquote>
+</li>
+<li><p>总分配字节数(Total Bytes)：</p>
+<blockquote>
+<p>所有已经分配内存,而且包括已经被释放了的字节的总数。</p>
+</blockquote>
+</li>
+<li><p>总分配数(#Total)：</p>
+<blockquote>
+<p>所有当前已经分配内存,包括已经被释放了的对象或内存 块的总数。</p>
+</blockquote>
+</li>
+<li><p>临时分配/全部内存分配(Transient/Total Bytes)：</p>
+<blockquote>
+<p>当前和全部分配数的直方图。如上图所示当比例变化时,直方条会变颜色，Instruments 应用通常给它们标示不同的颜色来指出分配模式以便进行进一步的研究。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、Cocoa-Layout"><a href="#四、Cocoa-Layout" class="headerlink" title="四、Cocoa Layout"></a>四、Cocoa Layout</h2><h2 id="五、Core-Animation"><a href="#五、Core-Animation" class="headerlink" title="五、Core Animation"></a>五、Core Animation</h2><h2 id="六、Core-Data"><a href="#六、Core-Data" class="headerlink" title="六、Core Data"></a>六、Core Data</h2><h2 id="七、Counters（计数器）"><a href="#七、Counters（计数器）" class="headerlink" title="七、Counters（计数器）"></a>七、Counters（计数器）</h2><h2 id="八、Energy-Log"><a href="#八、Energy-Log" class="headerlink" title="八、Energy Log"></a>八、Energy Log</h2><h2 id="九、File-Activity"><a href="#九、File-Activity" class="headerlink" title="九、File Activity"></a>九、File Activity</h2><h2 id="十、Leaks（内存泄漏）"><a href="#十、Leaks（内存泄漏）" class="headerlink" title="十、Leaks（内存泄漏）"></a>十、Leaks（内存泄漏）</h2><h2 id="十一、Metal-System-Trace"><a href="#十一、Metal-System-Trace" class="headerlink" title="十一、Metal System Trace"></a>十一、Metal System Trace</h2><h2 id="十二、Network"><a href="#十二、Network" class="headerlink" title="十二、Network"></a>十二、Network</h2><h2 id="十三、SceneKit"><a href="#十三、SceneKit" class="headerlink" title="十三、SceneKit"></a>十三、SceneKit</h2><h2 id="十四、System-Trace（系统跟踪）"><a href="#十四、System-Trace（系统跟踪）" class="headerlink" title="十四、System Trace（系统跟踪）"></a>十四、System Trace（系统跟踪）</h2><h2 id="十五、System-Usage"><a href="#十五、System-Usage" class="headerlink" title="十五、System Usage"></a>十五、System Usage</h2><p> ios 模拟器暂不支持</p>
+<h2 id="十六、Time-profiler"><a href="#十六、Time-profiler" class="headerlink" title="十六、Time profiler"></a>十六、Time profiler</h2><h2 id="十七、Zombies（僵尸）"><a href="#十七、Zombies（僵尸）" class="headerlink" title="十七、Zombies（僵尸）"></a>十七、Zombies（僵尸）</h2>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.JPG" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.JPG" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http:www.agumon.top/2016/05/15/2016/instrument-详解/" title="instrument 详解">http:www.agumon.top/2016/05/15/2016/instrument-详解/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/instrument/" rel="tag"># instrument</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/12/19/2014/ios知识脉络梳理/" rel="next" title="ios知识脉络梳理">
+                <i class="fa fa-chevron-left"></i> ios知识脉络梳理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" rel="prev" title="从微信跳一跳学习逆向开发iOS">
+                从微信跳一跳学习逆向开发iOS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -361,8 +652,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +773,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Blank"><span class="nav-number">1.</span> <span class="nav-text">一、Blank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Activity-Monitor（活动监视器）"><span class="nav-number">2.</span> <span class="nav-text">二、Activity Monitor（活动监视器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Allocations（内存分配）"><span class="nav-number">3.</span> <span class="nav-text">三、Allocations（内存分配）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、程序员对内存关注的点"><span class="nav-number">3.1.</span> <span class="nav-text">1、程序员对内存关注的点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Regions（区域）"><span class="nav-number">3.2.</span> <span class="nav-text">2、Regions（区域）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、虚拟内存之间的关系"><span class="nav-number">3.3.</span> <span class="nav-text">3、虚拟内存之间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、VMTracker："><span class="nav-number">3.4.</span> <span class="nav-text">4、VMTracker：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、参数："><span class="nav-number">3.5.</span> <span class="nav-text">5、参数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Cocoa-Layout"><span class="nav-number">4.</span> <span class="nav-text">四、Cocoa Layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、Core-Animation"><span class="nav-number">5.</span> <span class="nav-text">五、Core Animation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、Core-Data"><span class="nav-number">6.</span> <span class="nav-text">六、Core Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、Counters（计数器）"><span class="nav-number">7.</span> <span class="nav-text">七、Counters（计数器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、Energy-Log"><span class="nav-number">8.</span> <span class="nav-text">八、Energy Log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九、File-Activity"><span class="nav-number">9.</span> <span class="nav-text">九、File Activity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十、Leaks（内存泄漏）"><span class="nav-number">10.</span> <span class="nav-text">十、Leaks（内存泄漏）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一、Metal-System-Trace"><span class="nav-number">11.</span> <span class="nav-text">十一、Metal System Trace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二、Network"><span class="nav-number">12.</span> <span class="nav-text">十二、Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三、SceneKit"><span class="nav-number">13.</span> <span class="nav-text">十三、SceneKit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十四、System-Trace（系统跟踪）"><span class="nav-number">14.</span> <span class="nav-text">十四、System Trace（系统跟踪）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十五、System-Usage"><span class="nav-number">15.</span> <span class="nav-text">十五、System Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十六、Time-profiler"><span class="nav-number">16.</span> <span class="nav-text">十六、Time profiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十七、Zombies（僵尸）"><span class="nav-number">17.</span> <span class="nav-text">十七、Zombies（僵尸）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -664,9 +980,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http:www.agumon.top/categories/index.html';
-          this.page.identifier = 'categories/index.html';
-          this.page.title = 'All categories';
+          this.page.url = 'http:www.agumon.top/2016/05/15/2016/instrument-详解/';
+          this.page.identifier = '2016/05/15/2016/instrument-详解/';
+          this.page.title = 'instrument 详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-yggdrasill-7c9-github-io.disqus.com/embed.js';

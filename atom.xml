@@ -6,17 +6,17 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:www.agumon.top/"/>
-  <updated>2018-01-12T06:51:05.000Z</updated>
+  <updated>2018-04-13T09:33:44.000Z</updated>
   <id>http:www.agumon.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>从微信跳一跳学习逆向开发iOS</title>
-    <link href="http:www.agumon.top/2017/12/29/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
-    <id>http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/</id>
+    <link href="http:www.agumon.top/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
+    <id>http:www.agumon.top/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/</id>
     <published>2017-12-29T09:05:40.000Z</published>
-    <updated>2018-01-12T06:51:05.000Z</updated>
+    <updated>2018-04-13T09:33:44.000Z</updated>
     
     <summary type="html">
     
@@ -38,87 +38,11 @@
   </entry>
   
   <entry>
-    <title>weak和 strong</title>
-    <link href="http:www.agumon.top/2014/05/20/weak%E5%92%8C-strong/"/>
-    <id>http:www.agumon.top/2014/05/20/weak和-strong/</id>
-    <published>2014-05-20T02:53:58.000Z</published>
-    <updated>2018-04-13T09:31:20.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="weak&amp;strong" scheme="http:www.agumon.top/tags/weak-strong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ios知识脉络梳理</title>
-    <link href="http:www.agumon.top/2014/05/19/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
-    <id>http:www.agumon.top/2014/05/19/ios知识脉络梳理/</id>
-    <published>2014-05-19T15:34:21.000Z</published>
-    <updated>2018-04-13T09:30:38.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ios HTTP请求</title>
-    <link href="http:www.agumon.top/2014/05/16/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
-    <id>http:www.agumon.top/2014/05/16/ios-HTTP请求/</id>
-    <published>2014-05-16T12:56:40.000Z</published>
-    <updated>2018-04-13T09:29:34.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="网络请求" scheme="http:www.agumon.top/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
-    
-  </entry>
-  
-  <entry>
     <title>instrument 详解</title>
-    <link href="http:www.agumon.top/2014/05/15/instrument-%E8%AF%A6%E8%A7%A3/"/>
-    <id>http:www.agumon.top/2014/05/15/instrument-详解/</id>
-    <published>2014-05-15T15:26:11.000Z</published>
-    <updated>2018-04-13T02:27:51.000Z</updated>
+    <link href="http:www.agumon.top/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/"/>
+    <id>http:www.agumon.top/2016/05/15/2016/instrument-详解/</id>
+    <published>2016-05-15T15:26:11.000Z</published>
+    <updated>2018-04-13T09:38:43.000Z</updated>
     
     <summary type="html">
     
@@ -140,15 +64,74 @@
   </entry>
   
   <entry>
-    <title> 闭包、lambda 计算、block</title>
-    <link href="http:www.agumon.top/2014/05/15/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
-    <id>http:www.agumon.top/2014/05/15/闭包、lambda-计算、block/</id>
-    <published>2014-05-15T07:07:23.000Z</published>
-    <updated>2018-04-13T09:20:35.000Z</updated>
+    <title>ios知识脉络梳理</title>
+    <link href="http:www.agumon.top/2014/12/19/2014/ios%E7%9F%A5%E8%AF%86%E8%84%89%E7%BB%9C%E6%A2%B3%E7%90%86/"/>
+    <id>http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/</id>
+    <published>2014-12-19T15:34:21.000Z</published>
+    <updated>2018-04-13T09:41:42.000Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;block&quot;&gt;&lt;a href=&quot;#block&quot; class=&quot;headerlink&quot; title=&quot;block&quot;&gt;&lt;/a&gt;block&lt;/h1&gt;&lt;p&gt;导读：&lt;/p&gt;
+      &lt;p&gt;本文收录并整理了一些 iOS 开发知识盲点。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>weak和 strong</title>
+    <link href="http:www.agumon.top/2014/05/20/2014/weak%E5%92%8C-strong/"/>
+    <id>http:www.agumon.top/2014/05/20/2014/weak和-strong/</id>
+    <published>2014-05-20T02:53:58.000Z</published>
+    <updated>2018-04-13T09:43:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;强引用和弱引用常考知识点和易错盲点&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="weak&amp;strong" scheme="http:www.agumon.top/tags/weak-strong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ios HTTP请求</title>
+    <link href="http:www.agumon.top/2014/05/16/2014/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>http:www.agumon.top/2014/05/16/2014/ios-HTTP请求/</id>
+    <published>2014-05-16T12:56:40.000Z</published>
+    <updated>2018-04-13T09:44:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;iOS9引入了新特性 &lt;a href=&quot;https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;App Transport Security (ATS)&lt;/a&gt;，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。&lt;/p&gt;
+&lt;p&gt;ios Http 请求，已更新。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http:www.agumon.top/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="网络请求" scheme="http:www.agumon.top/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title> 闭包、lambda 计算、block</title>
+    <link href="http:www.agumon.top/2014/05/15/2014/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
+    <id>http:www.agumon.top/2014/05/15/2014/闭包、lambda-计算、block/</id>
+    <published>2014-05-15T07:07:23.000Z</published>
+    <updated>2018-04-13T09:39:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;导读：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;什么是 block？&lt;/li&gt;
 &lt;li&gt;block 基本原理是什么？&lt;/li&gt;
@@ -164,10 +147,10 @@
   
   <entry>
     <title>Http - Web 基础概述</title>
-    <link href="http:www.agumon.top/2013/05/13/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"/>
-    <id>http:www.agumon.top/2013/05/13/Http报文详解/</id>
+    <link href="http:www.agumon.top/2013/05/13/2013/Http%E6%8A%A5%E6%96%87%E8%AF%A6%E8%A7%A3/"/>
+    <id>http:www.agumon.top/2013/05/13/2013/Http报文详解/</id>
     <published>2013-05-13T08:58:34.000Z</published>
-    <updated>2018-01-31T08:45:46.000Z</updated>
+    <updated>2018-04-13T09:45:49.000Z</updated>
     
     <summary type="html">
     
@@ -187,6 +170,32 @@
       <category term="Http 报文" scheme="http:www.agumon.top/tags/Http-%E6%8A%A5%E6%96%87/"/>
     
       <category term="URL" scheme="http:www.agumon.top/tags/URL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cUrl使用心得</title>
+    <link href="http:www.agumon.top/2013/01/13/2013/cUrl%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    <id>http:www.agumon.top/2013/01/13/2013/cUrl使用心得/</id>
+    <published>2013-01-13T06:32:40.000Z</published>
+    <updated>2018-01-31T08:47:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http:www.agumon.top/categories/Linux/"/>
+    
+    
+      <category term="cUrl" scheme="http:www.agumon.top/tags/cUrl/"/>
     
   </entry>
   

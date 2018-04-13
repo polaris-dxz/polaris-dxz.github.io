@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Http 报文,URL," />
 
 
 
@@ -88,13 +88,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http:www.agumon.top/categories/index.html">
+<meta name="description" content="[TOC] 一、HTTP报文 Http 报文分为请求报文（request）和响应报文（response），主要分三部分：  1、起始行 请求行：包含了一个方法和 URL（路径） 以及 HTTP 版本  响应行：包含了 HTTP 版本，状态码和原因短语  方法：  分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。   状态码：  状态码位于响应的起始行中； 状态码数在每条响应报文的起始">
+<meta name="keywords" content="Http 报文,URL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Http - Web 基础概述">
+<meta property="og:url" content="http:www.agumon.top/2013/05/13/2013/Http报文详解/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:updated_time" content="2018-04-11T07:28:55.000Z">
+<meta property="og:description" content="[TOC] 一、HTTP报文 Http 报文分为请求报文（request）和响应报文（response），主要分三部分：  1、起始行 请求行：包含了一个方法和 URL（路径） 以及 HTTP 版本  响应行：包含了 HTTP 版本，状态码和原因短语  方法：  分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。   状态码：  状态码位于响应的起始行中； 状态码数在每条响应报文的起始">
+<meta property="og:image" content="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png">
+<meta property="og:image" content="http:www.agumon.top/2013/05/13/2013/Http报文详解/响应报文首部.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
+<meta property="og:image" content="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2018-04-13T09:45:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
+<meta name="twitter:title" content="Http - Web 基础概述">
+<meta name="twitter:description" content="[TOC] 一、HTTP报文 Http 报文分为请求报文（request）和响应报文（response），主要分三部分：  1、起始行 请求行：包含了一个方法和 URL（路径） 以及 HTTP 版本  响应行：包含了 HTTP 版本，状态码和原因短语  方法：  分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。   状态码：  状态码位于响应的起始行中； 状态码数在每条响应报文的起始">
+<meta name="twitter:image" content="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png">
 
 
 
@@ -124,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http:www.agumon.top/categories/"/>
+  <link rel="canonical" href="http:www.agumon.top/2013/05/13/2013/Http报文详解/"/>
 
 
 
 
 
-  <title>All categories | 温故而知新</title>
+  <title>Http - Web 基础概述 | 温故而知新</title>
   
 
 
@@ -285,40 +294,333 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2013/05/13/2013/Http报文详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温故而知新">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">All categories</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 5 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Http/">Http</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS开发/">iOS开发</a><span class="category-list-count">6</span></li></ul>
-            </div>
-          </div>
+          <h2 class="post-title" itemprop="name headline">Http - Web 基础概述</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-05-13T16:58:34+08:00">
+                2013-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Http/" itemprop="url" rel="index">
+                    <span itemprop="name">Http</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>[TOC]</p>
+<h1 id="一、HTTP报文"><a href="#一、HTTP报文" class="headerlink" title="一、HTTP报文"></a>一、HTTP报文</h1><p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png" alt=""></p>
+<p>Http 报文分为请求报文（request）和响应报文（response），主要分三部分：</p>
+<ul>
+<li><h2 id="1、起始行"><a href="#1、起始行" class="headerlink" title="1、起始行"></a>1、起始行</h2><ul>
+<li><p>请求行：<strong>包含了一个方法和 URL（路径） 以及 HTTP 版本</strong></p>
+</li>
+<li><p>响应行：包含了 HTTP 版本，状态码和原因短语</p>
+</li>
+<li><p>方法：</p>
+<blockquote>
+<p>分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
+</blockquote>
+</li>
+<li><p>状态码：</p>
+<blockquote>
+<p>状态码位于响应的起始行中；</p>
+<p>状态码数在每条响应报文的起始行中返回的；</p>
+</blockquote>
+</li>
+<li><p>原因短语：</p>
+<blockquote>
+<p>通常与状态码成对出现，如200 OK（描述操作状态的、文本的形式的原因短语）</p>
+</blockquote>
+</li>
+<li><p>版本号：</p>
+<blockquote>
+<p><strong>注意，版本号不会被当做小数处理，2.22要比2.3要大</strong> </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h2 id="2、首部（请求头、响应头、head）"><a href="#2、首部（请求头、响应头、head）" class="headerlink" title="2、首部（请求头、响应头、head）"></a>2、首部（请求头、响应头、head）</h2><ul>
+<li>通用首部</li>
+<li>请求首部<ul>
+<li>Accept 首部</li>
+<li>条件请求首部</li>
+<li>安全请求首部</li>
+<li>代理请求首部</li>
+</ul>
+</li>
+<li>响应首部<ul>
+<li>协商首部</li>
+<li>安全响应首部</li>
+</ul>
+</li>
+<li>实体首部<ul>
+<li>内容首部（Content）</li>
+<li>实体缓存首部</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="3、主体（请求体、响应体、body）"><a href="#3、主体（请求体、响应体、body）" class="headerlink" title="3、主体（请求体、响应体、body）"></a>3、主体（请求体、响应体、body）</h2></li>
+</ul>
+<p><img src="响应报文首部.png" alt="响应报文首部"></p>
+<h1 id="二、URL"><a href="#二、URL" class="headerlink" title="二、URL"></a>二、URL</h1><p>##1、URL 语法</p>
+<p><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params1>;<params2>?<query>&amp;<query2>#<flag></flag></query2></query></params2></params1></port></host></password></user></scheme></p>
+<p>方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</p>
+<blockquote>
+<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
+<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
+<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
+</blockquote>
+<h2 id="2、一些常见的概念"><a href="#2、一些常见的概念" class="headerlink" title="2、一些常见的概念"></a>2、一些常见的概念</h2><h3 id="（1）-URI"><a href="#（1）-URI" class="headerlink" title="（1） URI"></a>（1） URI</h3><p>URI（统一资源标识符）</p>
+<ul>
+<li>URL（统一资源定位符）</li>
+<li>URN（统一资源名）</li>
+</ul>
+<h3 id="（1）RFC"><a href="#（1）RFC" class="headerlink" title="（1）RFC"></a>（1）RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
+<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
+<h3 id="（3）事物"><a href="#（3）事物" class="headerlink" title="（3）事物"></a>（3）事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
+<p>事物 = 请求 + 响应</p>
+<h3 id="（4）TCP"><a href="#（4）TCP" class="headerlink" title="（4）TCP"></a>（4）TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<strong><em>转发 HTTP 报文</em></strong>。</p>
+<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
+<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
+<p>作用：</p>
+<ul>
+<li>无差错的数据传输</li>
+<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
+<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
+</ul>
+<h3 id="（5）隧道（tunnel）"><a href="#（5）隧道（tunnel）" class="headerlink" title="（5）隧道（tunnel）"></a>（5）隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
+<h3 id="（6）SSL"><a href="#（6）SSL" class="headerlink" title="（6）SSL"></a>（6）SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""></p>
+<h3 id="（7）代理与-Agent-代理"><a href="#（7）代理与-Agent-代理" class="headerlink" title="（7）代理与 Agent 代理"></a>（7）代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
+<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
+<h3 id="（8）报文流"><a href="#（8）报文流" class="headerlink" title="（8）报文流"></a>（8）报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
+<p>HTTP 使用流入和流出描述<strong><em>事务处理</em></strong>的方向。</p>
+<p>客服端\</p>
+<p>​           服务器</p>
+<p>客户端/</p>
+<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><p>###1、OSI 七层协议和 TCP/IP 五层网络协议</p>
+<p>总结为一句话：应表会、传网数物（五层协议中应表会为一层）。</p>
+<p>###2、TCP 协议中的三次握手</p>
+<p>总结为一句话：“船~来~了！船~来~了~吗？船~来~了。”之后服务器把船开往客服端。</p>
+<p><img src="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<h3 id="3、TCP-慢启动（slow-shtar）"><a href="#3、TCP-慢启动（slow-shtar）" class="headerlink" title="3、TCP 慢启动（slow shtar）"></a>3、TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
+<blockquote>
+<p> 新建了一座桥。汽车为了试试这个桥能不能走，先慢慢开过去，如果发现没问题，其他汽车再提速过去。</p>
+</blockquote>
+<p>在提速的过程中，有个概念叫<strong><em>打开拥塞窗口</em></strong>。</p>
+<blockquote>
+<p>有一个车队要过一座桥。一开始先派一辆车过去，确认没事的话派两个车试试，如果还没事的话派四辆车过去，这个过程就叫打开拥塞窗口。</p>
+</blockquote>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.JPG" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.JPG" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/bitcoin.jpg" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http:www.agumon.top/2013/05/13/2013/Http报文详解/" title="Http - Web 基础概述">http:www.agumon.top/2013/05/13/2013/Http报文详解/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Http-报文/" rel="tag"># Http 报文</a>
+          
+            <a href="/tags/URL/" rel="tag"># URL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/01/13/2013/cUrl使用心得/" rel="next" title="cUrl使用心得">
+                <i class="fa fa-chevron-left"></i> cUrl使用心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/05/15/2014/闭包、lambda-计算、block/" rel="prev" title=" 闭包、lambda 计算、block">
+                 闭包、lambda 计算、block <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -361,8 +663,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +784,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、HTTP报文"><span class="nav-number">1.</span> <span class="nav-text">一、HTTP报文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、起始行"><span class="nav-number">1.1.</span> <span class="nav-text">1、起始行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、首部（请求头、响应头、head）"><span class="nav-number">1.2.</span> <span class="nav-text">2、首部（请求头、响应头、head）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、主体（请求体、响应体、body）"><span class="nav-number">1.3.</span> <span class="nav-text">3、主体（请求体、响应体、body）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、URL"><span class="nav-number">2.</span> <span class="nav-text">二、URL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2、一些常见的概念"><span class="nav-number">2.1.</span> <span class="nav-text">2、一些常见的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）-URI"><span class="nav-number">2.1.1.</span> <span class="nav-text">（1） URI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）RFC"><span class="nav-number">2.1.2.</span> <span class="nav-text">（1）RFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）事物"><span class="nav-number">2.1.3.</span> <span class="nav-text">（3）事物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）TCP"><span class="nav-number">2.1.4.</span> <span class="nav-text">（4）TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（5）隧道（tunnel）"><span class="nav-number">2.1.5.</span> <span class="nav-text">（5）隧道（tunnel）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（6）SSL"><span class="nav-number">2.1.6.</span> <span class="nav-text">（6）SSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（7）代理与-Agent-代理"><span class="nav-number">2.1.7.</span> <span class="nav-text">（7）代理与 Agent 代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（8）报文流"><span class="nav-number">2.1.8.</span> <span class="nav-text">（8）报文流</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、连接管理"><span class="nav-number">3.</span> <span class="nav-text">三、连接管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3、TCP-慢启动（slow-shtar）"><span class="nav-number">3.0.1.</span> <span class="nav-text">3、TCP 慢启动（slow shtar）</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -664,9 +991,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http:www.agumon.top/categories/index.html';
-          this.page.identifier = 'categories/index.html';
-          this.page.title = 'All categories';
+          this.page.url = 'http:www.agumon.top/2013/05/13/2013/Http报文详解/';
+          this.page.identifier = '2013/05/13/2013/Http报文详解/';
+          this.page.title = 'Http - Web 基础概述';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-yggdrasill-7c9-github-io.disqus.com/embed.js';

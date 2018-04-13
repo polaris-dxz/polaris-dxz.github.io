@@ -88,16 +88,16 @@
 
 
 
-<meta name="description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
+<meta name="description" content="本文收录并整理了一些 iOS 开发知识盲点。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios知识脉络梳理">
-<meta property="og:url" content="http:www.agumon.top/2014/05/19/ios知识脉络梳理/index.html">
+<meta property="og:url" content="http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
-<meta property="og:updated_time" content="2018-04-13T09:30:38.000Z">
+<meta property="og:description" content="本文收录并整理了一些 iOS 开发知识盲点。">
+<meta property="og:updated_time" content="2018-04-13T09:41:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios知识脉络梳理">
-<meta name="twitter:description" content="目录 [TOC] （一）、Foundation 相关知识点一、内存管理的思考方式1、内存管理的原则： 自己生成的对象，自己持有  不是自己生成的对象，自己也能持有 （需要手动 retain）  &amp;gt; id obj = [NSMutableArray array]; // 取得对象的存在，但自己并不持有&amp;gt; [obj retain]; // 自己持有对象&amp;gt;   不是自己持有的对象，自己">
+<meta name="twitter:description" content="本文收录并整理了一些 iOS 开发知识盲点。">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http:www.agumon.top/2014/05/19/ios知识脉络梳理/"/>
+  <link rel="canonical" href="http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/"/>
 
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/05/19/ios知识脉络梳理/">
+    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -329,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-05-19T23:34:21+08:00">
-                2014-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-12-19T23:34:21+08:00">
+                2014-12-19
               </time>
             
 
@@ -394,15 +394,14 @@
       
 
       
-        <p>目录</p>
+        <p>本文收录并整理了一些 iOS 开发知识盲点。<br><a id="more"></a></p>
+<p>目录</p>
 <p>[TOC]</p>
 <h2 id="（一）、Foundation-相关知识点"><a href="#（一）、Foundation-相关知识点" class="headerlink" title="（一）、Foundation 相关知识点"></a>（一）、Foundation 相关知识点</h2><h3 id="一、内存管理的思考方式"><a href="#一、内存管理的思考方式" class="headerlink" title="一、内存管理的思考方式"></a>一、内存管理的思考方式</h3><h4 id="1、内存管理的原则："><a href="#1、内存管理的原则：" class="headerlink" title="1、内存管理的原则："></a>1、内存管理的原则：</h4><ul>
 <li><p>自己生成的对象，自己持有</p>
 </li>
 <li><p>不是自己生成的对象，自己也能持有 （需要手动 retain）</p>
-<blockquote>
-<figure class="highlight obj-c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">id</span> obj = [<span class="built_in">NSMutableArray</span> array]; <span class="comment">// 取得对象的存在，但自己并不持有</span></span><br><span class="line">&gt; [obj <span class="keyword">retain</span>]; <span class="comment">// 自己持有对象</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
+ <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">id</span> obj = [<span class="built_in">NSMutableArray</span> array]; <span class="comment">// 取得对象的存在，但自己并不持有</span></span><br><span class="line">[obj <span class="keyword">retain</span>]; <span class="comment">// 自己持有对象</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>不是自己持有的对象，自己无法释放</p>
 </li>
@@ -635,7 +634,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http:www.agumon.top/2014/05/19/ios知识脉络梳理/" title="ios知识脉络梳理">http:www.agumon.top/2014/05/19/ios知识脉络梳理/</a>
+    <a href="http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/" title="ios知识脉络梳理">http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -657,8 +656,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/05/16/ios-HTTP请求/" rel="next" title="ios HTTP请求">
-                <i class="fa fa-chevron-left"></i> ios HTTP请求
+              <a href="/2014/05/20/2014/weak和-strong/" rel="next" title="weak和 strong">
+                <i class="fa fa-chevron-left"></i> weak和 strong
               </a>
             
           </div>
@@ -667,8 +666,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/05/20/weak和-strong/" rel="prev" title="weak和 strong">
-                weak和 strong <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/15/2016/instrument-详解/" rel="prev" title="instrument 详解">
+                instrument 详解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -760,7 +759,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1059,8 +1058,8 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http:www.agumon.top/2014/05/19/ios知识脉络梳理/';
-          this.page.identifier = '2014/05/19/ios知识脉络梳理/';
+          this.page.url = 'http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/';
+          this.page.identifier = '2014/12/19/2014/ios知识脉络梳理/';
           this.page.title = 'ios知识脉络梳理';
         };
         var d = document, s = d.createElement('script');

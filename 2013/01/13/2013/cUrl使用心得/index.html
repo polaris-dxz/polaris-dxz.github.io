@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="libimobiledevice," />
+  <meta name="keywords" content="cUrl," />
 
 
 
@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="从微信跳一跳学习逆向开发 iOS[TOC] 一、libimobiledevice与 adblibimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议 adb：安卓下调试工具 二、安装libimobiledevice$ brew update$ brew install libimobiledevice#libimobiledevice中并不包含ipa的安装命令，所">
-<meta name="keywords" content="libimobiledevice">
+<meta name="description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
+<meta name="keywords" content="cUrl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从微信跳一跳学习逆向开发iOS">
-<meta property="og:url" content="http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/index.html">
+<meta property="og:title" content="cUrl使用心得">
+<meta property="og:url" content="http:www.agumon.top/2013/01/13/2013/cUrl使用心得/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="从微信跳一跳学习逆向开发 iOS[TOC] 一、libimobiledevice与 adblibimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议 adb：安卓下调试工具 二、安装libimobiledevice$ brew update$ brew install libimobiledevice#libimobiledevice中并不包含ipa的安装命令，所">
-<meta property="og:updated_time" content="2018-01-12T06:51:05.000Z">
+<meta property="og:description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
+<meta property="og:updated_time" content="2018-01-31T08:47:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从微信跳一跳学习逆向开发iOS">
-<meta name="twitter:description" content="从微信跳一跳学习逆向开发 iOS[TOC] 一、libimobiledevice与 adblibimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议 adb：安卓下调试工具 二、安装libimobiledevice$ brew update$ brew install libimobiledevice#libimobiledevice中并不包含ipa的安装命令，所">
+<meta name="twitter:title" content="cUrl使用心得">
+<meta name="twitter:description" content="一、常用参数# -i：include全部HTTP报文# -v：显示请求过程# -d：HTTP POST DATA # -X：自定义请求方法。如-X POST# -H：自定义请求头 如 -H &quot;Content-type: application/json&quot;# -G： --get  Send the -d data with a HTTP GET (H)# -o：输出# -s：静音模式，不输出任何东西">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/"/>
+  <link rel="canonical" href="http:www.agumon.top/2013/01/13/2013/cUrl使用心得/"/>
 
 
 
 
 
-  <title>从微信跳一跳学习逆向开发iOS | 温故而知新</title>
+  <title>cUrl使用心得 | 温故而知新</title>
   
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/">
+    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2013/01/13/2013/cUrl使用心得/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -318,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">从微信跳一跳学习逆向开发iOS</h2>
+          <h2 class="post-title" itemprop="name headline">cUrl使用心得</h2>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T17:05:40+08:00">
-                2017-12-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-01-13T14:32:40+08:00">
+                2013-01-13
               </time>
             
 
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -395,10 +395,13 @@
       
 
       
-        <h1 id="从微信跳一跳学习逆向开发-iOS"><a href="#从微信跳一跳学习逆向开发-iOS" class="headerlink" title="从微信跳一跳学习逆向开发 iOS"></a>从微信跳一跳学习逆向开发 iOS</h1><p>[TOC]</p>
-<h3 id="一、libimobiledevice与-adb"><a href="#一、libimobiledevice与-adb" class="headerlink" title="一、libimobiledevice与 adb"></a>一、libimobiledevice与 adb</h3><p>libimobiledevice：逆向出 iOS 与 Mac Windows 接口的通讯协议</p>
-<p>adb：安卓下调试工具</p>
-<h3 id="二、安装libimobiledevice"><a href="#二、安装libimobiledevice" class="headerlink" title="二、安装libimobiledevice"></a>二、安装libimobiledevice</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install libimobiledevice</span><br><span class="line">#libimobiledevice中并不包含ipa的安装命令，所以还需要安装</span><br><span class="line">$ brew install ideviceinstaller</span><br></pre></td></tr></table></figure>
+        <h1 id="一、常用参数"><a href="#一、常用参数" class="headerlink" title="一、常用参数"></a>一、常用参数</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -i：include全部HTTP报文</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v：显示请求过程</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d：HTTP POST DATA </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -X：自定义请求方法。如-X POST</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -H：自定义请求头 如 -H <span class="string">"Content-type: application/json"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -G： --get  Send the -d data with a HTTP GET (H)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -o：输出</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：静音模式，不输出任何东西</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -S, --show-error    Show error. With -s, make curl show errors when they occur</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f, --fail         连接失败时不显示http错误 (H)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 调试的话暂时用到这么多，其他的命令想到在更。这种东西可以直接看英文文档。</span></span><br></pre></td></tr></table></figure>
+<h1 id="二、get-请求"><a href="#二、get-请求" class="headerlink" title="二、get 请求"></a>二、get 请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span></span><br><span class="line">curl "http://7xssni.com1.z0.glb.clouddn.com/home.txt"  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示全部信息:包括起始行、响应头、响应体</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i: --include       Include protocol headers <span class="keyword">in</span> the output (H/F)</span></span><br><span class="line">curl -i "http://7xssni.com1.z0.glb.clouddn.com/home.txt"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示get请求全过程解析 *表示解析过程  &gt;表示请求 &lt;表示响应 </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v: --verbose 冗长的</span></span><br><span class="line">curl -v "http://7xssni.com1.z0.glb.clouddn.com/home.txt" #--verbose</span><br></pre></td></tr></table></figure>
+<h1 id="三、post请求"><a href="#三、post请求" class="headerlink" title="三、post请求"></a>三、post请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">  -d: --data DATA     HTTP POST data (H)</span></span><br><span class="line">curl -d "param1=value1&amp;param2=value2" "http://www.baidu.com"</span><br></pre></td></tr></table></figure>
+<h1 id="四、JSON-格式的-post-请求"><a href="#四、JSON-格式的-post-请求" class="headerlink" title="四、JSON 格式的 post 请求"></a>四、JSON 格式的 post 请求</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -H: --header LINE   Pass custom header LINE to server (H)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -X: --request COMMAND  Specify request <span class="built_in">command</span> to use</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d: --data DATA     HTTP POST data (H)</span></span><br><span class="line">curl -l -H "Content-type: application/json" -X POST -d '&#123;"phone":"13521389587","password":"test"&#125;' http://domain/apis/users.json</span><br></pre></td></tr></table></figure>
+<h1 id="五、实例"><a href="#五、实例" class="headerlink" title="五、实例"></a>五、实例</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">URL ：http://7xssni.com1.z0.glb.clouddn.com/home.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;headUrl&quot; : &#123;</span><br><span class="line">    &quot;headList&quot; : [</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home1.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home2.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home3.jpg&quot;,</span><br><span class="line">      &quot;http://7xssni.com1.z0.glb.clouddn.com/home4.jpg&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;homeUrl&quot; : &#123;</span><br><span class="line">    &quot;dataList&quot; : [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/1.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;PVC实体塑木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/2.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;3D印花地毯&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/3.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;金刚木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/4.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典菱形软包&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/5.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典防水木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/6.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典花纹墙纸&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/7.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;经典使用木板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;imagesURL&quot; : &quot;http://7xssni.com1.z0.glb.clouddn.com/8.jpg&quot;,</span><br><span class="line">        &quot;materialList&quot; : &quot;进口&quot;,</span><br><span class="line">        &quot;titleStr&quot; : &quot;非洲柚木地板&quot;,</span><br><span class="line">        &quot;use&quot; : &quot;地板/家具/隔墙/衣柜&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五、常用命令："><a href="#五、常用命令：" class="headerlink" title="五、常用命令："></a>五、常用命令：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-a, --append        Append to target file when uploading (F/SFTP)</span><br><span class="line">-E, --cert CERT[:PASSWD]  Client certificate file and password (SSL)</span><br><span class="line">-K, --config FILE   Read config from FILE</span><br><span class="line">-C, --continue-at OFFSET  Resumed transfer OFFSET</span><br><span class="line">-b, --cookie STRING/FILE  Read cookies from STRING/FILE (H)</span><br><span class="line">-c, --cookie-jar FILE  Write cookies to FILE after operation (H)</span><br><span class="line">-d, --data DATA     HTTP POST data (H)</span><br><span class="line">-D, --dump-header FILE  Write the received headers to FILE</span><br><span class="line">-f, --fail          Fail silently (no output at all) on HTTP errors (H)</span><br><span class="line">-F, --form CONTENT  Specify HTTP multipart POST data (H)</span><br><span class="line">-P, --ftp-port ADR  Use PORT with given address instead of PASV (F)</span><br><span class="line">-G, --get           Send the -d data with a HTTP GET (H)</span><br><span class="line">-g, --globoff       Disable URL sequences and ranges using &#123;&#125; and []</span><br><span class="line">-H, --header LINE   Pass custom header LINE to server (H)</span><br><span class="line">-I, --head          Show document info only</span><br><span class="line">-h, --help          This help text</span><br><span class="line">-i, --include       Include protocol headers in the output (H/F)</span><br><span class="line">-k, --insecure      Allow connections to SSL sites without certs (H)</span><br><span class="line">-j, --junk-session-cookies  Ignore session cookies read from file (H)</span><br><span class="line">-l, --list-only     List only mode (F/POP3)</span><br><span class="line">-L, --location      Follow redirects (H)</span><br><span class="line">-M, --manual        Display the full manual</span><br><span class="line">-m, --max-time SECONDS  Maximum time allowed for the transfer</span><br><span class="line">-n, --netrc         Must read .netrc for user name and password</span><br><span class="line">-N, --no-buffer     Disable buffering of the output stream</span><br><span class="line">-o, --output FILE   Write to FILE instead of stdout</span><br><span class="line">-U, --proxy-user USER[:PASSWORD]  Proxy user and password</span><br><span class="line">    --proxy1.0 HOST[:PORT]  Use HTTP/1.0 proxy on given port</span><br><span class="line">-p, --proxytunnel   Operate through a HTTP proxy tunnel (using CONNECT)</span><br><span class="line">    --pubkey KEY    Public key file name (SSH)</span><br><span class="line">-Q, --quote CMD     Send command(s) to server before transfer (F/SFTP)</span><br><span class="line">    --random-file FILE  File for reading random data from (SSL)</span><br><span class="line">-r, --range RANGE   Retrieve only the bytes within RANGE</span><br><span class="line">    --raw           Do HTTP &quot;raw&quot;; no transfer decoding (H)</span><br><span class="line">-e, --referer       Referer URL (H)</span><br><span class="line">-J, --remote-header-name  Use the header-provided filename (H)</span><br><span class="line">-O, --remote-name   Write output to a file named as the remote file</span><br><span class="line">    --remote-name-all  Use the remote file name for all URLs</span><br><span class="line">-R, --remote-time   Set the remote file&apos;s time on the local output</span><br><span class="line">-X, --request COMMAND  Specify request command to use</span><br><span class="line">-S, --show-error    Show error. With -s, make curl show errors when they occur</span><br><span class="line">-s, --silent        Silent mode (don&apos;t output anything)</span><br><span class="line">-Y, --speed-limit RATE  Stop transfers below RATE for &apos;speed-time&apos; secs</span><br><span class="line">-y, --speed-time SECONDS  Trigger &apos;speed-limit&apos; abort after SECONDS (default: 30)</span><br><span class="line">-t, --telnet-option OPT=VAL  Set telnet option</span><br><span class="line">    --tftp-blksize VALUE  Set TFTP BLKSIZE option (must be &gt;512)</span><br><span class="line">    --tftp-no-options  Do not send TFTP options requests</span><br><span class="line">-z, --time-cond TIME   Transfer based on a time condition</span><br><span class="line">-T, --upload-file FILE  Transfer FILE to destination</span><br><span class="line">    --url URL       URL to work with</span><br><span class="line">-B, --use-ascii     Use ASCII/text transfer</span><br><span class="line">-u, --user USER[:PASSWORD]  Server user and password</span><br><span class="line">-A, --user-agent STRING  Send User-Agent STRING to server (H)</span><br><span class="line">-v, --verbose       Make the operation more talkative</span><br><span class="line">-V, --version       Show version number and quit</span><br><span class="line">-w, --write-out FORMAT  Use output FORMAT after completion</span><br><span class="line">-q, --disable       Disable .curlrc (must be first parameter)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -453,7 +456,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/" title="从微信跳一跳学习逆向开发iOS">http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/</a>
+    <a href="http:www.agumon.top/2013/01/13/2013/cUrl使用心得/" title="cUrl使用心得">http:www.agumon.top/2013/01/13/2013/cUrl使用心得/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -468,7 +471,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/libimobiledevice/" rel="tag"># libimobiledevice</a>
+            <a href="/tags/cUrl/" rel="tag"># cUrl</a>
           
         </div>
       
@@ -481,15 +484,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/05/20/weak和-strong/" rel="next" title="weak和 strong">
-                <i class="fa fa-chevron-left"></i> weak和 strong
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/05/13/2013/Http报文详解/" rel="prev" title="Http - Web 基础概述">
+                Http - Web 基础概述 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -580,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -682,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从微信跳一跳学习逆向开发-iOS"><span class="nav-number">1.</span> <span class="nav-text">从微信跳一跳学习逆向开发 iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、libimobiledevice与-adb"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、libimobiledevice与 adb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、安装libimobiledevice"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、安装libimobiledevice</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、常用参数"><span class="nav-number">1.</span> <span class="nav-text">一、常用参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、get-请求"><span class="nav-number">2.</span> <span class="nav-text">二、get 请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、post请求"><span class="nav-number">3.</span> <span class="nav-text">三、post请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、JSON-格式的-post-请求"><span class="nav-number">4.</span> <span class="nav-text">四、JSON 格式的 post 请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、实例"><span class="nav-number">5.</span> <span class="nav-text">五、实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#五、常用命令："><span class="nav-number">5.1.</span> <span class="nav-text">五、常用命令：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -879,9 +882,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http:www.agumon.top/2017/12/29/从微信跳一跳学习逆向开发iOS/';
-          this.page.identifier = '2017/12/29/从微信跳一跳学习逆向开发iOS/';
-          this.page.title = '从微信跳一跳学习逆向开发iOS';
+          this.page.url = 'http:www.agumon.top/2013/01/13/2013/cUrl使用心得/';
+          this.page.identifier = '2013/01/13/2013/cUrl使用心得/';
+          this.page.title = 'cUrl使用心得';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-yggdrasill-7c9-github-io.disqus.com/embed.js';
