@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:www.agumon.top/"/>
-  <updated>2018-04-13T09:33:44.000Z</updated>
+  <updated>2018-04-13T09:53:14.000Z</updated>
   <id>http:www.agumon.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -16,17 +16,11 @@
     <link href="http:www.agumon.top/2017/12/29/2017/%E4%BB%8E%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%AD%A6%E4%B9%A0%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91iOS/"/>
     <id>http:www.agumon.top/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/</id>
     <published>2017-12-29T09:05:40.000Z</published>
-    <updated>2018-04-13T09:33:44.000Z</updated>
+    <updated>2018-04-13T09:53:14.000Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
+      &lt;p&gt;这几天出了个小程序特别火，借此机会学习下逆向开发&lt;br&gt;
     
     </summary>
     
@@ -42,7 +36,7 @@
     <link href="http:www.agumon.top/2016/05/15/2016/instrument-%E8%AF%A6%E8%A7%A3/"/>
     <id>http:www.agumon.top/2016/05/15/2016/instrument-详解/</id>
     <published>2016-05-15T15:26:11.000Z</published>
-    <updated>2018-04-13T09:38:43.000Z</updated>
+    <updated>2018-04-13T09:53:53.000Z</updated>
     
     <summary type="html">
     
@@ -106,12 +100,11 @@
     <link href="http:www.agumon.top/2014/05/16/2014/ios-HTTP%E8%AF%B7%E6%B1%82/"/>
     <id>http:www.agumon.top/2014/05/16/2014/ios-HTTP请求/</id>
     <published>2014-05-16T12:56:40.000Z</published>
-    <updated>2018-04-13T09:44:35.000Z</updated>
+    <updated>2018-04-13T09:54:18.000Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;iOS9引入了新特性 &lt;a href=&quot;https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;App Transport Security (ATS)&lt;/a&gt;，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。&lt;/p&gt;
-&lt;p&gt;ios Http 请求，已更新。&lt;br&gt;
     
     </summary>
     

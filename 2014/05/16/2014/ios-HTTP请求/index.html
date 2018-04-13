@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。 ios Http 请求，已更新。">
+<meta name="description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。">
 <meta name="keywords" content="网络请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios HTTP请求">
 <meta property="og:url" content="http:www.agumon.top/2014/05/16/2014/ios-HTTP请求/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。 ios Http 请求，已更新。">
-<meta property="og:updated_time" content="2018-04-13T09:44:35.000Z">
+<meta property="og:description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。">
+<meta property="og:updated_time" content="2018-04-13T09:54:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios HTTP请求">
-<meta name="twitter:description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。 ios Http 请求，已更新。">
+<meta name="twitter:description" content="iOS9引入了新特性 App Transport Security (ATS)，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。">
 
 
 
@@ -396,7 +396,7 @@
 
       
         <p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
-<p>ios Http 请求，已更新。<br><a id="more"></a></p>
+<a id="more"></a>
 <h2 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h2><p>早期还有NSURLConnection方法，iOS 9 以后被淘汰了，有几个代理方法不能用了（同步请求，异步请求）</p>
 <p>原生方法：</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSURL</span>* url = [<span class="built_in">NSURL</span> URLWithString:HomeUrl]; <span class="comment">//url</span></span><br><span class="line"><span class="built_in">NSURLRequest</span>* request = [<span class="built_in">NSURLRequest</span> requestWithURL:url];<span class="comment">//请求</span></span><br><span class="line"><span class="built_in">NSURLSession</span>* session = [<span class="built_in">NSURLSession</span> sharedSession]; <span class="comment">//session</span></span><br><span class="line"><span class="built_in">NSURLSessionDataTask</span>* task = [session dataTaskWithRequest:request completionHandler:^(<span class="built_in">NSData</span> * _Nullable data, <span class="built_in">NSURLResponse</span> * _Nullable response, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">    <span class="keyword">if</span>(error)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"请求失败"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"请求成功"</span>);</span><br><span class="line">        <span class="built_in">NSString</span> *receiveStr = [[<span class="built_in">NSString</span> alloc]initWithData:data encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSData</span> * jsonData = [receiveStr dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSDictionary</span> *jsonDict = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:jsonData options:<span class="built_in">NSJSONReadingMutableLeaves</span> error:<span class="literal">nil</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>

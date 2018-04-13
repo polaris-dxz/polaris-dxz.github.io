@@ -88,19 +88,19 @@
 
 
 
-<meta name="description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta name="description" content="整理一些常用 instrument 工具 [TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参">
 <meta name="keywords" content="instrument">
 <meta property="og:type" content="article">
 <meta property="og:title" content="instrument 详解">
 <meta property="og:url" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta property="og:description" content="整理一些常用 instrument 工具 [TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参">
 <meta property="og:image" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/instrument.png">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:updated_time" content="2018-04-13T09:38:43.000Z">
+<meta property="og:updated_time" content="2018-04-13T09:53:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="instrument 详解">
-<meta name="twitter:description" content="[TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参考自 Stack Overflow 视频链">
+<meta name="twitter:description" content="整理一些常用 instrument 工具 [TOC]  一、Blank二、Activity Monitor（活动监视器）三、Allocations（内存分配） 1、程序员对内存关注的点 正确使用  避免非法访问  即避免访问被释放掉的内存。release 后不能再 retain。   避免内存泄漏    高效使用  降低内存峰值 处理内存警告 Cache    2、Regions（区域）以下内容参">
 <meta name="twitter:image" content="http:www.agumon.top/2016/05/15/2016/instrument-详解/instrument.png">
 
 
@@ -398,7 +398,8 @@
       
 
       
-        <p>[TOC]</p>
+        <p>整理一些常用 instrument 工具</p>
+<p>[TOC]</p>
 <p><img src="instrument.png" alt=""></p>
 <h2 id="一、Blank"><a href="#一、Blank" class="headerlink" title="一、Blank"></a>一、Blank</h2><h2 id="二、Activity-Monitor（活动监视器）"><a href="#二、Activity-Monitor（活动监视器）" class="headerlink" title="二、Activity Monitor（活动监视器）"></a>二、Activity Monitor（活动监视器）</h2><h2 id="三、Allocations（内存分配）"><a href="#三、Allocations（内存分配）" class="headerlink" title="三、Allocations（内存分配）"></a>三、Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
 <h3 id="1、程序员对内存关注的点"><a href="#1、程序员对内存关注的点" class="headerlink" title="1、程序员对内存关注的点"></a>1、程序员对内存关注的点</h3><ul>
