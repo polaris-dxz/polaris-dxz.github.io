@@ -193,17 +193,16 @@
     <link href="http:www.agumon.top/2014/05/15/iOS%E5%BC%80%E5%8F%91/iOS%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/%E9%97%AD%E5%8C%85%E3%80%81lambda-%E8%AE%A1%E7%AE%97%E3%80%81block/"/>
     <id>http:www.agumon.top/2014/05/15/iOS开发/iOS 开发基础/闭包、lambda-计算、block/</id>
     <published>2014-05-15T07:07:23.000Z</published>
-    <updated>2018-01-31T08:46:16.000Z</updated>
+    <updated>2018-04-13T09:20:35.000Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
-        
-      
+      &lt;h1 id=&quot;block&quot;&gt;&lt;a href=&quot;#block&quot; class=&quot;headerlink&quot; title=&quot;block&quot;&gt;&lt;/a&gt;block&lt;/h1&gt;&lt;p&gt;导读：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是 block？&lt;/li&gt;
+&lt;li&gt;block 基本原理是什么？&lt;/li&gt;
+&lt;li&gt;使用 block 需要避免哪些问题？&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
