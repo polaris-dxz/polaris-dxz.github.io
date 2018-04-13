@@ -22,6 +22,7 @@ thumbnail: https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692f
 
 ![](https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
 
+
 ### 1、程序员对内存关注的点
 
 * 正确使用
