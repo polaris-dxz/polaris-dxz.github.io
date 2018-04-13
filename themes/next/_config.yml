@@ -96,7 +96,7 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  about: /about/ || user
+  about: /about/ || user-secret
   tags: /tag/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
@@ -130,7 +130,7 @@ scheme: Gemini
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/Yggdrasill-7C9 || github
+  GitHub: https://github.com/Yggdrasill-7C9 || github-alt
   E-Mail: mailto:0x31f9f17@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -140,7 +140,10 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  # 掘金: http://www.baidu.com || spinner
+  掘金: https://juejin.im/user/59ee29a36fb9a0451c3990e5 || braille
+  sf.gg: https://segmentfault.com/u/maobuyu || fort-awesome-alt
+  知乎: https://www.zhihu.com/people/ya-la-si-te-er/ || graduation--cap
+  豆瓣: https://www.douban.com/people/163834656/ || book
 
 social_icons:
   enable: true
