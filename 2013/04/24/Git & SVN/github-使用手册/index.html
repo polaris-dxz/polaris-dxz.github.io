@@ -366,16 +366,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2013/04/24/Git & SVN/github-使用手册/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2013/04/24/Git & SVN/github-使用手册/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -631,9 +621,12 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
 
   
@@ -982,6 +975,24 @@
 
   
 
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://Yggdrasill-7C9.github.io/2013/04/24/Git & SVN/github-使用手册/';
+          this.page.identifier = '2013/04/24/Git & SVN/github-使用手册/';
+          this.page.title = 'git 深入学习';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-yggdrasill-7c9-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -997,49 +1008,8 @@
 
 
 
-  
 
 
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'Yggdrasill-7C9',
-            repo: 'Yggdrasill-7C9.github.io',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: 'aefc8a2011208d7ab0d8be687a18f0d54add906e',
-            
-                client_id: 'ab9172437f4f667332a1'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
