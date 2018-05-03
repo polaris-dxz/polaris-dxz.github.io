@@ -126,5 +126,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Yggdrasill-7C9/Yggdrasill-7C9.github.io.git
+  # repo: https://github.com/Yggdrasill-7C9/Yggdrasill-7C9.github.io.git
+  repo: https://gitlab.com/Yggdrasill-7C9/Yggdrasill-7C9.github.io.git
   branch: master

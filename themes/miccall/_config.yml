@@ -1,0 +1,107 @@
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# Head info
+head:
+    favicon: "/img/icon.png"
+    high_res_favicon: "/img/icon.png"
+    apple_touch_icon: "/img/icon.png"
+    keywords: keywords
+
+Intro:
+    name:  萧萧兮易水寒
+    slogan:  摇滚是态度，民谣也是态度。
+    HeadButton: 主页
+
+Nav:
+    Home_name: 主页
+    is_use_categories : true 
+    categories_name: 分类
+    is_use_archives : true
+    archives_name: 归档
+    icon:
+        github: 
+            use: false
+            link: "https://github.com/Yggdrasill-7C9"
+        Twitter:
+            use: false
+            link: 
+        Facebook:
+            use: false
+            link: 
+        Instagram:
+            use: false
+            link:
+    pages:
+        标签:
+            link: "/tag/"
+        友情链接:
+            link: "/group/"    
+        about: 
+            link: "/about/"
+        图库 :
+            link: "/gallery/"
+        #自定义标签名
+        #   link：“路径”
+
+MainFirst:
+    name:  记录我的点点滴滴
+    description: 宜未雨而绸缪；毋临渴而掘井。
+    pic_url: /images/me.jpg
+    goto_ulr: "https://hexo.io/zh-cn/docs/front-matter.html"
+
+Gallery :
+    title: Gallery title 
+    description: 
+
+# ---------------------------------------------------------------
+# Style Settings
+# ---------------------------------------------------------------
+
+# Custom code Render System 自定义代码渲染 
+# default dark funky okaidia twilight coy solarized  可选项  
+# link to review : http://prismjs.com/index.html   官网预览
+# 这个插件卸载了，不知道为什么会出错
+#prism: coy
+# prism_plugin:
+#   mode: 'preprocess'    # realtime/preprocess
+#   theme: 'coy'
+#   line_number: false    # default false
+
+# Custom Fonts
+fonts: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif
+
+# Comment Systems
+# Available value of "use":
+#     duoshuo | disqus | disqus_click | changyan
+comment:
+    use: disqus_click
+    shortname: http-Ydddrasill-7C9-github-io 
+    duoshuo_thread_key_type: path
+    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
+    changyan_appid:
+    changyan_conf:
+    changyan_thread_key_type: path
+
+# Search Systems
+# Available value:
+#     swiftype | google | local
+search:
+    use: google
+    swiftype_key: Just another fine responsive  
+    
+
+# Leancloud Views
+leancloud:
+    enable: true
+    app_id: xgIskKX26QAI6TVH1E4R7PqD-gzGzoHsz
+    app_key: c9cyiImdqKIgxbxPjlq5ukTt
+    av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
+
+# Busuanzi 不蒜子 Views
+busuanzi:
+    enable: true
+    all_site_uv: true
+    post_pv: true
+    busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
