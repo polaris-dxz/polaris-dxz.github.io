@@ -12,7 +12,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://Yggdrasill-7C9.github.io
+# url: https://Yggdrasill-7C9.github.io
+url: http:www.agumon.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -34,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -71,12 +72,12 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess 在浏览器实时解析代码/预处理节点代码
-  theme: 'Duotone Space'
-  line_number: false    # default false
-  highlight:
-    enable: true
+# prism_plugin:
+#   mode: 'preprocess'    # realtime/preprocess 在浏览器实时解析代码/预处理节点代码
+#   theme: 'Duotone Space'
+#   line_number: false    # default false
+#   highlight:
+#     enable: true
 
 feed:
   type: atom

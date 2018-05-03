@@ -141,9 +141,9 @@ social:
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
   掘金: https://juejin.im/user/59ee29a36fb9a0451c3990e5 || braille
-  sf.gg: https://segmentfault.com/u/maobuyu || fort-awesome-alt
-  知乎: https://www.zhihu.com/people/ya-la-si-te-er/ || graduation--cap
   豆瓣: https://www.douban.com/people/163834656/ || book
+  sf.gg: https://segmentfault.com/u/maobuyu || code
+  知乎: https://www.zhihu.com/people/ya-la-si-te-er/ || bell  
 
 social_icons:
   enable: true
@@ -250,9 +250,9 @@ post_wordcount:
 
 # Reward
 #reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
-#bitcoin: /images/bitcoin.png
+wechatpay: /images/wechatpay.JPG
+alipay: /images/alipay.JPG
+bitcoin: /images/bitcoin.jpg
 
 # Declare license on posts
 post_copyright:
@@ -356,7 +356,7 @@ mathjax:
 # Han Support docs: https://hanzi.pro/
 han: false
 
-# Swiftype Search API Key
+# Swiftype Search API Key 站内搜
 swiftype_key: HMXzWdxGhpfUj9oCbQ56
 
 # Baidu Analytics ID
@@ -365,9 +365,9 @@ swiftype_key: HMXzWdxGhpfUj9oCbQ56
 # Duoshuo ShortName
 #duoshuo_shortname:
 
-# Disqus
+# Disqus  评论
 disqus:
-  enable: false
+  enable:  true
   shortname: https-yggdrasill-7c9-github-io
   count: false
 
@@ -408,7 +408,7 @@ valine:
 # Introduction: https://imsun.net/posts/gitment-introduction/
 # You can get your Github ID from https://api.github.com/users/<Github username>
 gitment:
-  enable: true
+  enable: false
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
