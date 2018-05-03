@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="强引用和弱引用常考知识点和易错盲点">
+<meta name="description" content="强引用和弱引用常考知识点和易错盲点。">
 <meta name="keywords" content="weak&amp;strong">
 <meta property="og:type" content="article">
 <meta property="og:title" content="weak和 strong">
 <meta property="og:url" content="http:www.agumon.top/2014/05/20/2014/weak和-strong/index.html">
 <meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="强引用和弱引用常考知识点和易错盲点">
-<meta property="og:updated_time" content="2018-04-13T09:43:17.000Z">
+<meta property="og:description" content="强引用和弱引用常考知识点和易错盲点。">
+<meta property="og:updated_time" content="2018-04-13T10:57:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weak和 strong">
-<meta name="twitter:description" content="强引用和弱引用常考知识点和易错盲点">
+<meta name="twitter:description" content="强引用和弱引用常考知识点和易错盲点。">
 
 
 
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS-Dev</span>
                   </a>
                 </span>
 
@@ -395,7 +395,7 @@
       
 
       
-        <p>强引用和弱引用常考知识点和易错盲点<br><a id="more"></a></p>
+        <p>强引用和弱引用常考知识点和易错盲点。<br><a id="more"></a></p>
 <p>@property中 weak 和 strong 的使用先看两段代码：</p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>)<span class="built_in">UIButton</span> *button1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line"></span><br><span class="line">-(<span class="built_in">UIButton</span> *)button1&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_button1) &#123;</span><br><span class="line">_button1=[<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">        _button1.frame=<span class="built_in">CGRectMake</span>(<span class="number">50</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">        [_button1 setTitle:<span class="string">@"第一个"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">_button1.backgroundColor=[<span class="built_in">UIColor</span> redColor];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> _button1;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.button1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">weak</span>) <span class="built_in">UIButton</span> *button2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line"></span><br><span class="line">-(<span class="built_in">UIButton</span> *)button2&#123; </span><br><span class="line">	</span><br><span class="line">    <span class="built_in">UIButton</span> *btn=[<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">    btn.frame=<span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">    [btn setTitle:<span class="string">@"第二个"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">    btn.backgroundColor=[<span class="built_in">UIColor</span> yellowColor];</span><br><span class="line">    <span class="keyword">return</span> btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.button2];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
@@ -578,7 +578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +589,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
