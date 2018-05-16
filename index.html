@@ -1,2495 +1,735 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>温故而知新</title>
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+  <meta property="og:site_name" content="温故而知新"/>
 
+  
+    <meta property="og:image" content=""/>
+  
 
   
   
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <link href="/favicon.png" rel="icon">
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
+  <script src="/js/jquery-2.0.3.min.js"></script>
 
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="温故而知新" type="application/atom+xml" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="温故而知新">
-<meta property="og:url" content="http:www.agumon.top/index.html">
-<meta property="og:site_name" content="温故而知新">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="温故而知新">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
 </script>
 
 
 
-  <link rel="canonical" href="http:www.agumon.top/"/>
-
-
-
-
-
-  <title>温故而知新</title>
-  
-
-
-
-
-
-
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">温故而知新</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">温故而知新</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description">我的全栈之路</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header logo">
+  <h1>我的全栈之路<span class="blink-fast">∎</span></h1>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tag/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'HMXzWdxGhpfUj9oCbQ56','2.0.0');
-</script>
-
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2018/04/13/以太坊开发入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/13/以太坊开发入门/" itemprop="url">以太坊开发入门</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T18:59:55+08:00">
-                2018-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          预备知识：
-你需要知道区块链的概念及实现一个无需信任的电子货币的运作原理。可以先看看长版，如果你觉得太长，可以看看短版。但我还是建议，看那个长的视频。如果你是一名软件工程师，拥有软件开发的经验。能知道从系统、架构角度学一个东西，其实能倍增学习效果。如果有一周的空闲时间。好了，下面开始就不再是废话了。
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/13/以太坊开发入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" itemprop="url">从微信跳一跳学习逆向开发iOS</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T17:05:40+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这几天出了个小程序特别火，借此机会学习下逆向开发。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2016/05/15/2016/instrument-详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/05/15/2016/instrument-详解/" itemprop="url">instrument 详解</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-15T23:26:11+08:00">
-                2016-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>整理一些常用 instrument 工具。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/05/15/2016/instrument-详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2015/04/13/2015/Xcode-环境变量/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/04/13/2015/Xcode-环境变量/" itemprop="url">Xcode 环境变量</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-13T18:52:04+08:00">
-                2015-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/04/13/2015/Xcode-环境变量/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/12/19/2014/ios知识脉络梳理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/12/19/2014/ios知识脉络梳理/" itemprop="url">ios知识脉络梳理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-12-19T23:34:21+08:00">
-                2014-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文收录并整理了一些 iOS 开发知识盲点。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/12/19/2014/ios知识脉络梳理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/05/20/2014/weak和-strong/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/05/20/2014/weak和-strong/" itemprop="url">weak和 strong</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-05-20T10:53:58+08:00">
-                2014-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>强引用和弱引用常考知识点和易错盲点。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/05/20/2014/weak和-strong/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/05/16/2014/ios-HTTP请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/05/16/2014/ios-HTTP请求/" itemprop="url">ios HTTP请求</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-05-16T20:56:40+08:00">
-                2014-05-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/05/16/2014/ios-HTTP请求/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2014/05/15/2014/闭包、lambda-计算、block/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/05/15/2014/闭包、lambda-计算、block/" itemprop="url"> 闭包、lambda 计算、block</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-05-15T15:07:23+08:00">
-                2014-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS-Dev/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS-Dev</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>导读：</p>
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+      <i class="fa fa-heart blink-slow"></i>
+      Keep and carry on.
+</div>    
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/04/13/以太坊开发入门/" >以太坊开发入门</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-04-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>预备知识：</p>
+<p>你需要知道区块链的概念及实现一个无需信任的电子货币的运作原理。可以先看看长版，如果你觉得太长，可以看看短版。但我还是建议，看那个长的视频。<br>如果你是一名软件工程师，拥有软件开发的经验。能知道从系统、架构角度学一个东西，其实能倍增学习效果。<br>如果有一周的空闲时间。好了，下面开始就不再是废话了。<br>你需要了解merkle tree的基本概念，看他是如何做到防止信息篡改，以及信息自校验的（译者注：可以看我曾经翻译的以太坊官方的关于merkle tree的文章，<a href="http://me.tryblockchain.org/Ethereum-MerklePatriciaTree.html" target="_blank" rel="noopener">http://me.tryblockchain.org/Ethereum-MerklePatriciaTree.html</a> ）。<br>不用必须读白皮书，只需要了解一些基本概念。但说实话，如果不读，不会相信这些概念，从而不能真正明白这些概念，所以读白皮书也许仍然是最快的方式。</p>
+<p>我建议你完整的读一下本文，从一个较高的层面了解一下，然后再挑感兴趣的，一一钻研，也许要花几天时间哦。</p>
+<p>你最后会发现，区块链就是建立在朴实无华的基本技术之上，一点也不神奇。虽然最近各种ICO把它炒得非常热。每个人都是站在巨人的肩膀上，如果你是程序员，你能对这些项目和技术，理解得更深。所以不要因为其它一些糟粕，而失去了一个提升自己的机会。</p>
+<p>以太坊<br>以太坊，Ethereum是一个分布式的计算机，有许多的节点，其中的每一个节点，都会执行字节码（其实就是智能合约），然后把结果存在区块链上。由于整个网络是分布式的，且应用就是一个个的状态组成，存储了状态就有了服务；所以它就能永不停机，没有一个中心化的结点（没有任何一个节点说了算，去中心化的），任何第三方不能干预。</p>
+<p>显然上面这一段话，直接解释了以太坊是什么。但你可能有非常多的问题。可以先读一下以太坊的白皮书。或者看下这个视频，25分钟理解以太坊。（译者注：以太坊入门，确实没有什么好的办法，就是看白皮书最好，最快）</p>
+<p>智能合约<br>智能合约与平时的代码其实没有什么区别，只是运行于一个以太坊这样的分布式平台上而已。这个运行的平台，赋予了这些代码不可变，确定性，分布式和可自校验状态等特点。代码运行过程中状态的存储，是不可变的。每一个人，都可以开一个自己的节点，重放整个区块链，将会获得同样的结果（译者注：能控制所有节点都达到一致状态，就是所谓的共识）。</p>
+<p>在以太坊中，每个合约都有一个唯一的地址来标识它自己（由创建者的哈希地址和曾经发送过的交易的数量推算出来）。客户端可以与这个地址进行交互，可以发送ether，调用函数，查询当前的状态等。</p>
+<p>智能合约，本质上来说就是代码，以及代码运行后存储到区块链上的状态两个元素组成。比如，你用来收发ETH的钱包，本质上就是一个智能合约，只是外面套了一个界面。</p>
+<p>概念非常强大，而我相信你已经看完了。而你在看相关的新闻，经常听到这个非常有潜力，经常听到资产/权利管理，分权自治组织（DAO），身份，社交网络等炫酷。但他本质就是这些。</p>
+<p>Gas<br>智能合约，就是一些代码，运行整个分布式网络中。由于网络中的每一个节点都是一个全节点。这样的好处是容错性强，坏处是效率低，消耗资源与时间（译者注：原来只在一个节点执行一次就行，现在所有节点中每一个，都要执行一模一样的运算）。因为执行计算要花钱，而要执行的运算量与代码直接相关。所以，每个在网络运行的底层操作都需要一定量的gas。gas只是一个名字，它代表的是执行所需要花费的成本（译者注：由于以太坊是图灵完备的，随便一个死循环就将导致网络不可用，所以引入了gas的概念）。整个分布式网络引入了强制限制，来避免停机问题。因此如果你写一个死循环，当gas耗尽后，网络就会拒绝执行接下来的操作，并且回滚你之前的所有操作。</p>
+<p>gas的价格由市场决定，类似于比特币的交易费机制。如果你的gas价格高，节点则将优先因为利益问题打包你的交易。</p>
+<p>一般来说，在Ethereum中计算和存储东西比在传统环境中做的更为昂贵，但是，Ethereum为您的代码提供了上述我们讨论过的那些好的属性，这可能是一样有价值的。</p>
+<p>一般来说，在以太坊网上读取状态是免费的，只有写入状态是收费的。下面这个文章是gas概念的一些深度解析。</p>
+<p>分布式APP（ĐApp / Dapp / dapp/ dApp）<br>一个分布式App是指，服务端运行于以太坊网络上一个或多个智能合约。</p>
+<p>一个分布式的App不用将所有状态都存储在区块链上，或者在链上进行所有计算（译者注：比如图形渲染），这样就太花gas了。所以一个分布式App把需要大家共同信任的状态存在区块链上就好了。许多的分布式应用使用后面提到的技术，如IPFS和Gelem，在链下进行分布式存储和计算。虽然没在以太坊上，但仍使用的是区块链技术。</p>
+<p>我不知道谁开始在D上使用这个小小的缺点，是看起来酷，但会影响搜索。 你可以自由使用，但尽量方便别人的搜索。</p>
+<p>以太坊的github上，有一个dapp-bin的目录，有一些文档和示例。使用前，你需要看看文件最近的状态，因为他们将很可能已经被淘汰。</p>
+<p>DApp客户端<br>大多数的分布式应用都通过一些用户友好的前端提供服务，因为不是所有人都愿意通过命令行，通过自己手动组装哈希串和操作指令码进行交易。</p>
+<p>一个DApp与传统的开发中的，客户端或前端是类似，区别仅在于它们与以太坊的区块链进行交互（也可以同时与其它服务交互）。这些客户端往往用JS编写，因为当前还暂时没有完成全部的向NodeJS的转换。</p>
+<p>另外，大多数的Dapp客户端使用JS的原因，是因为它可以在浏览器中运行，因为大家都有浏览器，这样每个人都可以运行了。由于有更多的go语言的开发工具，使用go语言来写客户端的也不少。在现在这个激烈的发展期，这意味着，除非你有自己的偏好，否则可能要从go和JS（也许还有，Rust）来选择一种语言，来与以太坊区块链，以及基于以太坊开发的协议进行交互了。</p>
+<p>以太坊的一个核心开发者，写了一篇关于使用Meteor工具来创建Dapp的文章，这意味着Meteor已经成为Dapp客户端开发的新标准。这绝对是基于JS建立全栈应用时的一个首选方法。但需要注意的是Meteor只是提供了一个开发工具，与DApp客户端并不等同，DApp客户端也完全可以由其它方式开发。（译者注：还有一些其它的开发工具，如Truffle，也是非常不错的哦）。</p>
+<p>因为围绕Meteor和DApp开发的活跃，有非常多的包在Atmophere（Meteor的包管理工具），它提供了许多常见的操作，如帐户管理，从区块链中获得最新的50个区块等等。</p>
+<p>DApp浏览器<br>一个DApp浏览器，正如它字面所表达的，用来让DApp客户端（常常使用JS与以太坊的智能合约进行交互）的使用更加容易。</p>
+<p>DApp浏览器的主要目的是：</p>
+<p>提供到一个以太坊节点的连接（或者连接到一个本地节点或者远程节点），和一个方便的切换不同节点（甚至是不同的网络）。<br>提供一个帐户（或者一个钱包）来方便用户与DApp交互。<br>Mist是以太坊官方的DApp浏览器。一个漂亮的界面来与以太坊节点交互，与智能合约发、收交易。</p>
+<p>Status是一个手机上可以使用的DApp浏览器。</p>
+<p>MetaMask是一个Google浏览器扩展，把Chrome变成了一个DApp浏览器。它的核心特性是注入以太坊提供的js客户端库web3，到每一个界面，来让DApp连接到MetaMask提供的以太坊节点服务。不过这个Chrome扩展，可以允许你管理你的钱包，以及连接到不同的以太坊网络（译者注：包括本地的开发网络）。</p>
+<p>Parity是一个以太坊客户端（也是一个全节点的实现），集成到了Web浏览器，并使之成为一个DApp浏览器。</p>
+<p>以太坊节点<br>与比特币的节点类似。每个节点都存储了整个区块链的数据，并重放所有的交易以验证结果的状态。你可以通过geth来运行一个全节点（官方的节点，go语言），或者parity来运行一个轻节点，它是第三方的，Rust语言写的。</p>
+<p>你的节点需要知道从哪个区块链下载数据，以及与哪些节点交互，后面会说明一些常见的网络。</p>
+<p>你也许可以运行下所有这些节点客户端。如果你不想自己运行一个这样的节点，有第三方的网关服务，比如Infura可以选择。另外还有专门用于测试和开发的，本地版本的节点，后面会提到。</p>
+<p>如果你正在开发一个DApp的客户端，你并不总是需要主动提供连接到以太坊的节点。因为DApp的浏览器一般会提供对应的连接（译者注：话说这样，那使用这个，还得额外安装一个DApp浏览器呀）。</p>
+<p>以太坊代币<br>现在你应该知道我们可以通过写智能合约，并将状态存到区块链上了？那如果，在状态这块，我们存的是一个Map类型，键是地址，值是整数。然后我们将这些整数值叫做余额，谁的余额呢？它就是我们要说的代币（译者注：代币的数据结构就是这样简单，存的就是某个用户，它当前的余额）。</p>
+<p>是的，所有你刚才听到的代币，只是一些数据，存储在一个哈希表里，通过api或者所谓的协议，来进行增删改查。这是一个简单的基本合约。</p>
+<p>你可以看看ethereum的创建一个众筹合约的官方教程。你将会发现它仅仅是一个合约（Crowdsale）与另一个合约（MyToken）交互，和前面的基本合约类似。并没有什么神奇的地方。</p>
+<p>人们使用代币来做各种各样的事情，阻拦大家如何使用的只有想像力。代币常常用来激励用户与某个协议进行交互，或者证明对某个资产的所有权，投票权等等。Coinbase的Fred有一个很好的关于代币，为什么存在，如何使用的文章。</p>
+<p>Ethereum的创始人Vitalik最近有一个关于代币发售模型，也是一篇不错的文章。</p>
+<p>ERC20代币与ERC23代币<br>每个人都开始定义自己与代币的交互协议，但这些很快显得陈旧，所以一些人开始集结起来，创建了ERC20代币接口标准。大概意思是说，我们定义这些接口，这样大家可以相互统一调用，比如转帐定义为transfer，第一个参数为要转去的帐户地址address _to，第二个参数为要发送的ether的uint _value数量。</p>
+<p>有些人觉得ERC20协议过于复杂了，所以他们提议了ERC197，稍微简单一点。</p>
+<p>由于在ERC20中存在的一个小问题，有人提议了一个新的ERC23。ERC23是向后兼容ERC20的。如果你已经创建了一个代币合约，可以尝试来支持ERC23。</p>
+<p>看起来ERC223和ERC23是相同的概念；ERC的值是223，但是当引用时，作者和所有的其它人误写成了ERC23非常多次，它现在也还是这样引用的。如果一句话说清楚的话，ERC223是规范号，代币说明时称为ERC23代币就好了。</p>
+<p>协议代币与App币<br>协议代币为用来激励对某个协议的使用。比如，REP，Augur的声誉代币，用来鼓励对Augur去中心化预测协议的使用。大多数的以太坊的ERC20/ERC23代币都是协议代币，比如Golem的GNT，ICONOMI，BAT等等。</p>
+<p>App币则是用来激励对某个特定DApp或客户端的使用，而不是因为其使用的协议提供的价值。其中一个例子是Status的SNT代币，可以用来在应用内获得价值（比如，进行消息推送，投票权，获得用户名等等）。</p>
+<p>这种范式的转变是，我们可以开始投资协议代币而不是应用程序代币，因为我们可以建立在它们之上（任何人都可以在协议之上构建一个dapp，或为实现该协议的Dapp构建一个Dapp客户端）。</p>
+<p>之前，这并不可能，因为加密代币，以及接下来的协议创新的时代，为了实现货币化，你自己可以在协议之上创建一个应用，并实现赢利。因为你自己可以实现协议的货币化，大家可以在未来更好的协作。</p>
+<p>你也许可以阅读一下，关于0xProject的下面这篇文章，关于这两者区别的详细说明。</p>
+<p>与智能合约交互<br>你与智能合约的交互（也称做调用函数和读取状态）通过连接到某个以太坊节点，并执行操作码。当前有各种各样的以太坊客户端，可以方便进行开发。Geth和parity都提供了控制台或浏览器的方式来更好的与智能合约交互。</p>
+<p>如果你想要一个程序的库用来与智能合约交互的接口，也有这样的客户端实现。对于JS语言，可以使用web3.js。以于go语言，可以使用在go-ethereum中的abigen的程序，提供了go包，用来与智能合约交互。</p>
+<p>如果只是用来测试和开发，可以使用ethereumjs-testrpc来运行一个本地节点（译者注：这个节点压短区块时间等，可以方便打整的开发与测试）。</p>
+<p>当你部署了一个智能合约，你实际进行的操作是向地址0x0发送了一个交易，使用当前合约内容作为参数，一个以太坊交易详解。</p>
+<p>Truffle和Embark<br>一旦你开始写智能合约，你会重复做大量的操作，比如编译源码为字节码和abi，部署到网络，测试然后部署合约等等。你也许希望更关注于你想要实现的东西。</p>
+<p>Truffle和Embark框架，标准化和自动化了这些琐碎的工作。它们提供了一个好的开发，部署，以及更为重要的，测试智能合约的体验。</p>
+<p>你可以查看这个文章来开启使用Truffle的旅程。</p>
+<p>这篇文章，提供了使用Truffle来部署以及与智能合约交互的文章。</p>
+<p>Embark提供了类似的，帮助开发者组织工程的稍有些不同的工具。</p>
+<p>当你一开始接触智能合约这块时，应该尽量不要使用框架。直到你明白了使用框架能带来的价值时，才应该开始使用，正如你不应该通过rails new来学习HTML语言一样。</p>
+<p>ETHPM<br>分享是关心，所以ETHPM是一个去中心化的智能合约包管理资源库。使用ETHPM，你可以关联或连接到某个著名的合约或库，减少代码重复，尽可能理想的为未来的开发提供好的基础。</p>
+<p>这里的这个规范，详细的说明了相关的信息以及背景。Truffle和Embark均可与之集成，并创造一个愉快的开发体验。</p>
+<p>网络<br>Mainnet-以太坊主网，通常是所有客户端的默认网络。</p>
+<p>Ropsten - 以太坊使用工作量证明的主测试网络。这个网络，因为低的计算量，容易遭到DDOS攻击，分片，或者其它问题。垃圾邮件攻击后被暂时放弃，最近才恢复使用。</p>
+<p>Kovan-parity客户端组成的测试网络，使用授权证明来提升对垃圾邮件攻击的抗扰度，并且持续4秒的阻塞时间。</p>
+<p>Rinkeby-geth客户端组成的测试网络，使用集团共识，尽管计算量低，但是对恶意行为者更有弹性。</p>
+<p>你可以自己搭建你自己的测试网络，也许使用kubernetes或者docker-compose，但也许你将很快就可以不需要花什么时间。</p>
+<p>帐户与钱包<br>一个以太坊帐户就是一个私钥和公钥地址对。它们可以用来存储ether，创建时不需要花费gas。</p>
+<p>钱包则是用来管理ether的智能合约（一些代码）。这里是使用solidity写的一个钱包，运行于Mist浏览器。他们可以有许多的特性，比如多用户签名，纸？等等。</p>
+<p>这样，我们就正确的定义了两个名词，前面看到其它人对这两个术语的困惑，并把所有能存ether的都叫作Wallet。</p>
+<p>EVM以及智能合约创建的状态<br>在每个全节点网络上运行的智能合约代码在EVM内执行。这是您的标准虚拟机，执行一些字节码，除了这个vm与网络，文件系统，进程等隔离。没有人想要编写字节码，所以我们有一些更高级别的语言编译为EVM字节码。</p>
+<p>Solidity<br>Solidity是第一批的描述智能合约的语言。当前是最流行的语言，因此也有最多的例子，文档，和教程。你应该学习这个，除非你有要学习其它的理由。</p>
+<p>你可以使用基于浏览器的Remix IDE来进行快速验证。</p>
+<p>下面是一个Solidity的合约：</p>
+<p>pragma solidity ^0.4.11;<br>contract BasicToken {<br>mapping(address =&gt; uint256) balances;<br>function transfer(address _to, uint256 _value) returns () {<br>    balances[msg.sender] = balances[msg.sender] - _value;<br>    balances[_to] = balances[_to] + _value;<br>  }<br>function balanceOf(address _owner) constant returns (uint256 balance) {<br>    return balances[_owner];<br>  }<br>}<br>LLL<br>LLL，是一门Lisp风格的底层编程语言，就像语言名称看到的这样。虽然以太坊官方并没有将它作为主要需要支持的语言，但它仍旧持续进行着更新，且与solidity在同一个资源库。</p>
+<p>这是一个使用LLL语言写的一个ERC20代币的合约</p>
+<p>LLL示例如下：</p>
+<p>(seq<br>  (def ‘node-bytes  0x00)<br>  (def ‘owner    0x20) ; address<br>  (def ‘set-node-owner    0x5b0fc9c3) ; setOwner(bytes32,address)<br>  (def ‘get-owner (node)<br>      (sload (+ node owner)))</p>
+<p>//只是用来示例，不能编译通过<br>如果你正在学习，也许不是那么的容易习惯LLL语言的写法。</p>
+<p>Serpent<br>Serpent是一个类Python的高级语言，最终也会被编译为EVM字节码。它主要被Augur团队使用。</p>
+<p>但最近Zeppelin Solution团队发现其编译器有一个严重的bug，在这个问题被修复之前都不建议继续使用。</p>
+<p>如果你对Augur如何解决这些漏洞感兴趣，你可以阅读Zeppelin Solution的这篇文章。</p>
+<p>Serpent的合约看起来如下：</p>
+<p>def register(key, value):</p>
+<pre><code># Key not yet claimed
+if not self.storage[key]:
+    self.storage[key] = value
+    return(1)
+else:
+    return(0)  # Key already claimed
+</code></pre><p>def ask(key):<br>    return(self.storage[key])<br>其它<br>在各种可用性和发展状态中还有一堆其他的高级语言，而且无疑将会被开发出来。 为了广泛采用，语言和编译器必须经过彻底的审查和测试，这当然需要时间。</p>
+<p>智能合约反编译/Disassembly<br>可以通过prosity来反编译以太坊智能合约的字节码，可以使用evmdis来Disassembly。</p>
+<p>智能合约的安全<br>一旦一个智能合约部署到了以太坊的网络上，它将是永不可变的，且将永久存在。如果你写了一个bug，你将不能下架这个有问题的版本，你只能在后续的版本中修复。</p>
+<p>由于许多工程师开发的Ethereum和其他智能合同平台来自于Web开发，所以这个概念实在是太新，而且是疯狂的。</p>
+<p>ConsenSys有一个非常棒的资源叫智能合约的最佳实践，你应该深入的理解一下。</p>
+<p>一个Parity的钱包被黑的解释。</p>
+<p>在你部署你的智能合约的时候，由于你管理的是真正的资金，你应该先开一个赏金计划，并尽量保证它完整的测试过。</p>
+<p>Whisper<br>Whisper是一个集成进以太坊的消息系统。它允许DApp发布小量的信息来进行非实时的消息通信。</p>
+<p>它使用shh协议。</p>
+<p>尽管它已经有段时间没有更新了，这是一个使用Whisper协议实现一个聊天客户端的例子。</p>
+<p>去中心自动化组织（DAOs）<br>这是一个组织（就像，一群人），其中，使用代码来保证最终的强制执行，而不是使用传统的法律文件。这群人使用智能合约来做常见组织做的所有的事情，比如在某件事上进行投票，比如决定是否对什么进行投资等等。</p>
+<p>副作用是决策，管理，以及对什么进行投资的结果将会不可改变的存储在区块链上。</p>
+<p>之前slock.it创建了标准的DAO框架来说明这个理念。在这里有对DAO概念的总览，以及如何使用框架来实现一个自己的DAO（译者注：这个项目由于bug被黑客攻击了）。</p>
+<p>Aragon<br>Aragon也正在应对挑战，设计一个根据智能合约逻辑运作的公司，重点是创建一个可以接受投资，处理会计，支付雇员，分配股权，正如我们现在知道的完成每天的公司的业务。他们也实现了漂亮的DApp客户端来让他们的协议使用起来更为简单。</p>
+<p>查看这里Aragon核心合约来更多的理解它是如何做的。</p>
+<p>IPFS&amp;FileCoin<br>IPFS（星际文件系统）是一个协议，用来分发文件。你可以认为它是一个基于bittorrent和git这样概念的一个文件系统，文件可以定位，且是不可变的。IPFS以IPLD数据模型存储信息，它非常有趣，提供了一些特别的特性，你可以通过下面的说明了解一些。</p>
+<p>这是一个新的协议，它有一个http的网关和文件系统适配器，这让你可以通过http，挂载整个互联网文件系统到你本地的盘/ipfs。IPFS还提供了一个寻址服务IPNS（星际命名空间），它允许可变的状态（需要注意的是在IPFS里的所有东西都是不可变的）。你甚至可以使用DNS TXT记录来定位到你的IPNS客户端，允许你生成用户友好的链接来指向到对应的数据。</p>
+<p>FileCoin是Protocol Lab为创建一个去中心化的基于IPFS的存储市场的努力结果，也就是向整个网络提供存储资源的激励层。FileCoin的共识协议没有使用浪费资源的工作量证明，而是使用了Proff of Replication和Proof of SpaceTime来保证每片数据被复制某个特定的拷贝数量且存储某个特定的时间。</p>
+<p>你应该读一下IPFS的白皮书，FileCoin的白皮书，以及IPLD的规范。</p>
+<p>由于当前FileCoin还没有上线，你可以使用当前的IPFS存储网络来运行html/css/js，并把作为一个类似orbit-db的数据库。</p>
+<p>Swarm<br>Swarm是一个去中心化的存储网络，集成于以太坊生态系统，作为第一阵营的项目，看看这里关于IPFS与这个项目的比较和优劣。但本质上，基本上是一样的，除了它们有不同的哲学，并在底层使用稍微不同的协议。</p>
+<p>项目<br>Augur<br>Augur是一个去中心化的预测市场，让大家对于某个现实世界的事件进行对赌。一方面，用户在某个具体可以发生的事件上投注，一旦结果成真，它们赢得的代币有真正的价值。为了实现这个，你需要实现一个去中心化的先知协议，来输入现实世界中的信息，它使用REP协议代币来进行经济激励。</p>
+<p>你可以看看Augur项目的合约代码，以及了解下Augur Master Plan。</p>
+<p>Gnosis<br>Gnosis与Augur有类似的理念，也是一个去中心化的预测市场。这是项目的白皮书，以及与Augur项目的对比。</p>
+<p>Golem<br>Golem是一个分布式的算力市场，以与IPFS一样的方式构建了一整套的提供算力市场。</p>
+<p>你可以看看FAQ来更好的理解。</p>
+<p>0xProject<br>0xProject创建了一个交换代币的协议，以及一个DApp来实现这个协议。开发者可以创建一个基于它们自己的分布式应用创建交易所（技术上叫中继层），而用户也不用信任这些app就可完成交易，结算在区块链上完成。0x协议旨在使用离线的第三方来广播交易和管理订单（可以创建/更新/删除订单，而不用直接向Ethereum发送缓慢/昂贵的交易），但最终会使用Ethereum进行结算。</p>
+<p>它们实现了场外交易，一个DApp使用这个协议来在用户之间直接交换代币。你可以在github上查看他们的合约。</p>
+<p>你还可以跳过这些酷炫的概念，直接阅读FAQ。</p>
+<p>Swap<br>ConsenSys的Swap协议也是非常类似的，但更专注于p2p的直接交易（而不是基于订单表），这里有一个白皮书，可以看看，这里有一个关于Swap协议的介绍。</p>
+<p>Bancor<br>代币的流动性是相对来说在加密币的生态中是一个非常大的问题。在用户间的交易需要满足买方和卖方两边的想法。</p>
+<p>Bancor是一个协议，可以让你的代币1）可以根据订单自动给予价格2）可以通过持有其它的代币作为抵押器来即时创造流动性。</p>
+<p>查看这里的白皮书</p>
+<p>Makerdao &amp; Dai<br>以太坊区块链管理的代币价值往往会有巨大的波动。这个特性在现实生活中则非常不好，比如你的目标是用来保值。</p>
+<p>Maker DAO是一个DAO来管理Dai稳定币。Dai现在还不存在，但他们已经发布了一个alpha的版本叫Sai来展示这门技术。</p>
+<p>这里是DAI的白皮书。</p>
+<p>Oraclize<br>如果我们要向智能合约中输入一些信息，比如纽约今天的天气，我也许需要实现一个去中心化的先知协议询问一批人（花费高且慢），但如果写一个服务以中心化的方式来提供信息，又违背了去中心化应用的理念。</p>
+<p>Oraclize尝试用以下方式来解决问题1）从一个外部数据源向你的智能合约发送数据。2）提供一个证明，数据来自某个数据源，且没有被修改过。由此如果你信任random.org，你可以使用Oraclize来提供一个随机数生成合约。</p>
+<p>他们的集成非常强大; 您可以获取URL，解析JSON和XPATH，查询Wolfram Alpha等。</p>
+<p>BTCRelay<br>BTCRelay作为比特币区块链交易的先知机制，这意味着你可以在以太坊上编写智能合约来响应比特币区块链上的某个交易，进行触发后续的操作。比如，你可以让人通过BTC为你的服务付费，使用BTCRelay在以太坊上校验付款成功后，继而在以太坊上提供对应的服务。</p>
+<p>Open Zeppelin &amp; zeppelinOS<br>Zeppelin Solutions是一个科技公司，在这个领域内正完成一些伟大，而且专业的事。它们实在做了太多事，太难一一说清了。</p>
+<p>他们管理了Open Zeppelin，一系列经过审查的，最佳的智能合约实践，你可以继承并应用于你自己的DApp中。你可以查看他们的github资源来学习更多。你应该读一下里面的每一个合约。</p>
+<p>他们坚持代码复用的理念，然后进一步创建了Zeppelin OS。你可以忽略OS，它不是传统意义上的操作系统的概念。zeppelinOS特性，工具和服务的集合，旨在提供稳固的开发人员体验，同时最大限度地提高智能合同安全性。</p>
+<p>zeppelinOS中的其中一部分是“zeppelinOS Kernel”。其实他们不是传统意义上的核心，而且是一组库。它们是通过库模型实现的可升级的智能合约，可以在出现安全问题时独立的进行更新。因为你在合约内包含的代码更少，部署也将花费更少的gas，而开发者也减少了代码的重复。</p>
+<p>zeppelinOS还有一些其他整齐的规划，比如调度程序（智能合约的异步执行，因为默认合同一般不会主动触发某个行为），市场级的协议和链下开发者体验工具。</p>
+<p>ENS - 以太坊的命名服务<br>ENS是一个去中心化的名称注册服务。并有一个描述性的项目名称。</p>
+<p>BAT 基础注意力代币 &amp; Brave浏览器<br>BAT尝试去中心化广告系统，通过监控大家的注意力，并在内容提供商，广告商和用户之间分发收益，切掉中间人。</p>
+<p>Brave和BAT由JS创始人Brendan Eich创建，同时他也是Mozilla的联合创始人。</p>
+<p>uPort<br>uPort在解决去中心化的身份识别问题。</p>
+<p>district0x<br>district0x是一个更高层级的去中心化的市场和社区。核心是通过一系列的智能合约来管理用户发布信息，搜索，过滤信息，在社区内维护信誉，管理支付等等。它可以用来建议如Ethlance和NameBazaar这样的市场。</p>
+<p>他们有非常棒的视觉设计。</p>
+<p>Steem<br>Steem是区块链上的reddit，它使用协议代币（STEEM）来激励这个社交社区的参与度。</p>
+<p>在这里查看白皮书。</p>
+<p>有一些关于Steemit块链如何启动以及支持组织如何运作的反应。</p>
+<p>参与者与领域内的玩家<br>ConsenSys<br>ConsenSys（有点像共识Consensus，但作为一个公司名称;它很聪明，巧妙的把u改成了s，但我一般念为“con-SEn-SIS”，避免读错）是一个“风险投资和产品工作室”。他们是一个（其实非常大）伞形组织，它赞助了一大堆项目和核心组件的开发。值得一提的是，它们资助了Truffle，Infura，MetaMask，Gnosis和uPort。</p>
+<p>Zeppelin Solutions<br>Zeppelin Solutions在上面我们有提到过，他也审查智能合约代码，提供咨询服务。他们的博客质量相当高。</p>
+<p>Protocol Labs<br>Protocol Labs是一群让人印象深刻的人，致力于IPFS，FileCoin，lip2p以及IPLD等其它项目的开发。</p>
+<p>区块链资本概况<br>Etienne Brunet有一篇关于代币，ICO和VC的概况文章。</p>
+<p>社区<br>你可以加入以太坊的社区。</p>
+<p>未来<br>未来展望。</p>
+
+	
+	</div>
+  <a type="button" href="/2018/04/13/以太坊开发入门/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" >从微信跳一跳学习逆向开发iOS</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2017-12-29  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>这几天出了个小程序特别火，借此机会学习下逆向开发。<br>
+	
+	</div>
+  <a type="button" href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2016/05/15/2016/instrument-详解/" >instrument 详解</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2016-05-15  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>整理一些常用 instrument 工具。<br>
+	
+	</div>
+  <a type="button" href="/2016/05/15/2016/instrument-详解/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2015/04/13/2015/Xcode-环境变量/" >Xcode 环境变量</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2015-04-13  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。<br>
+	
+	</div>
+  <a type="button" href="/2015/04/13/2015/Xcode-环境变量/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2014/12/19/2014/ios知识脉络梳理/" >ios知识脉络梳理</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2014-12-19  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>本文收录并整理了一些 iOS 开发知识盲点。<br>
+	
+	</div>
+  <a type="button" href="/2014/12/19/2014/ios知识脉络梳理/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2014/05/20/2014/weak和-strong/" >weak和 strong</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2014-05-20  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>强引用和弱引用常考知识点和易错盲点。<br>
+	
+	</div>
+  <a type="button" href="/2014/05/20/2014/weak和-strong/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2014/05/16/2014/ios-HTTP请求/" >ios HTTP请求</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2014-05-16  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>iOS9引入了新特性 <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-DontLinkElementID_13" target="_blank" rel="noopener">App Transport Security (ATS)</a>，所以需要在 Info.plist加入NSAppTransportSecurity 字典的 AllowsArbitraryLoads key的值为 BOOL。</p>
+	
+	</div>
+  <a type="button" href="/2014/05/16/2014/ios-HTTP请求/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2014/05/15/2014/闭包、lambda-计算、block/" > 闭包、lambda 计算、block</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2014-05-15  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>导读：</p>
 <ul>
 <li>什么是 block？</li>
 <li>block 基本原理是什么？</li>
 <li>使用 block 需要避免哪些问题？</li>
 </ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/05/15/2014/闭包、lambda-计算、block/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2013/05/13/2013/Http报文详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/05/13/2013/Http报文详解/" itemprop="url">Http - Web 基础概述</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-05-13T16:58:34+08:00">
-                2013-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Http/" itemprop="url" rel="index">
-                    <span itemprop="name">Http</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>唔。。。我真的是太菜了<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/05/13/2013/Http报文详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http:www.agumon.top/2013/01/13/2013/cUrl使用心得/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温故而知新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/01/13/2013/cUrl使用心得/" itemprop="url">cUrl使用心得</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-01-13T14:32:40+08:00">
-                2013-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>curl 真是调试利器啊！！<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/01/13/2013/cUrl使用心得/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/avatar.jpg"
-                alt="" />
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tag/index.html">
-                  <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/Yggdrasill-7C9" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github-alt"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:0x31f9f17@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://juejin.im/user/59ee29a36fb9a0451c3990e5" target="_blank" title="掘金">
-                      
-                        <i class="fa fa-fw fa-braille"></i>掘金</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.douban.com/people/163834656/" target="_blank" title="豆瓣">
-                      
-                        <i class="fa fa-fw fa-book"></i>豆瓣</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://segmentfault.com/u/maobuyu" target="_blank" title="sf.gg">
-                      
-                        <i class="fa fa-fw fa-code"></i>sf.gg</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/ya-la-si-te-er/" target="_blank" title="知乎">
-                      
-                        <i class="fa fa-fw fa-bell"></i>知乎</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder"></span>
-
-  
+	
+	</div>
+  <a type="button" href="/2014/05/15/2014/闭包、lambda-计算、block/#more" class="btn btn-default more">Read More</a>
 </div>
 
-
-
-
-
-
-
-
-  <div class="footer-custom">时间 = 知识 = 金钱</div>
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2013/05/13/2013/Http报文详解/" >Http - Web 基础概述</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2013-05-13  </div>
+		</div>
+	</div>
 	
 
 
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>唔。。。我真的是太菜了<br>
+	
+	</div>
+  <a type="button" href="/2013/05/13/2013/Http报文详解/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2013/01/13/2013/cUrl使用心得/" >cUrl使用心得</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2013-01-13  </div>
+		</div>
+	</div>
+	
 
 
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>curl 真是调试利器啊！！<br>
+	
+	</div>
+  <a type="button" href="/2013/01/13/2013/cUrl使用心得/#more" class="btn btn-default more">Read More</a>
+</div>
 
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Http/">Http<span>1</span></a></li>
+		
+			<li><a href="/categories/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/categories/git-svn/">git&amp;svn<span>0</span></a></li>
+		
+			<li><a href="/categories/iOS-Dev/">iOS-Dev<span>7</span></a></li>
+		
+			<li><a href="/categories/iOS开发/">iOS开发<span>0</span></a></li>
+		
+			<li><a href="/categories/股票投资/">股票投资<span>0</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/网络请求/">网络请求<span>1</span></a></li>
+		
+			<li><a href="/tags/weak-strong/">weak&amp;strong<span>1</span></a></li>
+		
+			<li><a href="/tags/rvm/">rvm<span>0</span></a></li>
+		
+			<li><a href="/tags/gem/">gem<span>0</span></a></li>
+		
+			<li><a href="/tags/URL/">URL<span>1</span></a></li>
+		
+			<li><a href="/tags/plugins/">plugins<span>0</span></a></li>
+		
+			<li><a href="/tags/libimobiledevice/">libimobiledevice<span>1</span></a></li>
+		
+			<li><a href="/tags/Http-报文/">Http 报文<span>1</span></a></li>
+		
+			<li><a href="/tags/github/">github<span>0</span></a></li>
+		
+			<li><a href="/tags/UITableView/">UITableView<span>0</span></a></li>
+		
+			<li><a href="/tags/instrument/">instrument<span>1</span></a></li>
+		
+			<li><a href="/tags/cUrl/">cUrl<span>1</span></a></li>
+		
+			<li><a href="/tags/tools/">tools<span>0</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/04/13/以太坊开发入门/" ><i class="fa fa-file-o"></i>以太坊开发入门</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" ><i class="fa fa-file-o"></i>从微信跳一跳学习逆向开发iOS</a>
+      </li>
+    
+      <li>
+        <a href="/2016/05/15/2016/instrument-详解/" ><i class="fa fa-file-o"></i>instrument 详解</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/13/2015/Xcode-环境变量/" ><i class="fa fa-file-o"></i>Xcode 环境变量</a>
+      </li>
+    
+      <li>
+        <a href="/2014/12/19/2014/ios知识脉络梳理/" ><i class="fa fa-file-o"></i>ios知识脉络梳理</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/hexo-theme-freemind" title="Freemind's Github repository." target="_blank"]);">Freemind</a></li>
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/kristopolous/BOOTSTRA.386" title="BOOTSTRA.386's Github repository." target="_blank"]);">BOOTSTRA.386</a></li>
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/blackshow/hexo-theme-freemind.386" title="Freemind.386's Github repository." target="_blank"]);">Freemind.386</a></li>
+	
+		<li><i class="fa fa-github"></i><a href="http://www.github.com/blackshow" title="My Github account." target="_blank"]);">My Github</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2018 温故而知新
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
 
 
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-
-  <script>
-    
-    
-      flOptions = {};
-      
-          flOptions.iconStyle = "box";
-      
-          flOptions.boxForm = "horizontal";
-      
-          flOptions.position = "middleRight";
-      
-          flOptions.networks = "Weibo,Wechat,Douban,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
-  </script>
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-  
-  
-   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
-   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-   <script type="text/javascript" src="/js/src/fireworks.js"></script>
-  
 
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
-</html>
+   </html>
