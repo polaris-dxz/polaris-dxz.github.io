@@ -1,318 +1,375 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="yanm1ng&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
-  <title>Xcode 环境变量 | 温故而知新</title>
-
-  <!-- keywords -->
+    <link rel="shortcut icon" href="/css/images/logo.png">
   
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Xcode 环境变量">
-<meta property="og:url" content="http:www.agumon.top/2015/04/13/2015/Xcode-环境变量/index.html">
-<meta property="og:site_name" content="温故而知新">
-<meta property="og:description" content="在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。">
-<meta property="og:updated_time" content="2018-05-03T13:00:05.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode 环境变量">
-<meta name="twitter:description" content="在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。">
-  
-    <link rel="alternative" href="/atom.xml" title="温故而知新" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
-  
+  <title>
+    
+      Xcode 环境变量 | 温故而知新
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
   
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
   
 
-  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
-  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
-  
 </head>
-<body>
-  <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/"></a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">我的全栈之路</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Http-报文/" style="font-size: 10px;">Http 报文</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/cUrl/" style="font-size: 10px;">cUrl</a> <a href="/tags/instrument/" style="font-size: 10px;">instrument</a> <a href="/tags/libimobiledevice/" style="font-size: 10px;">libimobiledevice</a> <a href="/tags/weak-strong/" style="font-size: 10px;">weak&strong</a> <a href="/tags/网络请求/" style="font-size: 10px;">网络请求</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-			</div>
-		</div>
-	</header>				
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
 </div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>温故而知新</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author"></h1>
-			</hgroup>
-			
-			<p class="header-subtitle">我的全栈之路</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-2015/Xcode-环境变量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/13/2015/Xcode-环境变量/" class="article-date">
-  	<time datetime="2015-04-13T10:52:04.000Z" itemprop="datePublished">2015-04-13</time>
-</a>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Xcode 环境变量
-      
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/iOS-Dev/">iOS-Dev</a>
-	</div>
-
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。<br><a id="more"></a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PhaseScriptExecution Run\ Script /Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Script-993355071C92B75C004569A0.sh</span><br><span class="line">    <span class="built_in">cd</span> <span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> ACTION=build</span><br><span class="line">    <span class="built_in">export</span> AD_HOC_CODE_SIGNING_ALLOWED=NO</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_MODE=u+w,go-w,a+rX</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_OWNER=home</span><br><span class="line">    <span class="built_in">export</span> ALWAYS_SEARCH_USER_PATHS=NO</span><br><span class="line">    <span class="built_in">export</span> ALWAYS_USE_SEPARATE_HEADERMAPS=NO</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DEVELOPER_DIR=/AppleInternal/Developer</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DIR=/AppleInternal</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DOCUMENTATION_DIR=/AppleInternal/Documentation</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_LIBRARY_DIR=/AppleInternal/Library</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_TOOLS=/AppleInternal/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> APPLICATION_EXTENSION_API_ONLY=NO</span><br><span class="line">    <span class="built_in">export</span> APPLY_RULES_IN_COPY_FILES=NO</span><br><span class="line">    <span class="built_in">export</span> ARCHS=arm64</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_32_64_BIT=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_32_BIT=armv7</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_64_BIT=arm64</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_INCLUDING_64_BIT=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_UNIVERSAL_IPHONE_OS=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon</span><br><span class="line">    <span class="built_in">export</span> AVAILABLE_PLATFORMS=<span class="string">"watchos iphonesimulator macosx appletvsimulator watchsimulator appletvos iphoneos"</span></span><br><span class="line">    <span class="built_in">export</span> BITCODE_GENERATION_MODE=marker</span><br><span class="line">    <span class="built_in">export</span> BUILD_ACTIVE_RESOURCES_ONLY=YES</span><br><span class="line">    <span class="built_in">export</span> BUILD_COMPONENTS=<span class="string">"headers build"</span></span><br><span class="line">    <span class="built_in">export</span> BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> BUILD_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> BUILD_STYLE=</span><br><span class="line">    <span class="built_in">export</span> BUILD_VARIANTS=normal</span><br><span class="line">    <span class="built_in">export</span> BUILT_PRODUCTS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CACHE_ROOT=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode</span><br><span class="line">    <span class="built_in">export</span> CCHROOT=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode</span><br><span class="line">    <span class="built_in">export</span> CHMOD=/bin/chmod</span><br><span class="line">    <span class="built_in">export</span> CHOWN=/usr/sbin/chown</span><br><span class="line">    <span class="built_in">export</span> CLANG_CXX_LANGUAGE_STANDARD=gnu++0x</span><br><span class="line">    <span class="built_in">export</span> CLANG_CXX_LIBRARY=libc++</span><br><span class="line">    <span class="built_in">export</span> CLANG_ENABLE_MODULES=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_ENABLE_OBJC_ARC=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_MODULES_BUILD_SESSION_FILE=/Users/home/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_BOOL_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_CONSTANT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_DIRECT_OBJC_ISA_USAGE=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_EMPTY_BODY=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_ENUM_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_INT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_OBJC_ROOT_CLASS=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_UNREACHABLE_CODE=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN__DUPLICATE_METHOD_MATCH=YES</span><br><span class="line">    <span class="built_in">export</span> CLASS_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/JavaClasses</span><br><span class="line">    <span class="built_in">export</span> CLEAN_PRECOMPS=YES</span><br><span class="line">    <span class="built_in">export</span> CLONE_HEADERS=NO</span><br><span class="line">    <span class="built_in">export</span> CODESIGNING_FOLDER_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGNING_ALLOWED=YES</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGNING_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGN_CONTEXT_CLASS=XCiPhoneOSCodeSignContext</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGN_IDENTITY=<span class="string">"iPhone Developer"</span></span><br><span class="line">    <span class="built_in">export</span> COLOR_DIAGNOSTICS=NO</span><br><span class="line">    <span class="built_in">export</span> COMBINE_HIDPI_IMAGES=NO</span><br><span class="line">    <span class="built_in">export</span> COMMAND_MODE=legacy</span><br><span class="line">    <span class="built_in">export</span> COMPOSITE_SDK_DIRS=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode/CompositeSDKs</span><br><span class="line">    <span class="built_in">export</span> COMPRESS_PNG_FILES=YES</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION=Debug</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION_BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CONTENTS_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> COPYING_PRESERVES_HFS_DATA=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_HEADERS_RUN_UNIFDEF=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_PHASE_STRIP=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_RESOURCES_FROM_STATIC_FRAMEWORKS=YES</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_PLATFORM_NAME=iphonesimulator</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_SDK_NAME=iphonesimulator9.2</span><br><span class="line">    <span class="built_in">export</span> CP=/bin/cp</span><br><span class="line">    <span class="built_in">export</span> CREATE_INFOPLIST_SECTION_IN_BINARY=NO</span><br><span class="line">    <span class="built_in">export</span> CURRENT_ARCH=arm64</span><br><span class="line">    <span class="built_in">export</span> CURRENT_VARIANT=normal</span><br><span class="line">    <span class="built_in">export</span> DEAD_CODE_STRIPPING=YES</span><br><span class="line">    <span class="built_in">export</span> DEBUGGING_SYMBOLS=YES</span><br><span class="line">    <span class="built_in">export</span> DEBUG_INFORMATION_FORMAT=dwarf</span><br><span class="line">    <span class="built_in">export</span> DEFAULT_COMPILER=com.apple.compilers.llvm.clang.1_0</span><br><span class="line">    <span class="built_in">export</span> DEFAULT_KEXT_INSTALL_PATH=/System/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> DEFINES_MODULE=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_LOCATION=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_POSTPROCESSING=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_ENV_NAME=IPHONEOS_DEPLOYMENT_TARGET</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_FLAG_NAME=miphoneos-version-min</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_FLAG_PREFIX=-miphoneos-version-min=</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_SETTING_NAME=IPHONEOS_DEPLOYMENT_TARGET</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_SUGGESTED_VALUES=<span class="string">"6.0 6.1 7.0 7.1 8.0 8.1 8.2 8.3 8.4 9.0 9.1 9.2"</span></span><br><span class="line">    <span class="built_in">export</span> DERIVED_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DERIVED_SOURCES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_FRAMEWORKS_DIR=/Applications/Xcode.app/Contents/Developer/Library/Frameworks</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_FRAMEWORKS_DIR_QUOTED=/Applications/Xcode.app/Contents/Developer/Library/Frameworks</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/Developer/Library</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> DEVELOPMENT_LANGUAGE=English</span><br><span class="line">    <span class="built_in">export</span> DOCUMENTATION_FOLDER_PATH=SelfSizedCellByCodeExample.app/English.lproj/Documentation</span><br><span class="line">    <span class="built_in">export</span> DO_HEADER_SCANNING_IN_JAM=NO</span><br><span class="line">    <span class="built_in">export</span> DSTROOT=/tmp/SelfSizedCellByCodeExample.dst</span><br><span class="line">    <span class="built_in">export</span> DT_TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FILE_NAME=SelfSizedCellByCodeExample.app.dSYM</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FOLDER_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> EFFECTIVE_PLATFORM_NAME=-iphoneos</span><br><span class="line">    <span class="built_in">export</span> EMBEDDED_CONTENT_CONTAINS_SWIFT=NO</span><br><span class="line">    <span class="built_in">export</span> EMBEDDED_PROFILE_NAME=embedded.mobileprovision</span><br><span class="line">    <span class="built_in">export</span> EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE=NO</span><br><span class="line">    <span class="built_in">export</span> ENABLE_BITCODE=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_HEADER_DEPENDENCIES=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_ON_DEMAND_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_STRICT_OBJC_MSGSEND=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_TESTABILITY=YES</span><br><span class="line">    <span class="built_in">export</span> ENTITLEMENTS_ALLOWED=YES</span><br><span class="line">    <span class="built_in">export</span> ENTITLEMENTS_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS=<span class="string">".DS_Store .svn .git .hg CVS"</span></span><br><span class="line">    <span class="built_in">export</span> EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES=<span class="string">"*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj"</span></span><br><span class="line">    <span class="built_in">export</span> EXECUTABLES_FOLDER_PATH=SelfSizedCellByCodeExample.app/Executables</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_PATH=SelfSizedCellByCodeExample.app/SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> EXPANDED_CODE_SIGN_IDENTITY=54D2584F0CDFF507E70F191FC851A7D39B24F29B</span><br><span class="line">    <span class="built_in">export</span> EXPANDED_CODE_SIGN_IDENTITY_NAME=<span class="string">"iPhone Developer: Jing Yang (KEPL6DZH42)"</span></span><br><span class="line">    <span class="built_in">export</span> EXPANDED_PROVISIONING_PROFILE=f2d6f047-08d8-4627-a967-585e63aa876a</span><br><span class="line">    <span class="built_in">export</span> FILE_LIST=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects/LinkFileList</span><br><span class="line">    <span class="built_in">export</span> FIXED_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/FixedFiles</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORKS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Frameworks</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_FLAG_PREFIX=-framework</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_VERSION=A</span><br><span class="line">    <span class="built_in">export</span> FULL_PRODUCT_NAME=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> GCC3_VERSION=3.3</span><br><span class="line">    <span class="built_in">export</span> GCC_C_LANGUAGE_STANDARD=gnu99</span><br><span class="line">    <span class="built_in">export</span> GCC_DYNAMIC_NO_PIC=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_INLINES_ARE_PRIVATE_EXTERN=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_NO_COMMON_BLOCKS=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_OPTIMIZATION_LEVEL=0</span><br><span class="line">    <span class="built_in">export</span> GCC_PFE_FILE_C_DIALECTS=<span class="string">"c objective-c c++ objective-c++"</span></span><br><span class="line">    <span class="built_in">export</span> GCC_PREPROCESSOR_DEFINITIONS=<span class="string">"DEBUG=1 "</span></span><br><span class="line">    <span class="built_in">export</span> GCC_SYMBOLS_PRIVATE_EXTERN=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_THUMB_SUPPORT=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_TREAT_WARNINGS_AS_ERRORS=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_VERSION=com.apple.compilers.llvm.clang.1_0</span><br><span class="line">    <span class="built_in">export</span> GCC_VERSION_IDENTIFIER=com_apple_compilers_llvm_clang_1_0</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_64_TO_32_BIT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_ABOUT_RETURN_TYPE=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNDECLARED_SELECTOR=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNINITIALIZED_AUTOS=YES_AGGRESSIVE</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNUSED_FUNCTION=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNUSED_VARIABLE=YES</span><br><span class="line">    <span class="built_in">export</span> GENERATE_MASTER_OBJECT_FILE=NO</span><br><span class="line">    <span class="built_in">export</span> GENERATE_PKGINFO_FILE=YES</span><br><span class="line">    <span class="built_in">export</span> GENERATE_PROFILING_CODE=NO</span><br><span class="line">    <span class="built_in">export</span> GID=20</span><br><span class="line">    <span class="built_in">export</span> GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_PROJECT_HEADERS=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_USES_FRAMEWORK_PREFIX_ENTRIES=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_USES_VFS=NO</span><br><span class="line">    <span class="built_in">export</span> HEADER_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/include "</span></span><br><span class="line">    <span class="built_in">export</span> HIDE_BITCODE_SYMBOLS=YES</span><br><span class="line">    <span class="built_in">export</span> HOME=/Users/home</span><br><span class="line">    <span class="built_in">export</span> ICONV=/usr/bin/iconv</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_EXPAND_BUILD_SETTINGS=YES</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_FILE=SelfSizedCellByCodeExample/Info.plist</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_OUTPUT_FORMAT=binary</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_PATH=SelfSizedCellByCodeExample.app/Info.plist</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_PREPROCESS=NO</span><br><span class="line">    <span class="built_in">export</span> INFOSTRINGS_PATH=SelfSizedCellByCodeExample.app/English.lproj/InfoPlist.strings</span><br><span class="line">    <span class="built_in">export</span> INSTALL_DIR=/tmp/SelfSizedCellByCodeExample.dst/Applications</span><br><span class="line">    <span class="built_in">export</span> INSTALL_GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> INSTALL_MODE_FLAG=u+w,go-w,a+rX</span><br><span class="line">    <span class="built_in">export</span> INSTALL_OWNER=home</span><br><span class="line">    <span class="built_in">export</span> INSTALL_PATH=/Applications</span><br><span class="line">    <span class="built_in">export</span> INSTALL_ROOT=/tmp/SelfSizedCellByCodeExample.dst</span><br><span class="line">    <span class="built_in">export</span> IPHONEOS_DEPLOYMENT_TARGET=7.0</span><br><span class="line">    <span class="built_in">export</span> JAVAC_DEFAULT_FLAGS=<span class="string">"-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"</span></span><br><span class="line">    <span class="built_in">export</span> JAVA_APP_STUB=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub</span><br><span class="line">    <span class="built_in">export</span> JAVA_ARCHIVE_CLASSES=YES</span><br><span class="line">    <span class="built_in">export</span> JAVA_ARCHIVE_TYPE=JAR</span><br><span class="line">    <span class="built_in">export</span> JAVA_COMPILER=/usr/bin/javac</span><br><span class="line">    <span class="built_in">export</span> JAVA_FOLDER_PATH=SelfSizedCellByCodeExample.app/Java</span><br><span class="line">    <span class="built_in">export</span> JAVA_FRAMEWORK_RESOURCES_DIRS=Resources</span><br><span class="line">    <span class="built_in">export</span> JAVA_JAR_FLAGS=cv</span><br><span class="line">    <span class="built_in">export</span> JAVA_SOURCE_SUBDIR=.</span><br><span class="line">    <span class="built_in">export</span> JAVA_USE_DEPENDENCIES=YES</span><br><span class="line">    <span class="built_in">export</span> JAVA_ZIP_FLAGS=-urg</span><br><span class="line">    <span class="built_in">export</span> JIKES_DEFAULT_FLAGS=<span class="string">"+E +OLDCSO"</span></span><br><span class="line">    <span class="built_in">export</span> KEEP_PRIVATE_EXTERNS=NO</span><br><span class="line">    <span class="built_in">export</span> LD_DEPENDENCY_INFO_FILE=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal/arm64/SelfSizedCellByCodeExample_dependency_info.dat</span><br><span class="line">    <span class="built_in">export</span> LD_GENERATE_MAP_FILE=NO</span><br><span class="line">    <span class="built_in">export</span> LD_MAP_FILE_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/SelfSizedCellByCodeExample-LinkMap-normal-arm64.txt</span><br><span class="line">    <span class="built_in">export</span> LD_NO_PIE=NO</span><br><span class="line">    <span class="built_in">export</span> LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER=YES</span><br><span class="line">    <span class="built_in">export</span> LD_RUNPATH_SEARCH_PATHS=<span class="string">" @executable_path/Frameworks"</span></span><br><span class="line">    <span class="built_in">export</span> LEGACY_DEVELOPER_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer</span><br><span class="line">    <span class="built_in">export</span> LEX=lex</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_FLAG_NOSPACE=YES</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_FLAG_PREFIX=-l</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_KEXT_INSTALL_PATH=/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> LINKER_DISPLAYS_MANGLED_NAMES=NO</span><br><span class="line">    <span class="built_in">export</span> LINK_FILE_LIST_normal_arm64=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal/arm64/SelfSizedCellByCodeExample.LinkFileList</span><br><span class="line">    <span class="built_in">export</span> LINK_WITH_STANDARD_LIBRARIES=YES</span><br><span class="line">    <span class="built_in">export</span> LOCALIZABLE_CONTENT_DIR=</span><br><span class="line">    <span class="built_in">export</span> LOCALIZED_RESOURCES_FOLDER_PATH=SelfSizedCellByCodeExample.app/English.lproj</span><br><span class="line">    <span class="built_in">export</span> LOCAL_ADMIN_APPS_DIR=/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> LOCAL_APPS_DIR=/Applications</span><br><span class="line">    <span class="built_in">export</span> LOCAL_DEVELOPER_DIR=/Library/Developer</span><br><span class="line">    <span class="built_in">export</span> LOCAL_LIBRARY_DIR=/Library</span><br><span class="line">    <span class="built_in">export</span> LOCROOT=</span><br><span class="line">    <span class="built_in">export</span> LOCSYMROOT=</span><br><span class="line">    <span class="built_in">export</span> MACH_O_TYPE=mh_execute</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_PRODUCT_BUILD_VERSION=15D21</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_ACTUAL=101103</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_MAJOR=101100</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_MINOR=1103</span><br><span class="line">    <span class="built_in">export</span> MODULE_CACHE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/ModuleCache</span><br><span class="line">    <span class="built_in">export</span> MTL_ENABLE_DEBUG_INFO=YES</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH=armv7</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_32_BIT=i386</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_64_BIT=x86_64</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_ACTUAL=x86_64</span><br><span class="line">    <span class="built_in">export</span> NO_COMMON=YES</span><br><span class="line">    <span class="built_in">export</span> OBJECT_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects</span><br><span class="line">    <span class="built_in">export</span> OBJECT_FILE_DIR_normal=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal</span><br><span class="line">    <span class="built_in">export</span> OBJROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> ONLY_ACTIVE_ARCH=YES</span><br><span class="line">    <span class="built_in">export</span> OPTIMIZATION_LEVEL=0</span><br><span class="line">    <span class="built_in">export</span> OS=MACOS</span><br><span class="line">    <span class="built_in">export</span> OSAC=/usr/bin/osacompile</span><br><span class="line">    <span class="built_in">export</span> PACKAGE_TYPE=com.apple.package-type.wrapper.application</span><br><span class="line">    <span class="built_in">export</span> PASCAL_STRINGS=YES</span><br><span class="line">    <span class="built_in">export</span> PATH=<span class="string">"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span><br><span class="line">    <span class="built_in">export</span> PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES=<span class="string">"/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"</span></span><br><span class="line">    <span class="built_in">export</span> PBDEVELOPMENTPLIST_PATH=SelfSizedCellByCodeExample.app/pbdevelopment.plist</span><br><span class="line">    <span class="built_in">export</span> PFE_FILE_C_DIALECTS=objective-c</span><br><span class="line">    <span class="built_in">export</span> PKGINFO_FILE_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/PkgInfo</span><br><span class="line">    <span class="built_in">export</span> PKGINFO_PATH=SelfSizedCellByCodeExample.app/PkgInfo</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DISPLAY_NAME=iOS</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_NAME=iphoneos</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_PREFERRED_ARCH=arm64</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_PRODUCT_BUILD_VERSION=13C75</span><br><span class="line">    <span class="built_in">export</span> PLIST_FILE_OUTPUT_FORMAT=binary</span><br><span class="line">    <span class="built_in">export</span> PLUGINS_FOLDER_PATH=SelfSizedCellByCodeExample.app/PlugIns</span><br><span class="line">    <span class="built_in">export</span> PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR=YES</span><br><span class="line">    <span class="built_in">export</span> PRECOMP_DESTINATION_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/PrefixHeaders</span><br><span class="line">    <span class="built_in">export</span> PRESERVE_DEAD_CODE_INITS_AND_TERMS=NO</span><br><span class="line">    <span class="built_in">export</span> PRIVATE_HEADERS_FOLDER_PATH=SelfSizedCellByCodeExample.app/PrivateHeaders</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_BUNDLE_IDENTIFIER=tv.douyu.SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_MODULE_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_SETTINGS_PATH=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample/SelfSizedCellByCodeExample/Info.plist"</span></span><br><span class="line">    <span class="built_in">export</span> PRODUCT_TYPE=com.apple.product-type.application</span><br><span class="line">    <span class="built_in">export</span> PROFILING_CODE=NO</span><br><span class="line">    <span class="built_in">export</span> PROJECT=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PROJECT_DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> PROJECT_DIR=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> PROJECT_FILE_PATH=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample/SelfSizedCellByCodeExample.xcodeproj"</span></span><br><span class="line">    <span class="built_in">export</span> PROJECT_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PROJECT_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> PROJECT_TEMP_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> PROVISIONING_PROFILE_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> PUBLIC_HEADERS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Headers</span><br><span class="line">    <span class="built_in">export</span> RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_CVS_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_GIT_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_HG_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_SVN_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> RESOURCE_RULES_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> REZ_COLLECTOR_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/ResourceManagerResources</span><br><span class="line">    <span class="built_in">export</span> REZ_OBJECTS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/ResourceManagerResources/Objects</span><br><span class="line">    <span class="built_in">export</span> REZ_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> SCAN_ALL_SOURCE_FILES_FOR_INCLUDES=NO</span><br><span class="line">    <span class="built_in">export</span> SCRIPTS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Scripts</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_INPUT_FILE_COUNT=0</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_OUTPUT_FILE_0=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources/myfile</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_OUTPUT_FILE_COUNT=1</span><br><span class="line">    <span class="built_in">export</span> SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_DIR_iphoneos9_2=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_NAME=iphoneos9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_NAMES=iphoneos9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_PRODUCT_BUILD_VERSION=13C75</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION=9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_ACTUAL=90200</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_MAJOR=90000</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_MINOR=200</span><br><span class="line">    <span class="built_in">export</span> SED=/usr/bin/sed</span><br><span class="line">    <span class="built_in">export</span> SEPARATE_STRIP=NO</span><br><span class="line">    <span class="built_in">export</span> SEPARATE_SYMBOL_EDIT=NO</span><br><span class="line">    <span class="built_in">export</span> SET_DIR_MODE_OWNER_GROUP=YES</span><br><span class="line">    <span class="built_in">export</span> SET_FILE_MODE_OWNER_GROUP=NO</span><br><span class="line">    <span class="built_in">export</span> SHALLOW_BUNDLE=YES</span><br><span class="line">    <span class="built_in">export</span> SHARED_DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> SHARED_FRAMEWORKS_FOLDER_PATH=SelfSizedCellByCodeExample.app/SharedFrameworks</span><br><span class="line">    <span class="built_in">export</span> SHARED_PRECOMPS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/PrecompiledHeaders</span><br><span class="line">    <span class="built_in">export</span> SHARED_SUPPORT_FOLDER_PATH=SelfSizedCellByCodeExample.app/SharedSupport</span><br><span class="line">    <span class="built_in">export</span> SKIP_INSTALL=NO</span><br><span class="line">    <span class="built_in">export</span> SOURCE_ROOT=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> SRCROOT=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> STRINGS_FILE_OUTPUT_ENCODING=binary</span><br><span class="line">    <span class="built_in">export</span> STRIP_BITCODE_FROM_COPIED_FILES=YES</span><br><span class="line">    <span class="built_in">export</span> STRIP_INSTALLED_PRODUCT=YES</span><br><span class="line">    <span class="built_in">export</span> STRIP_STYLE=all</span><br><span class="line">    <span class="built_in">export</span> SUPPORTED_DEVICE_FAMILIES=1,2</span><br><span class="line">    <span class="built_in">export</span> SUPPORTED_PLATFORMS=<span class="string">"iphonesimulator iphoneos"</span></span><br><span class="line">    <span class="built_in">export</span> SUPPORTS_TEXT_BASED_API=NO</span><br><span class="line">    <span class="built_in">export</span> SWIFT_PLATFORM_TARGET_PREFIX=ios</span><br><span class="line">    <span class="built_in">export</span> SYMROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_ADMIN_APPS_DIR=/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_APPS_DIR=/Applications</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_CORE_SERVICES_DIR=/System/Library/CoreServices</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEMOS_DIR=/Applications/Extras</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_APPS_DIR=/Applications/Xcode.app/Contents/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DEMOS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DOC_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_JAVA_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_RELEASENOTES_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS=/Applications/Xcode.app/Contents/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS_DOC_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_UTILITIES_DIR=/Applications/Xcode.app/Contents/Developer/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DOCUMENTATION_DIR=/Library/Documentation</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_KEXT_INSTALL_PATH=/System/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_LIBRARY_DIR=/System/Library</span><br><span class="line">    <span class="built_in">export</span> TARGETED_DEVICE_FAMILY=1,2</span><br><span class="line">    <span class="built_in">export</span> TARGETNAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> TARGET_BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> TARGET_DEVICE_MODEL=iPhone7,2</span><br><span class="line">    <span class="built_in">export</span> TARGET_DEVICE_OS_VERSION=9.0.2</span><br><span class="line">    <span class="built_in">export</span> TARGET_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> TARGET_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> TOOLCHAINS=com.apple.dt.toolchain.XcodeDefault</span><br><span class="line">    <span class="built_in">export</span> TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</span><br><span class="line">    <span class="built_in">export</span> TREAT_MISSING_BASELINES_AS_TEST_FAILURES=NO</span><br><span class="line">    <span class="built_in">export</span> UID=501</span><br><span class="line">    <span class="built_in">export</span> UNLOCALIZED_RESOURCES_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> UNSTRIPPED_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> USER=home</span><br><span class="line">    <span class="built_in">export</span> USER_APPS_DIR=/Users/home/Applications</span><br><span class="line">    <span class="built_in">export</span> USER_LIBRARY_DIR=/Users/home/Library</span><br><span class="line">    <span class="built_in">export</span> USE_DYNAMIC_NO_PIC=YES</span><br><span class="line">    <span class="built_in">export</span> USE_HEADERMAP=YES</span><br><span class="line">    <span class="built_in">export</span> USE_HEADER_SYMLINKS=NO</span><br><span class="line">    <span class="built_in">export</span> VALIDATE_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> VALID_ARCHS=<span class="string">"arm64 armv7 armv7s"</span></span><br><span class="line">    <span class="built_in">export</span> VERBOSE_PBXCP=NO</span><br><span class="line">    <span class="built_in">export</span> VERSIONPLIST_PATH=SelfSizedCellByCodeExample.app/version.plist</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_BUILDER=home</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_FILE=SelfSizedCellByCodeExample_vers.c</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_STRING=<span class="string">"\"@(#)PROGRAM:SelfSizedCellByCodeExample  PROJECT:SelfSizedCellByCodeExample-\""</span></span><br><span class="line">    <span class="built_in">export</span> WRAPPER_EXTENSION=app</span><br><span class="line">    <span class="built_in">export</span> WRAPPER_NAME=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> WRAPPER_SUFFIX=.app</span><br><span class="line">    <span class="built_in">export</span> WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES=NO</span><br><span class="line">    <span class="built_in">export</span> XCODE_APP_SUPPORT_DIR=/Applications/Xcode.app/Contents/Developer/Library/Xcode</span><br><span class="line">    <span class="built_in">export</span> XCODE_PRODUCT_BUILD_VERSION=7C1002</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_ACTUAL=0721</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_MAJOR=0700</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_MINOR=0720</span><br><span class="line">    <span class="built_in">export</span> XPCSERVICES_FOLDER_PATH=SelfSizedCellByCodeExample.app/XPCServices</span><br><span class="line">    <span class="built_in">export</span> YACC=yacc</span><br><span class="line">    <span class="built_in">export</span> arch=arm64</span><br><span class="line">    <span class="built_in">export</span> variant=normal</span><br><span class="line">    /bin/sh -c /Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Script-993355071C92B75C004569A0.sh</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
   </div>
-  
+</header>
+
+    <div id="article-banner">
+  <h2>Xcode 环境变量</h2>
+  <p class="post-date">2015-04-13</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>在build 过程中，要想观察所有已存在的环境变量，你可以在 Build Phases 中添加一个 “Run Script”，并勾选上 “Show environment variables in build log”。<br><a id="more"></a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PhaseScriptExecution Run\ Script /Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Script-993355071C92B75C004569A0.sh</span><br><span class="line">    <span class="built_in">cd</span> <span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> ACTION=build</span><br><span class="line">    <span class="built_in">export</span> AD_HOC_CODE_SIGNING_ALLOWED=NO</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_MODE=u+w,go-w,a+rX</span><br><span class="line">    <span class="built_in">export</span> ALTERNATE_OWNER=home</span><br><span class="line">    <span class="built_in">export</span> ALWAYS_SEARCH_USER_PATHS=NO</span><br><span class="line">    <span class="built_in">export</span> ALWAYS_USE_SEPARATE_HEADERMAPS=NO</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DEVELOPER_DIR=/AppleInternal/Developer</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DIR=/AppleInternal</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_DOCUMENTATION_DIR=/AppleInternal/Documentation</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_LIBRARY_DIR=/AppleInternal/Library</span><br><span class="line">    <span class="built_in">export</span> APPLE_INTERNAL_TOOLS=/AppleInternal/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> APPLICATION_EXTENSION_API_ONLY=NO</span><br><span class="line">    <span class="built_in">export</span> APPLY_RULES_IN_COPY_FILES=NO</span><br><span class="line">    <span class="built_in">export</span> ARCHS=arm64</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_32_64_BIT=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_32_BIT=armv7</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_64_BIT=arm64</span><br><span class="line">    <span class="built_in">export</span> ARCHS_STANDARD_INCLUDING_64_BIT=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ARCHS_UNIVERSAL_IPHONE_OS=<span class="string">"armv7 arm64"</span></span><br><span class="line">    <span class="built_in">export</span> ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon</span><br><span class="line">    <span class="built_in">export</span> AVAILABLE_PLATFORMS=<span class="string">"watchos iphonesimulator macosx appletvsimulator watchsimulator appletvos iphoneos"</span></span><br><span class="line">    <span class="built_in">export</span> BITCODE_GENERATION_MODE=marker</span><br><span class="line">    <span class="built_in">export</span> BUILD_ACTIVE_RESOURCES_ONLY=YES</span><br><span class="line">    <span class="built_in">export</span> BUILD_COMPONENTS=<span class="string">"headers build"</span></span><br><span class="line">    <span class="built_in">export</span> BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> BUILD_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> BUILD_STYLE=</span><br><span class="line">    <span class="built_in">export</span> BUILD_VARIANTS=normal</span><br><span class="line">    <span class="built_in">export</span> BUILT_PRODUCTS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CACHE_ROOT=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode</span><br><span class="line">    <span class="built_in">export</span> CCHROOT=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode</span><br><span class="line">    <span class="built_in">export</span> CHMOD=/bin/chmod</span><br><span class="line">    <span class="built_in">export</span> CHOWN=/usr/sbin/chown</span><br><span class="line">    <span class="built_in">export</span> CLANG_CXX_LANGUAGE_STANDARD=gnu++0x</span><br><span class="line">    <span class="built_in">export</span> CLANG_CXX_LIBRARY=libc++</span><br><span class="line">    <span class="built_in">export</span> CLANG_ENABLE_MODULES=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_ENABLE_OBJC_ARC=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_MODULES_BUILD_SESSION_FILE=/Users/home/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_BOOL_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_CONSTANT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_DIRECT_OBJC_ISA_USAGE=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_EMPTY_BODY=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_ENUM_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_INT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_OBJC_ROOT_CLASS=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN_UNREACHABLE_CODE=YES</span><br><span class="line">    <span class="built_in">export</span> CLANG_WARN__DUPLICATE_METHOD_MATCH=YES</span><br><span class="line">    <span class="built_in">export</span> CLASS_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/JavaClasses</span><br><span class="line">    <span class="built_in">export</span> CLEAN_PRECOMPS=YES</span><br><span class="line">    <span class="built_in">export</span> CLONE_HEADERS=NO</span><br><span class="line">    <span class="built_in">export</span> CODESIGNING_FOLDER_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGNING_ALLOWED=YES</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGNING_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGN_CONTEXT_CLASS=XCiPhoneOSCodeSignContext</span><br><span class="line">    <span class="built_in">export</span> CODE_SIGN_IDENTITY=<span class="string">"iPhone Developer"</span></span><br><span class="line">    <span class="built_in">export</span> COLOR_DIAGNOSTICS=NO</span><br><span class="line">    <span class="built_in">export</span> COMBINE_HIDPI_IMAGES=NO</span><br><span class="line">    <span class="built_in">export</span> COMMAND_MODE=legacy</span><br><span class="line">    <span class="built_in">export</span> COMPOSITE_SDK_DIRS=/var/folders/vp/gh5sjvr13k5_r7tb5_n8y92c0000gn/C/com.apple.DeveloperTools/7.2.1-7C1002/Xcode/CompositeSDKs</span><br><span class="line">    <span class="built_in">export</span> COMPRESS_PNG_FILES=YES</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION=Debug</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION_BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CONFIGURATION_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> CONTENTS_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> COPYING_PRESERVES_HFS_DATA=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_HEADERS_RUN_UNIFDEF=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_PHASE_STRIP=NO</span><br><span class="line">    <span class="built_in">export</span> COPY_RESOURCES_FROM_STATIC_FRAMEWORKS=YES</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_PLATFORM_NAME=iphonesimulator</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> CORRESPONDING_SIMULATOR_SDK_NAME=iphonesimulator9.2</span><br><span class="line">    <span class="built_in">export</span> CP=/bin/cp</span><br><span class="line">    <span class="built_in">export</span> CREATE_INFOPLIST_SECTION_IN_BINARY=NO</span><br><span class="line">    <span class="built_in">export</span> CURRENT_ARCH=arm64</span><br><span class="line">    <span class="built_in">export</span> CURRENT_VARIANT=normal</span><br><span class="line">    <span class="built_in">export</span> DEAD_CODE_STRIPPING=YES</span><br><span class="line">    <span class="built_in">export</span> DEBUGGING_SYMBOLS=YES</span><br><span class="line">    <span class="built_in">export</span> DEBUG_INFORMATION_FORMAT=dwarf</span><br><span class="line">    <span class="built_in">export</span> DEFAULT_COMPILER=com.apple.compilers.llvm.clang.1_0</span><br><span class="line">    <span class="built_in">export</span> DEFAULT_KEXT_INSTALL_PATH=/System/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> DEFINES_MODULE=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_LOCATION=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_POSTPROCESSING=NO</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_ENV_NAME=IPHONEOS_DEPLOYMENT_TARGET</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_FLAG_NAME=miphoneos-version-min</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_CLANG_FLAG_PREFIX=-miphoneos-version-min=</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_SETTING_NAME=IPHONEOS_DEPLOYMENT_TARGET</span><br><span class="line">    <span class="built_in">export</span> DEPLOYMENT_TARGET_SUGGESTED_VALUES=<span class="string">"6.0 6.1 7.0 7.1 8.0 8.1 8.2 8.3 8.4 9.0 9.1 9.2"</span></span><br><span class="line">    <span class="built_in">export</span> DERIVED_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DERIVED_SOURCES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_FRAMEWORKS_DIR=/Applications/Xcode.app/Contents/Developer/Library/Frameworks</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_FRAMEWORKS_DIR_QUOTED=/Applications/Xcode.app/Contents/Developer/Library/Frameworks</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/Developer/Library</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> DEVELOPMENT_LANGUAGE=English</span><br><span class="line">    <span class="built_in">export</span> DOCUMENTATION_FOLDER_PATH=SelfSizedCellByCodeExample.app/English.lproj/Documentation</span><br><span class="line">    <span class="built_in">export</span> DO_HEADER_SCANNING_IN_JAM=NO</span><br><span class="line">    <span class="built_in">export</span> DSTROOT=/tmp/SelfSizedCellByCodeExample.dst</span><br><span class="line">    <span class="built_in">export</span> DT_TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FILE_NAME=SelfSizedCellByCodeExample.app.dSYM</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> DWARF_DSYM_FOLDER_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> EFFECTIVE_PLATFORM_NAME=-iphoneos</span><br><span class="line">    <span class="built_in">export</span> EMBEDDED_CONTENT_CONTAINS_SWIFT=NO</span><br><span class="line">    <span class="built_in">export</span> EMBEDDED_PROFILE_NAME=embedded.mobileprovision</span><br><span class="line">    <span class="built_in">export</span> EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE=NO</span><br><span class="line">    <span class="built_in">export</span> ENABLE_BITCODE=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_HEADER_DEPENDENCIES=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_ON_DEMAND_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_STRICT_OBJC_MSGSEND=YES</span><br><span class="line">    <span class="built_in">export</span> ENABLE_TESTABILITY=YES</span><br><span class="line">    <span class="built_in">export</span> ENTITLEMENTS_ALLOWED=YES</span><br><span class="line">    <span class="built_in">export</span> ENTITLEMENTS_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS=<span class="string">".DS_Store .svn .git .hg CVS"</span></span><br><span class="line">    <span class="built_in">export</span> EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES=<span class="string">"*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj"</span></span><br><span class="line">    <span class="built_in">export</span> EXECUTABLES_FOLDER_PATH=SelfSizedCellByCodeExample.app/Executables</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> EXECUTABLE_PATH=SelfSizedCellByCodeExample.app/SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> EXPANDED_CODE_SIGN_IDENTITY=54D2584F0CDFF507E70F191FC851A7D39B24F29B</span><br><span class="line">    <span class="built_in">export</span> EXPANDED_CODE_SIGN_IDENTITY_NAME=<span class="string">"iPhone Developer: Jing Yang (KEPL6DZH42)"</span></span><br><span class="line">    <span class="built_in">export</span> EXPANDED_PROVISIONING_PROFILE=f2d6f047-08d8-4627-a967-585e63aa876a</span><br><span class="line">    <span class="built_in">export</span> FILE_LIST=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects/LinkFileList</span><br><span class="line">    <span class="built_in">export</span> FIXED_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/FixedFiles</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORKS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Frameworks</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_FLAG_PREFIX=-framework</span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> FRAMEWORK_VERSION=A</span><br><span class="line">    <span class="built_in">export</span> FULL_PRODUCT_NAME=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> GCC3_VERSION=3.3</span><br><span class="line">    <span class="built_in">export</span> GCC_C_LANGUAGE_STANDARD=gnu99</span><br><span class="line">    <span class="built_in">export</span> GCC_DYNAMIC_NO_PIC=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_INLINES_ARE_PRIVATE_EXTERN=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_NO_COMMON_BLOCKS=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_OPTIMIZATION_LEVEL=0</span><br><span class="line">    <span class="built_in">export</span> GCC_PFE_FILE_C_DIALECTS=<span class="string">"c objective-c c++ objective-c++"</span></span><br><span class="line">    <span class="built_in">export</span> GCC_PREPROCESSOR_DEFINITIONS=<span class="string">"DEBUG=1 "</span></span><br><span class="line">    <span class="built_in">export</span> GCC_SYMBOLS_PRIVATE_EXTERN=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_THUMB_SUPPORT=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_TREAT_WARNINGS_AS_ERRORS=NO</span><br><span class="line">    <span class="built_in">export</span> GCC_VERSION=com.apple.compilers.llvm.clang.1_0</span><br><span class="line">    <span class="built_in">export</span> GCC_VERSION_IDENTIFIER=com_apple_compilers_llvm_clang_1_0</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_64_TO_32_BIT_CONVERSION=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_ABOUT_RETURN_TYPE=YES_ERROR</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNDECLARED_SELECTOR=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNINITIALIZED_AUTOS=YES_AGGRESSIVE</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNUSED_FUNCTION=YES</span><br><span class="line">    <span class="built_in">export</span> GCC_WARN_UNUSED_VARIABLE=YES</span><br><span class="line">    <span class="built_in">export</span> GENERATE_MASTER_OBJECT_FILE=NO</span><br><span class="line">    <span class="built_in">export</span> GENERATE_PKGINFO_FILE=YES</span><br><span class="line">    <span class="built_in">export</span> GENERATE_PROFILING_CODE=NO</span><br><span class="line">    <span class="built_in">export</span> GID=20</span><br><span class="line">    <span class="built_in">export</span> GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_INCLUDES_PROJECT_HEADERS=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_USES_FRAMEWORK_PREFIX_ENTRIES=YES</span><br><span class="line">    <span class="built_in">export</span> HEADERMAP_USES_VFS=NO</span><br><span class="line">    <span class="built_in">export</span> HEADER_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/include "</span></span><br><span class="line">    <span class="built_in">export</span> HIDE_BITCODE_SYMBOLS=YES</span><br><span class="line">    <span class="built_in">export</span> HOME=/Users/home</span><br><span class="line">    <span class="built_in">export</span> ICONV=/usr/bin/iconv</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_EXPAND_BUILD_SETTINGS=YES</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_FILE=SelfSizedCellByCodeExample/Info.plist</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_OUTPUT_FORMAT=binary</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_PATH=SelfSizedCellByCodeExample.app/Info.plist</span><br><span class="line">    <span class="built_in">export</span> INFOPLIST_PREPROCESS=NO</span><br><span class="line">    <span class="built_in">export</span> INFOSTRINGS_PATH=SelfSizedCellByCodeExample.app/English.lproj/InfoPlist.strings</span><br><span class="line">    <span class="built_in">export</span> INSTALL_DIR=/tmp/SelfSizedCellByCodeExample.dst/Applications</span><br><span class="line">    <span class="built_in">export</span> INSTALL_GROUP=staff</span><br><span class="line">    <span class="built_in">export</span> INSTALL_MODE_FLAG=u+w,go-w,a+rX</span><br><span class="line">    <span class="built_in">export</span> INSTALL_OWNER=home</span><br><span class="line">    <span class="built_in">export</span> INSTALL_PATH=/Applications</span><br><span class="line">    <span class="built_in">export</span> INSTALL_ROOT=/tmp/SelfSizedCellByCodeExample.dst</span><br><span class="line">    <span class="built_in">export</span> IPHONEOS_DEPLOYMENT_TARGET=7.0</span><br><span class="line">    <span class="built_in">export</span> JAVAC_DEFAULT_FLAGS=<span class="string">"-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"</span></span><br><span class="line">    <span class="built_in">export</span> JAVA_APP_STUB=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub</span><br><span class="line">    <span class="built_in">export</span> JAVA_ARCHIVE_CLASSES=YES</span><br><span class="line">    <span class="built_in">export</span> JAVA_ARCHIVE_TYPE=JAR</span><br><span class="line">    <span class="built_in">export</span> JAVA_COMPILER=/usr/bin/javac</span><br><span class="line">    <span class="built_in">export</span> JAVA_FOLDER_PATH=SelfSizedCellByCodeExample.app/Java</span><br><span class="line">    <span class="built_in">export</span> JAVA_FRAMEWORK_RESOURCES_DIRS=Resources</span><br><span class="line">    <span class="built_in">export</span> JAVA_JAR_FLAGS=cv</span><br><span class="line">    <span class="built_in">export</span> JAVA_SOURCE_SUBDIR=.</span><br><span class="line">    <span class="built_in">export</span> JAVA_USE_DEPENDENCIES=YES</span><br><span class="line">    <span class="built_in">export</span> JAVA_ZIP_FLAGS=-urg</span><br><span class="line">    <span class="built_in">export</span> JIKES_DEFAULT_FLAGS=<span class="string">"+E +OLDCSO"</span></span><br><span class="line">    <span class="built_in">export</span> KEEP_PRIVATE_EXTERNS=NO</span><br><span class="line">    <span class="built_in">export</span> LD_DEPENDENCY_INFO_FILE=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal/arm64/SelfSizedCellByCodeExample_dependency_info.dat</span><br><span class="line">    <span class="built_in">export</span> LD_GENERATE_MAP_FILE=NO</span><br><span class="line">    <span class="built_in">export</span> LD_MAP_FILE_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/SelfSizedCellByCodeExample-LinkMap-normal-arm64.txt</span><br><span class="line">    <span class="built_in">export</span> LD_NO_PIE=NO</span><br><span class="line">    <span class="built_in">export</span> LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER=YES</span><br><span class="line">    <span class="built_in">export</span> LD_RUNPATH_SEARCH_PATHS=<span class="string">" @executable_path/Frameworks"</span></span><br><span class="line">    <span class="built_in">export</span> LEGACY_DEVELOPER_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer</span><br><span class="line">    <span class="built_in">export</span> LEX=lex</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_FLAG_NOSPACE=YES</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_FLAG_PREFIX=-l</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_KEXT_INSTALL_PATH=/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> LIBRARY_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> LINKER_DISPLAYS_MANGLED_NAMES=NO</span><br><span class="line">    <span class="built_in">export</span> LINK_FILE_LIST_normal_arm64=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal/arm64/SelfSizedCellByCodeExample.LinkFileList</span><br><span class="line">    <span class="built_in">export</span> LINK_WITH_STANDARD_LIBRARIES=YES</span><br><span class="line">    <span class="built_in">export</span> LOCALIZABLE_CONTENT_DIR=</span><br><span class="line">    <span class="built_in">export</span> LOCALIZED_RESOURCES_FOLDER_PATH=SelfSizedCellByCodeExample.app/English.lproj</span><br><span class="line">    <span class="built_in">export</span> LOCAL_ADMIN_APPS_DIR=/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> LOCAL_APPS_DIR=/Applications</span><br><span class="line">    <span class="built_in">export</span> LOCAL_DEVELOPER_DIR=/Library/Developer</span><br><span class="line">    <span class="built_in">export</span> LOCAL_LIBRARY_DIR=/Library</span><br><span class="line">    <span class="built_in">export</span> LOCROOT=</span><br><span class="line">    <span class="built_in">export</span> LOCSYMROOT=</span><br><span class="line">    <span class="built_in">export</span> MACH_O_TYPE=mh_execute</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_PRODUCT_BUILD_VERSION=15D21</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_ACTUAL=101103</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_MAJOR=101100</span><br><span class="line">    <span class="built_in">export</span> MAC_OS_X_VERSION_MINOR=1103</span><br><span class="line">    <span class="built_in">export</span> MODULE_CACHE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/ModuleCache</span><br><span class="line">    <span class="built_in">export</span> MTL_ENABLE_DEBUG_INFO=YES</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH=armv7</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_32_BIT=i386</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_64_BIT=x86_64</span><br><span class="line">    <span class="built_in">export</span> NATIVE_ARCH_ACTUAL=x86_64</span><br><span class="line">    <span class="built_in">export</span> NO_COMMON=YES</span><br><span class="line">    <span class="built_in">export</span> OBJECT_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects</span><br><span class="line">    <span class="built_in">export</span> OBJECT_FILE_DIR_normal=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Objects-normal</span><br><span class="line">    <span class="built_in">export</span> OBJROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> ONLY_ACTIVE_ARCH=YES</span><br><span class="line">    <span class="built_in">export</span> OPTIMIZATION_LEVEL=0</span><br><span class="line">    <span class="built_in">export</span> OS=MACOS</span><br><span class="line">    <span class="built_in">export</span> OSAC=/usr/bin/osacompile</span><br><span class="line">    <span class="built_in">export</span> PACKAGE_TYPE=com.apple.package-type.wrapper.application</span><br><span class="line">    <span class="built_in">export</span> PASCAL_STRINGS=YES</span><br><span class="line">    <span class="built_in">export</span> PATH=<span class="string">"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span><br><span class="line">    <span class="built_in">export</span> PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES=<span class="string">"/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"</span></span><br><span class="line">    <span class="built_in">export</span> PBDEVELOPMENTPLIST_PATH=SelfSizedCellByCodeExample.app/pbdevelopment.plist</span><br><span class="line">    <span class="built_in">export</span> PFE_FILE_C_DIALECTS=objective-c</span><br><span class="line">    <span class="built_in">export</span> PKGINFO_FILE_PATH=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/PkgInfo</span><br><span class="line">    <span class="built_in">export</span> PKGINFO_PATH=SelfSizedCellByCodeExample.app/PkgInfo</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_DISPLAY_NAME=iOS</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_NAME=iphoneos</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_PREFERRED_ARCH=arm64</span><br><span class="line">    <span class="built_in">export</span> PLATFORM_PRODUCT_BUILD_VERSION=13C75</span><br><span class="line">    <span class="built_in">export</span> PLIST_FILE_OUTPUT_FORMAT=binary</span><br><span class="line">    <span class="built_in">export</span> PLUGINS_FOLDER_PATH=SelfSizedCellByCodeExample.app/PlugIns</span><br><span class="line">    <span class="built_in">export</span> PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR=YES</span><br><span class="line">    <span class="built_in">export</span> PRECOMP_DESTINATION_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/PrefixHeaders</span><br><span class="line">    <span class="built_in">export</span> PRESERVE_DEAD_CODE_INITS_AND_TERMS=NO</span><br><span class="line">    <span class="built_in">export</span> PRIVATE_HEADERS_FOLDER_PATH=SelfSizedCellByCodeExample.app/PrivateHeaders</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_BUNDLE_IDENTIFIER=tv.douyu.SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_MODULE_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PRODUCT_SETTINGS_PATH=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample/SelfSizedCellByCodeExample/Info.plist"</span></span><br><span class="line">    <span class="built_in">export</span> PRODUCT_TYPE=com.apple.product-type.application</span><br><span class="line">    <span class="built_in">export</span> PROFILING_CODE=NO</span><br><span class="line">    <span class="built_in">export</span> PROJECT=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PROJECT_DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> PROJECT_DIR=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> PROJECT_FILE_PATH=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample/SelfSizedCellByCodeExample.xcodeproj"</span></span><br><span class="line">    <span class="built_in">export</span> PROJECT_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> PROJECT_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> PROJECT_TEMP_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> PROVISIONING_PROFILE_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> PUBLIC_HEADERS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Headers</span><br><span class="line">    <span class="built_in">export</span> RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_CVS_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_GIT_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_HG_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> REMOVE_SVN_FROM_RESOURCES=YES</span><br><span class="line">    <span class="built_in">export</span> RESOURCE_RULES_REQUIRED=YES</span><br><span class="line">    <span class="built_in">export</span> REZ_COLLECTOR_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/ResourceManagerResources</span><br><span class="line">    <span class="built_in">export</span> REZ_OBJECTS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/ResourceManagerResources/Objects</span><br><span class="line">    <span class="built_in">export</span> REZ_SEARCH_PATHS=<span class="string">"/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos "</span></span><br><span class="line">    <span class="built_in">export</span> SCAN_ALL_SOURCE_FILES_FOR_INCLUDES=NO</span><br><span class="line">    <span class="built_in">export</span> SCRIPTS_FOLDER_PATH=SelfSizedCellByCodeExample.app/Scripts</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_INPUT_FILE_COUNT=0</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_OUTPUT_FILE_0=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/DerivedSources/myfile</span><br><span class="line">    <span class="built_in">export</span> SCRIPT_OUTPUT_FILE_COUNT=1</span><br><span class="line">    <span class="built_in">export</span> SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_DIR_iphoneos9_2=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk</span><br><span class="line">    <span class="built_in">export</span> SDK_NAME=iphoneos9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_NAMES=iphoneos9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_PRODUCT_BUILD_VERSION=13C75</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION=9.2</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_ACTUAL=90200</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_MAJOR=90000</span><br><span class="line">    <span class="built_in">export</span> SDK_VERSION_MINOR=200</span><br><span class="line">    <span class="built_in">export</span> SED=/usr/bin/sed</span><br><span class="line">    <span class="built_in">export</span> SEPARATE_STRIP=NO</span><br><span class="line">    <span class="built_in">export</span> SEPARATE_SYMBOL_EDIT=NO</span><br><span class="line">    <span class="built_in">export</span> SET_DIR_MODE_OWNER_GROUP=YES</span><br><span class="line">    <span class="built_in">export</span> SET_FILE_MODE_OWNER_GROUP=NO</span><br><span class="line">    <span class="built_in">export</span> SHALLOW_BUNDLE=YES</span><br><span class="line">    <span class="built_in">export</span> SHARED_DERIVED_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos/DerivedSources</span><br><span class="line">    <span class="built_in">export</span> SHARED_FRAMEWORKS_FOLDER_PATH=SelfSizedCellByCodeExample.app/SharedFrameworks</span><br><span class="line">    <span class="built_in">export</span> SHARED_PRECOMPS_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/PrecompiledHeaders</span><br><span class="line">    <span class="built_in">export</span> SHARED_SUPPORT_FOLDER_PATH=SelfSizedCellByCodeExample.app/SharedSupport</span><br><span class="line">    <span class="built_in">export</span> SKIP_INSTALL=NO</span><br><span class="line">    <span class="built_in">export</span> SOURCE_ROOT=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> SRCROOT=<span class="string">"/Users/home/Desktop/Learning/codebase/My TableView/SelfSizedCellByCodeExample"</span></span><br><span class="line">    <span class="built_in">export</span> STRINGS_FILE_OUTPUT_ENCODING=binary</span><br><span class="line">    <span class="built_in">export</span> STRIP_BITCODE_FROM_COPIED_FILES=YES</span><br><span class="line">    <span class="built_in">export</span> STRIP_INSTALLED_PRODUCT=YES</span><br><span class="line">    <span class="built_in">export</span> STRIP_STYLE=all</span><br><span class="line">    <span class="built_in">export</span> SUPPORTED_DEVICE_FAMILIES=1,2</span><br><span class="line">    <span class="built_in">export</span> SUPPORTED_PLATFORMS=<span class="string">"iphonesimulator iphoneos"</span></span><br><span class="line">    <span class="built_in">export</span> SUPPORTS_TEXT_BASED_API=NO</span><br><span class="line">    <span class="built_in">export</span> SWIFT_PLATFORM_TARGET_PREFIX=ios</span><br><span class="line">    <span class="built_in">export</span> SYMROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_ADMIN_APPS_DIR=/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_APPS_DIR=/Applications</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_CORE_SERVICES_DIR=/System/Library/CoreServices</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEMOS_DIR=/Applications/Extras</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_APPS_DIR=/Applications/Xcode.app/Contents/Developer/Applications</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DEMOS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_DOC_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_JAVA_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_RELEASENOTES_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS=/Applications/Xcode.app/Contents/Developer/Tools</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS_DOC_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR=<span class="string">"/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"</span></span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DEVELOPER_UTILITIES_DIR=/Applications/Xcode.app/Contents/Developer/Applications/Utilities</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_DOCUMENTATION_DIR=/Library/Documentation</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_KEXT_INSTALL_PATH=/System/Library/Extensions</span><br><span class="line">    <span class="built_in">export</span> SYSTEM_LIBRARY_DIR=/System/Library</span><br><span class="line">    <span class="built_in">export</span> TARGETED_DEVICE_FAMILY=1,2</span><br><span class="line">    <span class="built_in">export</span> TARGETNAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> TARGET_BUILD_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Products/Debug-iphoneos</span><br><span class="line">    <span class="built_in">export</span> TARGET_DEVICE_MODEL=iPhone7,2</span><br><span class="line">    <span class="built_in">export</span> TARGET_DEVICE_OS_VERSION=9.0.2</span><br><span class="line">    <span class="built_in">export</span> TARGET_NAME=SelfSizedCellByCodeExample</span><br><span class="line">    <span class="built_in">export</span> TARGET_TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_FILES_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_FILE_DIR=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build</span><br><span class="line">    <span class="built_in">export</span> TEMP_ROOT=/Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates</span><br><span class="line">    <span class="built_in">export</span> TOOLCHAINS=com.apple.dt.toolchain.XcodeDefault</span><br><span class="line">    <span class="built_in">export</span> TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</span><br><span class="line">    <span class="built_in">export</span> TREAT_MISSING_BASELINES_AS_TEST_FAILURES=NO</span><br><span class="line">    <span class="built_in">export</span> UID=501</span><br><span class="line">    <span class="built_in">export</span> UNLOCALIZED_RESOURCES_FOLDER_PATH=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> UNSTRIPPED_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> USER=home</span><br><span class="line">    <span class="built_in">export</span> USER_APPS_DIR=/Users/home/Applications</span><br><span class="line">    <span class="built_in">export</span> USER_LIBRARY_DIR=/Users/home/Library</span><br><span class="line">    <span class="built_in">export</span> USE_DYNAMIC_NO_PIC=YES</span><br><span class="line">    <span class="built_in">export</span> USE_HEADERMAP=YES</span><br><span class="line">    <span class="built_in">export</span> USE_HEADER_SYMLINKS=NO</span><br><span class="line">    <span class="built_in">export</span> VALIDATE_PRODUCT=NO</span><br><span class="line">    <span class="built_in">export</span> VALID_ARCHS=<span class="string">"arm64 armv7 armv7s"</span></span><br><span class="line">    <span class="built_in">export</span> VERBOSE_PBXCP=NO</span><br><span class="line">    <span class="built_in">export</span> VERSIONPLIST_PATH=SelfSizedCellByCodeExample.app/version.plist</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_BUILDER=home</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_FILE=SelfSizedCellByCodeExample_vers.c</span><br><span class="line">    <span class="built_in">export</span> VERSION_INFO_STRING=<span class="string">"\"@(#)PROGRAM:SelfSizedCellByCodeExample  PROJECT:SelfSizedCellByCodeExample-\""</span></span><br><span class="line">    <span class="built_in">export</span> WRAPPER_EXTENSION=app</span><br><span class="line">    <span class="built_in">export</span> WRAPPER_NAME=SelfSizedCellByCodeExample.app</span><br><span class="line">    <span class="built_in">export</span> WRAPPER_SUFFIX=.app</span><br><span class="line">    <span class="built_in">export</span> WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES=NO</span><br><span class="line">    <span class="built_in">export</span> XCODE_APP_SUPPORT_DIR=/Applications/Xcode.app/Contents/Developer/Library/Xcode</span><br><span class="line">    <span class="built_in">export</span> XCODE_PRODUCT_BUILD_VERSION=7C1002</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_ACTUAL=0721</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_MAJOR=0700</span><br><span class="line">    <span class="built_in">export</span> XCODE_VERSION_MINOR=0720</span><br><span class="line">    <span class="built_in">export</span> XPCSERVICES_FOLDER_PATH=SelfSizedCellByCodeExample.app/XPCServices</span><br><span class="line">    <span class="built_in">export</span> YACC=yacc</span><br><span class="line">    <span class="built_in">export</span> arch=arm64</span><br><span class="line">    <span class="built_in">export</span> variant=normal</span><br><span class="line">    /bin/sh -c /Users/home/Library/Developer/Xcode/DerivedData/SelfSizedCellByCodeExample-hcqrqdritrqaldddhuundxfypgvk/Build/Intermediates/SelfSizedCellByCodeExample.build/Debug-iphoneos/SelfSizedCellByCodeExample.build/Script-993355071C92B75C004569A0.sh</span><br></pre></td></tr></table></figure>
+</section>
+    <!-- Tags START -->
     
-<nav id="article-nav">
-  
-    <a href="/2016/05/15/2016/instrument-详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2014/12/19/2014/ios知识脉络梳理/">
+        <span class="nav-arrow">← </span>
+        
+          ios知识脉络梳理
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2016/05/15/2016/instrument-详解/">
         
           instrument 详解
         
-      </div>
-    </a>
-  
-  
-    <a href="/2014/12/19/2014/ios知识脉络梳理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ios知识脉络梳理</div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-<div class="ds-share share" data-thread-key="2015/Xcode-环境变量" data-title="Xcode 环境变量" data-url="http:www.agumon.top/2015/04/13/2015/Xcode-环境变量/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="Xcode 环境变量">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
- 
-
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2018 温故而知新
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
-        </div>
-    </div>
-  </div>
-</footer>
-    </div>
+        <span class="nav-arrow"> →</span>
+      </a>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  </div>
 
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="nav">none</ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
 
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="/js/main.js"></script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  (function () {
+    var url = 'http:www.agumon.top/2015/04/13/2015/Xcode-环境变量/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
     }
-});
+    $('.header').removeClass('fixed-header')
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "Xcode 环境变量",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
 </script>
 
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http:www.agumon.top/2015/04/13/2015/Xcode-环境变量/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
 
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
 
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'false';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
 </html>
