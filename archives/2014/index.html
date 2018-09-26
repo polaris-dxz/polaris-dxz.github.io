@@ -1,317 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="yanm1ng&#39;s blog">
-  <meta name="keyword" content="hexo-theme, vuejs">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      温故而知新
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/plugins/gitment.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-  <script src="/js/qrious.js"></script>
-<script src="/js/gitment.js"></script>
-  
-  
-    <!-- MathJax support START -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
+extends base
+include mixins/blocks
+include mixins/themes
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <!-- MathJax support END -->
-  
+block title
+    title= `${config.title}`
 
+block vars
+    case theme.theme
+        when 'combustion-purple'
+                - var bodyClass = 'combustion-purple-skin'
+                - var formType = 'classic'
+        when 'combustion-yellow'
+                - var bodyClass = 'combustion-yellow-skin'
+                - var formType = 'human'
+        when 'fuzzy-hue'
+                - var bodyClass = 'fuzzy-hue-skin'
+                - var formType = 'classic'
+        when 'fuzzy-saturation'
+                - var bodyClass = 'fuzzy-saturation-skin'
+                - var formType = 'classic'
+        when 'ring-blue'
+                - var bodyClass = 'ring-pink-skin'
+                - var formType = 'human'
+        when 'ring-green'
+                - var bodyClass = 'ring-green-skin'
+                - var formType = 'classic'
+        when 'tunnel'
+                - var bodyClass = 'tunnel-skin'
+                - var formType = 'human'
+        when 'waves-deep-purple'
+                - var bodyClass = 'waves-deep-purple-skin'
+                - var formType = 'classic'
+        when 'waves-light-blue'
+                - var bodyClass = 'waves-light-blue-skin'
+                - var formType = 'human'
+    //+vars(theme.theme) //not sure why mixin not working
+    
+block spinner
+    +spinner(theme.theme)
 
-</head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png" />
-</div>
+block hero
+    +hero(theme.theme)
 
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>温故而知新</span>
-    </a>
-    <ul class="right-list">
-      
-        <li class="list-item">
-          
-            <a href="/" class="item-link">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/archives/" class="item-link">Archives</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/project/" class="item-link">Projects</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
-      
-    </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
-        
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link">Home</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/tags/" class="menu-link">Tags</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/archives/" class="menu-link">Archives</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/project/" class="menu-link">Projects</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</header>
-
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
-</div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2018
-  </h1>
-  <div class="section-list">
+block sections
+    +blocks
     
+block skin-script
+    +skin(theme.theme)
     
-      <div class="section-list-item">
-        <a href="/2018/04/13/以太坊开发入门/" class="archive-title">以太坊开发入门</a>
-        <p class="archive-date">04-13</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" class="archive-title">从微信跳一跳学习逆向开发iOS</a>
-        <p class="archive-date">12-29</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2016
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2016/05/15/2016/instrument-详解/" class="archive-title">instrument 详解</a>
-        <p class="archive-date">05-15</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2015
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2015/04/13/2015/Xcode-环境变量/" class="archive-title">Xcode 环境变量</a>
-        <p class="archive-date">04-13</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2014
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2014/12/19/2014/ios知识脉络梳理/" class="archive-title">ios知识脉络梳理</a>
-        <p class="archive-date">12-19</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2014/05/20/2014/weak和-strong/" class="archive-title">weak和 strong</a>
-        <p class="archive-date">05-20</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2014/05/16/2014/ios-HTTP请求/" class="archive-title">ios HTTP请求</a>
-        <p class="archive-date">05-16</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2014/05/15/2014/闭包、lambda-计算、block/" class="archive-title"> 闭包、lambda 计算、block</a>
-        <p class="archive-date">05-15</p>
-      </div>
-    
-  </div>
-</section>
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2013
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2013/05/13/2013/Http报文详解/" class="archive-title">Http - Web 基础概述</a>
-        <p class="archive-date">05-13</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2013/01/13/2013/cUrl使用心得/" class="archive-title">cUrl使用心得</a>
-        <p class="archive-date">01-13</p>
-      </div>
-    
-  </div>
-</section>
-  
-</main>
-
-<script>
-  (function () {
-    var url = 'http:www.agumon.top/archives/2014/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
-  })();
-</script>
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
-</div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
-</footer>
-
-<script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-</script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
-</script>
-
-<script>
-  var hasLine = 'false';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
-    });
-  })
-</script>
-<!-- Baidu Tongji -->
-
-<script src="/js/script.js"></script>
-  <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
-</html>
