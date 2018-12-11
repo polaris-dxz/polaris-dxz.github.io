@@ -1,50 +1,208 @@
-extends base
-include mixins/blocks
-include mixins/themes
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>关于我 | 温故而知新</title>
+  
+  
+  <meta name="description" content="关于本站从 wordpress 到 jekyll，从 jekyll 到 hexo，折腾了有好几年了。最初建站的时候是在高中毕业那会，因为后来没有精力维护就搁浅了。前前后后写过新浪博客、LOFTER、轻博客、简书，最终还是选择 hexo + github 托管的形式。可惜好多文章都没备份(ಥ_ಥ)
+喜">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-block title
-    title= `${config.title}`
+  <meta property="og:title" content="关于我"/>
+  <meta property="og:site_name" content="温故而知新"/>
 
-block vars
-    case theme.theme
-        when 'combustion-purple'
-                - var bodyClass = 'combustion-purple-skin'
-                - var formType = 'classic'
-        when 'combustion-yellow'
-                - var bodyClass = 'combustion-yellow-skin'
-                - var formType = 'human'
-        when 'fuzzy-hue'
-                - var bodyClass = 'fuzzy-hue-skin'
-                - var formType = 'classic'
-        when 'fuzzy-saturation'
-                - var bodyClass = 'fuzzy-saturation-skin'
-                - var formType = 'classic'
-        when 'ring-blue'
-                - var bodyClass = 'ring-pink-skin'
-                - var formType = 'human'
-        when 'ring-green'
-                - var bodyClass = 'ring-green-skin'
-                - var formType = 'classic'
-        when 'tunnel'
-                - var bodyClass = 'tunnel-skin'
-                - var formType = 'human'
-        when 'waves-deep-purple'
-                - var bodyClass = 'waves-deep-purple-skin'
-                - var formType = 'classic'
-        when 'waves-light-blue'
-                - var bodyClass = 'waves-light-blue-skin'
-                - var formType = 'human'
-    //+vars(theme.theme) //not sure why mixin not working
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">温故而知新</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tag" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="//atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+	
+		<div class="page-header">
+			<h1> 关于我</h1>
+		</div>
+	
+
+
+
+<div class="row page">
+	<!-- cols -->
+	
+	<div class="col-md-12">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>从 wordpress 到 jekyll，从 jekyll 到 hexo，折腾了有好几年了。最初建站的时候是在高中毕业那会，因为后来没有精力维护就搁浅了。前前后后写过新浪博客、LOFTER、轻博客、简书，最终还是选择 hexo + github 托管的形式。可惜好多文章都没备份(ಥ_ಥ)</p>
+<p>喜欢折腾，光 hexo 主题就换了五六个了，不过一直没有满意的。最近还是想把更多的心思放在写文章上，所以就选择这套 next 主题了。<del>不过有时间一定要自己写一套 theme！ щ(ﾟДﾟщ)</del></p>
+<p>至于本站嘛。。本站只是单纯的记录一些自己关于技术方面的看法和生活中的一些琐事，咳咳，其实并没有对外公布的打算。如果你偶然发现本站的话，请多多鼓励我哈！</p>
+<h2 id="关于站长"><a href="#关于站长" class="headerlink" title="关于站长"></a>关于站长</h2><p>嗯，本人是一枚兴趣爱好有点多的伪文艺男青年！</p>
+<p>喜欢咖啡、调酒！（过程就像在做化学实验，不过总的来说很享受！）</p>
+<p>喜欢天文，喜欢晚上一个人看星星！（从初中开始就一直喜欢干这件事，我的征途是星辰大海！ ）</p>
+<p>喜欢国学、易学、命理学（因为一直不是很喜欢自己的名字，所以从大学开始就一直在自学这些东西，颇有心得。不过国学水平真的很渣，，）</p>
+<p>喜欢数学（从小的梦想就是当一名数学家~）</p>
+<p>喜欢折腾~（真的是太喜欢折腾了，玩 psv 自己破解不过瘾，还研究着写一个好用的插件）</p>
+<p>………</p>
+<p>23333，喜欢的东西有些多，力争做一个有趣的人！</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
     
-block spinner
-    +spinner(theme.theme)
+</div>
 
-block hero
-    +hero(theme.theme)
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
 
-block sections
-    +blocks
-    
-block skin-script
-    +skin(theme.theme)
-    
+	</div> <!-- col-md-9/col-md-12 -->
+		
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2018 温故而知新
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
+   </html>

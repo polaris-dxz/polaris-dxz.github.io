@@ -1,50 +1,363 @@
-extends base
-include mixins/blocks
-include mixins/themes
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>instrument 详解 | 温故而知新</title>
+  
+  
+  <meta name="description" content="整理一些常用 instrument 工具。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-block title
-    title= `${config.title}`
+  <meta property="og:title" content="instrument 详解"/>
+  <meta property="og:site_name" content="温故而知新"/>
 
-block vars
-    case theme.theme
-        when 'combustion-purple'
-                - var bodyClass = 'combustion-purple-skin'
-                - var formType = 'classic'
-        when 'combustion-yellow'
-                - var bodyClass = 'combustion-yellow-skin'
-                - var formType = 'human'
-        when 'fuzzy-hue'
-                - var bodyClass = 'fuzzy-hue-skin'
-                - var formType = 'classic'
-        when 'fuzzy-saturation'
-                - var bodyClass = 'fuzzy-saturation-skin'
-                - var formType = 'classic'
-        when 'ring-blue'
-                - var bodyClass = 'ring-pink-skin'
-                - var formType = 'human'
-        when 'ring-green'
-                - var bodyClass = 'ring-green-skin'
-                - var formType = 'classic'
-        when 'tunnel'
-                - var bodyClass = 'tunnel-skin'
-                - var formType = 'human'
-        when 'waves-deep-purple'
-                - var bodyClass = 'waves-deep-purple-skin'
-                - var formType = 'classic'
-        when 'waves-light-blue'
-                - var bodyClass = 'waves-light-blue-skin'
-                - var formType = 'human'
-    //+vars(theme.theme) //not sure why mixin not working
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">温故而知新</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tag" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="//atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> instrument 详解</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>整理一些常用 instrument 工具。<br><a id="more"></a></p>
+<p>[TOC]</p>
+<p><img src="instrument.png" alt=""></p>
+<h2 id="一、Blank"><a href="#一、Blank" class="headerlink" title="一、Blank"></a>一、Blank</h2><h2 id="二、Activity-Monitor（活动监视器）"><a href="#二、Activity-Monitor（活动监视器）" class="headerlink" title="二、Activity Monitor（活动监视器）"></a>二、Activity Monitor（活动监视器）</h2><h2 id="三、Allocations（内存分配）"><a href="#三、Allocations（内存分配）" class="headerlink" title="三、Allocations（内存分配）"></a>三、Allocations（内存分配）</h2><p><img src="https://upload-images.jianshu.io/upload_images/325854-060ac29a8dbf6c9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""></p>
+<h3 id="1、程序员对内存关注的点"><a href="#1、程序员对内存关注的点" class="headerlink" title="1、程序员对内存关注的点"></a>1、程序员对内存关注的点</h3><ul>
+<li><p>正确使用</p>
+<ul>
+<li><p>避免非法访问</p>
+<blockquote>
+<p>即避免访问被释放掉的内存。release 后不能再 retain。</p>
+</blockquote>
+</li>
+<li><p>避免内存泄漏</p>
+</li>
+</ul>
+</li>
+<li><p>高效使用</p>
+<ul>
+<li>降低内存峰值</li>
+<li>处理内存警告</li>
+<li>Cache</li>
+</ul>
+</li>
+</ul>
+<h3 id="2、Regions（区域）"><a href="#2、Regions（区域）" class="headerlink" title="2、Regions（区域）"></a>2、Regions（区域）</h3><p>以下内容参考自 <a href="https://stackoverflow.com/questions/13437365/what-is-resident-and-dirty-memory-of-ios!" target="_blank" rel="noopener">Stack Overflow</a></p>
+<p>视频链接：<a href="https://www.imooc.com/video/11075" target="_blank" rel="noopener">iOS内存管理及优化</a></p>
+<ul>
+<li>Clean Memory：在闪存中有备份，能够再次读取。主要包括<code>system framework</code>、<code>binary executable of your app</code>、<code>memory mapped files</code></li>
+<li>Dirty Memory：所有非<code>Clean Memory</code>，<strong>系统无法回收</strong>。包括<code>Heap allocation</code>、<code>caches</code>、<code>decompressed images</code>（解压的图片）</li>
+</ul>
+<h3 id="3、虚拟内存之间的关系"><a href="#3、虚拟内存之间的关系" class="headerlink" title="3、虚拟内存之间的关系"></a>3、虚拟内存之间的关系</h3><ul>
+<li><p>虚拟内存层面：（逻辑内存）</p>
+<blockquote>
+<p> virtual memory = clean memory + dirty memory.</p>
+</blockquote>
+</li>
+<li><p>物理内存层面：</p>
+<blockquote>
+<p>resident memory= dirty memory+clean memory that loaded in physical memory</p>
+</blockquote>
+</li>
+<li><p>总结：</p>
+<blockquote>
+<p>virtual memory == (clean memory + dirty memory) &gt; resident memory &gt;dirty memory</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// clean memory</span><br><span class="line">- (IBAction)clickAction1&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// dirty memory</span><br><span class="line">- (IBAction)clickAction2&#123;</span><br><span class="line">  char *buf = malloc(100*1024*1024); //100M 虚拟内存</span><br><span class="line">  NSLog(@&quot;%p&quot;,buf);</span><br><span class="line">  for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存，剩余97M 虚拟内存</span><br><span class="line">    buf[i] = rand();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)cleanOrDirtyMemory&#123;</span><br><span class="line">  </span><br><span class="line">  	NSString* str1 = [NSString stringWithString:@&quot;dirty&quot;];//dirty memory(堆上分配的内存都是 dirty的，不回收的话系统都会占用这个内存)</span><br><span class="line">    NSString* str2 = @&quot;w&quot;;//存在只读数据段里面 </span><br><span class="line">    char *buf = malloc(100*1024*1024); //100M 虚拟内存 (clean，因为我们没有访问到)</span><br><span class="line">    for(int i=0; i &lt; 3*1024*1024; ++i)&#123; //分配3M 物理内存（dirty），剩余97M 虚拟内存(clean)</span><br><span class="line">    buf[i] = rand();//dirty</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、VMTracker："><a href="#4、VMTracker：" class="headerlink" title="4、VMTracker："></a>4、VMTracker：</h3><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 官方解释：Adds the Allocations and VM Tracker instruments toyour document. Use this template to monitor memory and object-allocationpatterns in your program </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>Dirty Size：</li>
+<li>Swapped Size：</li>
+<li>Resident Size：</li>
+</ul>
+<h3 id="5、参数："><a href="#5、参数：" class="headerlink" title="5、参数："></a>5、参数：</h3><ul>
+<li><p>图形列（Graph）：</p>
+<blockquote>
+<p>当指定类别的复选框被勾选时,instrument工具在跟踪面板里面显示特定类别的图形。 Instruments 应用通常给每个图形类别赋一个颜色。</p>
+</blockquote>
+</li>
+<li><p>类别(Category)：</p>
+<blockquote>
+<p>通常是一个 Core Foundation 对象、Objective-C 类、或者 malloc 出来的内存空间。</p>
+</blockquote>
+</li>
+<li><p>净分配字节数(Persistent Bytes)：</p>
+<blockquote>
+<p>当前已经分配内存但是仍然没有被释放的字节的总数。</p>
+</blockquote>
+</li>
+<li><p>净分配数(#Persistent)：</p>
+<blockquote>
+<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
+</blockquote>
+</li>
+<li><p>临时分配数(#Transient)：</p>
+<blockquote>
+<p>当前已经分配内存但仍然没有被释放的对象或内存块的数量。</p>
+</blockquote>
+</li>
+<li><p>总分配字节数(Total Bytes)：</p>
+<blockquote>
+<p>所有已经分配内存,而且包括已经被释放了的字节的总数。</p>
+</blockquote>
+</li>
+<li><p>总分配数(#Total)：</p>
+<blockquote>
+<p>所有当前已经分配内存,包括已经被释放了的对象或内存 块的总数。</p>
+</blockquote>
+</li>
+<li><p>临时分配/全部内存分配(Transient/Total Bytes)：</p>
+<blockquote>
+<p>当前和全部分配数的直方图。如上图所示当比例变化时,直方条会变颜色，Instruments 应用通常给它们标示不同的颜色来指出分配模式以便进行进一步的研究。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、Cocoa-Layout"><a href="#四、Cocoa-Layout" class="headerlink" title="四、Cocoa Layout"></a>四、Cocoa Layout</h2><h2 id="五、Core-Animation"><a href="#五、Core-Animation" class="headerlink" title="五、Core Animation"></a>五、Core Animation</h2><h2 id="六、Core-Data"><a href="#六、Core-Data" class="headerlink" title="六、Core Data"></a>六、Core Data</h2><h2 id="七、Counters（计数器）"><a href="#七、Counters（计数器）" class="headerlink" title="七、Counters（计数器）"></a>七、Counters（计数器）</h2><h2 id="八、Energy-Log"><a href="#八、Energy-Log" class="headerlink" title="八、Energy Log"></a>八、Energy Log</h2><h2 id="九、File-Activity"><a href="#九、File-Activity" class="headerlink" title="九、File Activity"></a>九、File Activity</h2><h2 id="十、Leaks（内存泄漏）"><a href="#十、Leaks（内存泄漏）" class="headerlink" title="十、Leaks（内存泄漏）"></a>十、Leaks（内存泄漏）</h2><h2 id="十一、Metal-System-Trace"><a href="#十一、Metal-System-Trace" class="headerlink" title="十一、Metal System Trace"></a>十一、Metal System Trace</h2><h2 id="十二、Network"><a href="#十二、Network" class="headerlink" title="十二、Network"></a>十二、Network</h2><h2 id="十三、SceneKit"><a href="#十三、SceneKit" class="headerlink" title="十三、SceneKit"></a>十三、SceneKit</h2><h2 id="十四、System-Trace（系统跟踪）"><a href="#十四、System-Trace（系统跟踪）" class="headerlink" title="十四、System Trace（系统跟踪）"></a>十四、System Trace（系统跟踪）</h2><h2 id="十五、System-Usage"><a href="#十五、System-Usage" class="headerlink" title="十五、System Usage"></a>十五、System Usage</h2><p> ios 模拟器暂不支持</p>
+<h2 id="十六、Time-profiler"><a href="#十六、Time-profiler" class="headerlink" title="十六、Time profiler"></a>十六、Time profiler</h2><h2 id="十七、Zombies（僵尸）"><a href="#十七、Zombies（僵尸）" class="headerlink" title="十七、Zombies（僵尸）"></a>十七、Zombies（僵尸）</h2>	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
     
-block spinner
-    +spinner(theme.theme)
-
-block hero
-    +hero(theme.theme)
-
-block sections
-    +blocks
     
-block skin-script
-    +skin(theme.theme)
+    <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Anterior</a>
     
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2015/04/13/2015/Xcode-环境变量/" type="button" class="btn btn-default ">Próximo<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comentários</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2016-05-15 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/iOS-Dev/">iOS-Dev<span>7</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/instrument/">instrument<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2018 温故而知新
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/"});</script></body>
+   </html>
