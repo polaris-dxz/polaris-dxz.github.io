@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Http - Web 基础概述 - 温故而知新</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="唔。。。我真的是太菜了">
+<meta name="keywords" content="Http 报文,URL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Http - Web 基础概述">
+<meta property="og:url" content="http:www.agumon.top/2013/05/13/2013/Http报文详解/index.html">
+<meta property="og:site_name" content="温故而知新">
+<meta property="og:description" content="唔。。。我真的是太菜了">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515845822875&di=5c5ed7e816115333fa10af3a5d2e12dd&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201708%2F02%2F162015g8shss8wbwb8w193.jpg">
+<meta property="og:updated_time" content="2018-05-03T13:00:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Http - Web 基础概述">
+<meta name="twitter:description" content="唔。。。我真的是太菜了">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515845822875&di=5c5ed7e816115333fa10af3a5d2e12dd&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201708%2F02%2F162015g8shss8wbwb8w193.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Http - Web 基础概述" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1515845822875&amp;di=5c5ed7e816115333fa10af3a5d2e12dd&amp;imgtype=0&amp;src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201708%2F02%2F162015g8shss8wbwb8w193.jpg" alt="Http - Web 基础概述">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2013-05-13T08:58:34.000Z">2013-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Http/">Http</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes read (About 1290 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Http - Web 基础概述
+            
+        </h1>
+        <div class="content">
+            <p>唔。。。我真的是太菜了<br><a id="more"></a><br>[TOC]</p>
+<h1 id="一、HTTP报文"><a href="#一、HTTP报文" class="headerlink" title="一、HTTP报文"></a>一、HTTP报文</h1><p><img src="https://images0.cnblogs.com/blog2015/776887/201507/241034588189239.png" alt></p>
+<p>Http 报文分为请求报文（request）和响应报文（response），主要分三部分：</p>
+<ul>
+<li><h2 id="1、起始行"><a href="#1、起始行" class="headerlink" title="1、起始行"></a>1、起始行</h2><ul>
+<li><p>请求行：<strong>包含了一个方法和 URL（路径） 以及 HTTP 版本</strong></p>
+</li>
+<li><p>响应行：包含了 HTTP 版本，状态码和原因短语</p>
+</li>
+<li><p>方法：</p>
+<blockquote>
+<p>分为常用的7种 HTTP 方法和对 HTTP 规范的扩展方法。</p>
+</blockquote>
+</li>
+<li><p>状态码：</p>
+<blockquote>
+<p>状态码位于响应的起始行中；</p>
+<p>状态码数在每条响应报文的起始行中返回的；</p>
+</blockquote>
+</li>
+<li><p>原因短语：</p>
+<blockquote>
+<p>通常与状态码成对出现，如200 OK（描述操作状态的、文本的形式的原因短语）</p>
+</blockquote>
+</li>
+<li><p>版本号：</p>
+<blockquote>
+<p><strong>注意，版本号不会被当做小数处理，2.22要比2.3要大</strong> </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h2 id="2、首部（请求头、响应头、head）"><a href="#2、首部（请求头、响应头、head）" class="headerlink" title="2、首部（请求头、响应头、head）"></a>2、首部（请求头、响应头、head）</h2><ul>
+<li>通用首部</li>
+<li>请求首部<ul>
+<li>Accept 首部</li>
+<li>条件请求首部</li>
+<li>安全请求首部</li>
+<li>代理请求首部</li>
+</ul>
+</li>
+<li>响应首部<ul>
+<li>协商首部</li>
+<li>安全响应首部</li>
+</ul>
+</li>
+<li>实体首部<ul>
+<li>内容首部（Content）</li>
+<li>实体缓存首部</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="3、主体（请求体、响应体、body）"><a href="#3、主体（请求体、响应体、body）" class="headerlink" title="3、主体（请求体、响应体、body）"></a>3、主体（请求体、响应体、body）</h2></li>
+</ul>
+<p><img src="响应报文首部.png" alt="响应报文首部"></p>
+<h1 id="二、URL"><a href="#二、URL" class="headerlink" title="二、URL"></a>二、URL</h1><p>##1、URL 语法</p>
+<p><scheme>://<user>:<password>@<host>:<port>/<path></path>;<params1>;<params2>?<query>&amp;<query2>#<flag></flag></query2></query></params2></params1></port></host></password></user></scheme></p>
+<p>方案://用户名:密码@主机:端口/路径;参数1;参数2？查询字符串#片段</p>
+<blockquote>
+<p>URI方案：http（80）、ftp（21）、https（443）、mailto、rtsp、rtmp（1935）、file、telnet（23）、ssh（22），以上为常用的，远不止这些</p>
+<p>rtsp：Real Time Streaming Protocol：实时流传输协议</p>
+<p>rtmp：Real Time Message Protocol ：实时信息传输协议</p>
+</blockquote>
+<h2 id="2、一些常见的概念"><a href="#2、一些常见的概念" class="headerlink" title="2、一些常见的概念"></a>2、一些常见的概念</h2><h3 id="（1）-URI"><a href="#（1）-URI" class="headerlink" title="（1） URI"></a>（1） URI</h3><p>URI（统一资源标识符）</p>
+<ul>
+<li>URL（统一资源定位符）</li>
+<li>URN（统一资源名）</li>
+</ul>
+<h3 id="（1）RFC"><a href="#（1）RFC" class="headerlink" title="（1）RFC"></a>（1）RFC</h3><p>​         Request For Comments（RFC），是一系列以编号排定的文件。说白了就是 Internet标准定制文件。</p>
+<p>​        一个RFC文件在成为官方标准前一般至少要经历4个阶段【RFC2026】：因特网草案、建议标准、草案标准、因特网标准。</p>
+<h3 id="（3）事物"><a href="#（3）事物" class="headerlink" title="（3）事物"></a>（3）事物</h3><p>一个 HTTP 事物有一条请求命令和一条响应结果组成。</p>
+<p>事物 = 请求 + 响应</p>
+<h3 id="（4）TCP"><a href="#（4）TCP" class="headerlink" title="（4）TCP"></a>（4）TCP</h3><p>TCP：传输控制协议，是把东西从一个地方传到另一个地方用的。<strong><em>转发 HTTP 报文</em></strong>。</p>
+<p>TCP 客户端与服务器是通过套接字（socket）通信的。</p>
+<p>HTTP 是<strong>应用</strong>层的，TCP 是<strong>传输</strong>层的。一个侧重应用，一个侧重传输。</p>
+<p>作用：</p>
+<ul>
+<li>无差错的数据传输</li>
+<li>按序传输（数据总是按照发送的顺序到达目的地）</li>
+<li>未分段的数据流（可以在任意时刻以任意尺寸发送数据）（尺寸就是 Content-Length）</li>
+</ul>
+<h3 id="（5）隧道（tunnel）"><a href="#（5）隧道（tunnel）" class="headerlink" title="（5）隧道（tunnel）"></a>（5）隧道（tunnel）</h3><p>定义：对 HTTP 报文进行<strong>盲转</strong>发的特殊代理。（ 之所以敢盲转还是不因为加了一层 SSL）</p>
+<h3 id="（6）SSL"><a href="#（6）SSL" class="headerlink" title="（6）SSL"></a>（6）SSL</h3><p>SSL（安全套接字层，）在 HTTPS 网络协议栈同 TSL 一样，属于安全层</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3588755-cca8c7cf776db6ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt></p>
+<h3 id="（7）代理与-Agent-代理"><a href="#（7）代理与-Agent-代理" class="headerlink" title="（7）代理与 Agent 代理"></a>（7）代理与 Agent 代理</h3><p>这俩货其实不一样，前者指 proxy，用于在客户端和服务器之间转发流量；</p>
+<p>后者是代表用户发起 HTTP 请求的客户端程序。（就是 web 机器人、爬虫）。</p>
+<h3 id="（8）报文流"><a href="#（8）报文流" class="headerlink" title="（8）报文流"></a>（8）报文流</h3><p>不管报文是从客户端流入服务器，还是从服务器流入客户端，所有的报文都是像河水一样，<strong>下游</strong>流动。</p>
+<p>HTTP 使用流入和流出描述<strong><em>事务处理</em></strong>的方向。</p>
+<p>客服端\</p>
+<p>​           服务器</p>
+<p>客户端/</p>
+<h1 id="三、连接管理"><a href="#三、连接管理" class="headerlink" title="三、连接管理"></a>三、连接管理</h1><p>###1、OSI 七层协议和 TCP/IP 五层网络协议</p>
+<p>总结为一句话：应表会、传网数物（五层协议中应表会为一层）。</p>
+<p>###2、TCP 协议中的三次握手</p>
+<p>总结为一句话：“船~来~了！船~来~了~吗？船~来~了。”之后服务器把船开往客服端。</p>
+<p><img src="http://img.blog.csdn.net/20170104214009596?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2h1c2xlaQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt></p>
+<h3 id="3、TCP-慢启动（slow-shtar）"><a href="#3、TCP-慢启动（slow-shtar）" class="headerlink" title="3、TCP 慢启动（slow shtar）"></a>3、TCP 慢启动（slow shtar）</h3><p>TCP 会通过时间进行自我调谐。开始会限制连接的最大速度，如果数据传输成功，再慢慢提速。这种调谐被称为 TCP 慢启动。</p>
+<blockquote>
+<p> 新建了一座桥。汽车为了试试这个桥能不能走，先慢慢开过去，如果发现没问题，其他汽车再提速过去。</p>
+</blockquote>
+<p>在提速的过程中，有个概念叫<strong><em>打开拥塞窗口</em></strong>。</p>
+<blockquote>
+<p>有一个车队要过一座桥。一开始先派一辆车过去，确认没事的话派两个车试试，如果还没事的话派四辆车过去，这个过程就叫打开拥塞窗口。</p>
+</blockquote>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Http-报文/">Http 报文</a>, <a class="has-link-grey -link" href="/tags/URL/">URL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2014/05/15/2014/闭包、lambda-计算、block/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item"> 闭包、lambda 计算、block</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2013/01/13/2013/cUrl使用心得/">
+                <span class="level-item">cUrl使用心得</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Your name
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Your title
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Your location</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        10
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        7
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/ppoffice" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/ppoffice">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="http://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Http/">
+            <span class="level-start">
+                <span class="level-item">Http</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/iOS-Dev/">
+            <span class="level-start">
+                <span class="level-item">iOS-Dev</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Http-报文/" style="font-size: 10px;">Http 报文</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/cUrl/" style="font-size: 10px;">cUrl</a> <a href="/tags/instrument/" style="font-size: 10px;">instrument</a> <a href="/tags/libimobiledevice/" style="font-size: 10px;">libimobiledevice</a> <a href="/tags/weak-strong/" style="font-size: 10px;">weak&strong</a> <a href="/tags/网络请求/" style="font-size: 10px;">网络请求</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/04/13/以太坊开发入门/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="以太坊开发入门">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-04-13T10:59:55.000Z">2018-04-13</time></div>
+                    <a href="/2018/04/13/以太坊开发入门/" class="has-link-black-ter is-size-6">以太坊开发入门</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1515671098503&amp;di=650c7f02a784008ee52200ccb1115324&amp;imgtype=0&amp;src=http%3A%2F%2Ff3.topitme.com%2F3%2Fb9%2F57%2F1132270460a9c57b93o.jpg" alt="从微信跳一跳学习逆向开发iOS">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-12-29T09:05:40.000Z">2017-12-29</time></div>
+                    <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" class="has-link-black-ter is-size-6">从微信跳一跳学习逆向开发iOS</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/05/15/2016/instrument-详解/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg" alt="instrument 详解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-05-15T15:26:11.000Z">2016-05-15</time></div>
+                    <a href="/2016/05/15/2016/instrument-详解/" class="has-link-black-ter is-size-6">instrument 详解</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/04/13/2015/Xcode-环境变量/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Xcode 环境变量">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-04-13T10:52:04.000Z">2015-04-13</time></div>
+                    <a href="/2015/04/13/2015/Xcode-环境变量/" class="has-link-black-ter is-size-6">Xcode 环境变量</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2014/12/19/2014/ios知识脉络梳理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://i0.hdslb.com/bfs/drawyoo/71c32ae66719b070ef7b565cc7e3c6237915e385.jpg" alt="ios知识脉络梳理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2014-12-19T15:34:21.000Z">2014-12-19</time></div>
+                    <a href="/2014/12/19/2014/ios知识脉络梳理/" class="has-link-black-ter is-size-6">ios知识脉络梳理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2014/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2014</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2014/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2014</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2013/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2013</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2013/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2013</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Http-报文/">
+                        <span class="tag">Http 报文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/URL/">
+                        <span class="tag">URL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cUrl/">
+                        <span class="tag">cUrl</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instrument/">
+                        <span class="tag">instrument</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/libimobiledevice/">
+                        <span class="tag">libimobiledevice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weak-strong/">
+                        <span class="tag">weak&amp;strong</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网络请求/">
+                        <span class="tag">网络请求</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/04/13/以太坊开发入门/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="以太坊开发入门">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-04-13T10:59:55.000Z">2018-04-13</time></div>
+                    <a href="/2018/04/13/以太坊开发入门/" class="has-link-black-ter is-size-6">以太坊开发入门</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1515671098503&amp;di=650c7f02a784008ee52200ccb1115324&amp;imgtype=0&amp;src=http%3A%2F%2Ff3.topitme.com%2F3%2Fb9%2F57%2F1132270460a9c57b93o.jpg" alt="从微信跳一跳学习逆向开发iOS">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-12-29T09:05:40.000Z">2017-12-29</time></div>
+                    <a href="/2017/12/29/2017/从微信跳一跳学习逆向开发iOS/" class="has-link-black-ter is-size-6">从微信跳一跳学习逆向开发iOS</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/05/15/2016/instrument-详解/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://i0.hdslb.com/bfs/drawyoo/08a8f9111655a8a0c2f1dd05ea4f5291692fb08c.jpg" alt="instrument 详解">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-05-15T15:26:11.000Z">2016-05-15</time></div>
+                    <a href="/2016/05/15/2016/instrument-详解/" class="has-link-black-ter is-size-6">instrument 详解</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/04/13/2015/Xcode-环境变量/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Xcode 环境变量">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-04-13T10:52:04.000Z">2015-04-13</time></div>
+                    <a href="/2015/04/13/2015/Xcode-环境变量/" class="has-link-black-ter is-size-6">Xcode 环境变量</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2014/12/19/2014/ios知识脉络梳理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://i0.hdslb.com/bfs/drawyoo/71c32ae66719b070ef7b565cc7e3c6237915e385.jpg" alt="ios知识脉络梳理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2014-12-19T15:34:21.000Z">2014-12-19</time></div>
+                    <a href="/2014/12/19/2014/ios知识脉络梳理/" class="has-link-black-ter is-size-6">ios知识脉络梳理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/iOS-Dev/">iOS-Dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2014/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2014</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2014/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2014</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2013/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2013</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2013/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2013</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Http-报文/">
+                        <span class="tag">Http 报文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/URL/">
+                        <span class="tag">URL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cUrl/">
+                        <span class="tag">cUrl</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/instrument/">
+                        <span class="tag">instrument</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/libimobiledevice/">
+                        <span class="tag">libimobiledevice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weak-strong/">
+                        <span class="tag">weak&amp;strong</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网络请求/">
+                        <span class="tag">网络请求</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Http - Web 基础概述" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Http - Web 基础概述&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
