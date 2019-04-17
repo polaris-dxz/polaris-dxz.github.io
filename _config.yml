@@ -121,7 +121,7 @@ live2d:
     opacityOnHover: 0.2
 
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-icarusq
+theme: icarus
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
