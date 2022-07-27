@@ -1,4 +1,4 @@
-# polaris-dxz-github.io
+# polaris-dxz.github.io
 
 * branch
   * master：deploy  generate static file
